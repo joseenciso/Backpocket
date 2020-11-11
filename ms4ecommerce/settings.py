@@ -37,6 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Django-Allauth
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    # end Django-Allauth
 ]
 
 MIDDLEWARE = [
@@ -59,7 +65,7 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',
+                'django.template.context_processors.request',  # Required by django-allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -67,8 +73,36 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ms4ecommerce.wsgi.application'
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
 
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+# Default: Not defined
+# The ID, as an integer, of the current site in the django_site database table.
+# This is used so that application data can hook into specific sites and a single
+# database can manage content for multiple sites.
+SITE_ID = 1
+
+# Sending  new account confimation emails to the console temporary
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Allauth allowing to --->
+ACCOUNT_AUTHENTICATIONMETHOD = 'username_email'  # Either username or email
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+ACCOUNT_USERNAME_MIN_LENGHT = 4
+LOGIN_URL = '/accounts/login/'
+# LOGIN_REDIRECT_URL = '/'
+# LOGIN_REDIRECT_URL = '/success'
+LOGIN_REDIRECT_URL = '/'
+
+
+WSGI_APPLICATION = 'ms4ecommerce.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
