@@ -1,0 +1,51 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: url('../../media/backgrounds/bg01.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 60px);
+
+}
+
+.fa-2x {
+    width: 50px !important;
+}
+
+.far,
+.fab,
+.fas {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+.navbar a,
+.navbar-nav a {
+    font-size: 1.5rem;
+}
+
+
+footer h4 {
+    border-bottom: solid white 2px;
+}
+
+main {
+    margin-top: 3rem;
+    height: 100%;
+}
+
+/*.fa-map-marker-alt,
+.fa-tiktok {
+    color: red;
+}*/
+
+
+
+
+@media (max-width: 768px) {
+    body {
+        height: calc(100vh - 103px);
+    }
+}

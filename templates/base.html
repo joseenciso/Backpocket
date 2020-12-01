@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.3/css/solid.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'styles/base.css' %}">
     {% endblock %}
     
     {% block extra_js %}{% endblock %}
@@ -32,39 +32,20 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     {% endblock %}
     
-    <title>Valhalla{% block extra_title %}{% endblock %}</title>
+    <title>BackPocket{% block extra_title %}{% endblock %}</title>
 </head>
 <body>
-    <header class="container  fixed-top mb-5">
+    <header class="container text-infofixed-top mb-5">
         <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
                 
-            <a class="navbar-brand text-info" href="#"><i class="fas fa-igloo fa-lg"></i> iGlu</a>
+            <a class="navbar-brand text-info" href="#"><i class="fab fa-shirtsinbulk fa-sm"></i>BackPocket</a>
             
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler text-info" type="button" data-toggle="collapse" data-target="#navbarCollapse" 
+                                                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon  text-info"></span>
             </button>
 
-            <form class="form-inline mt-2 mt-md-0 w-100 ">
-                <div class="input-group-append search w-100">
-                    <input class="form-control w-100" type="text" placeholder="Search" aria-label="Search">
-                    <a class="btn btn-outline-success input-group-text" type="submit"><i class="fas fa-search"></i></a>
-                </div>
-            </form>
-
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <!--span class="sr-only">(current)</!--span--></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-user fa-2x"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-shopping-bag fa-2x"></i></a>
-                    </li>
-                </ul>
-            </div>
+            {% include 'includes/main-nav.html'%}
 
         </nav>
     </header>
@@ -78,54 +59,60 @@
 
     {% block content %}{% endblock %}
 
-    <footer class="page-footer lighten-3 mt-2 pt-4 bg-light">
-        <div class="container">
+    <footer class="page-footer lighten-3 mt-2 bg-dark">
+        <div class="container py-4 mb-4 text-light">
+            <h4><i class="fab fa-shirtsinbulk fa-sm"></i>BackPocket</h4>
             <div class="row">
+                
                 <div class="col-md-4 col-lg-3 mt-4 mb-1">
-            
-                    <div class="">
-                        <h5>iGlu</h5>
-                        <ul class="">
-                            <li><a href=""><i class="far fa-question-circle"></i>info@iglu.com</a></li>
-                            <li><a href=""><i class="fas fa-phone-alt"></i>+ 01 234 567 88</a></li>
-                            <li><a href=""><i class="fas fa-map-marker-alt"></i>1 Kildare St, Leicester LE1 3YH</a></li>
-                            <li><a href=""></a></li>
-                            <li><a href=""></a></li>
-                        </ul>
-                    </div>
+                    <ul class="list-unstyled ">
+                        <li><i class="far fa-paper-plane"></i>Contact us</li>
+                        <li><i class="far fa-envelope"></i>info@backpocket.com</li>
+                        <li><i class="fas fa-phone-alt"></i>+ 01 234 567 88</li>
+                        <li><i class="fas fa-map-marker-alt"></i>1 Kildare St, Leicester LE1 3YH</li>
+                    </ul>
+                </div>
 
-                    <div class="">
-                        <h5 class="font-weight-bold text-uppercase mb-4">??????</h5>
-                        <ul class="">
-                            <li><a href=""></a></li>
-                            <li><a href=""></a></li>
-                            <li><a href=""></a></li>
-                            <li><a href=""></a></li>
-                            <li><a href=""></a></li>
-                        </ul>
-                    </div>
+                <div class="col-md-4 col-lg-6 mt-4 mb-1 ">
+                    <div id="map" class="w-100 h-100"></div>
+                </div>
+                
 
-                    <div class="">
-                        <h5>Follow us</h5>
-                        <ul class="list-unstyled">
-                            <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href=""><i class="fab fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fab fa-pinterest-p"></i></a></li>
-                            <li><a href=""><i class="fab fa-tiktok"></i></a></li>
-                            <li><a href=""><i class="fab fa-instagram"></i></a></li>
-                        </ul>
+                <div class="col-md-4 col-lg-3 mt-4 mb-1">
+                    <h5>Follow us</h5>
+                    <ul class="list-unstyled ">
+                        <li><a href="" class="text-light"><i class="fab fa-facebook-f"></i>facebook</a></li>
+                        <li><a href="" class="text-light"><i class="fab fa-twitter"></i>twitter</a></li>
+                        <li><a href="" class="text-light"><i class="fab fa-pinterest-p"></i>pinterest</a></li>
+                        <li><a href="" class="text-light"><i class="fab fa-tiktok"></i>tiktok</a></li>
+                        <li><a href="" class="text-light"><i class="fab fa-instagram"></i>instagram</a></li>
+                    </ul>
+
+                    <p>Sign up to our newsletter and get 15% off your first order  </p>
+                    
+                    <div class="progress-bar">
+                        <a href="" class="btn btn-warning text-light   progress-bar-striped bg-warning">Sign up for newsletter <i class="fas fa-chevron-right text-white"></i></a>
                     </div>
                 </div>
             </div>
+
+            <div class="row w-100 h-100">
+            </div>
         </div>
 
-        <div class="footer-copyright text-center py-3">
-            <a href="">Jose Enciso</a>:
-            <a href="">MS4-eCommerce - iGlu</a>
+        <div class="footer-copyright text-center bg-secondary text-light py-4">
+            <a href="#" class="text-light">Jose Enciso</a>:
+            <a href="#" class="text-light">MS4-eCommerce - <i class="fab fa-shirtsinbulk fa-sm"></i>BackPocket</a>
         </div>
-        
+    
     </footer>
+    <script src="{% static './scripts/app.js' %}"></script>
 
+
+
+    <script defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjFJQZu1bk-mSmZmVssCYn2OSqUjDIBqs&callback=initMap">
+    </script>
     {% block postload_js %}{% endblock %}
 </body>
 </html>
