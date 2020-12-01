@@ -17,13 +17,13 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    category = models.ForeignKey(
-        'Category', null=True, blank=True, on_delete=models.SET_NULL)
+    # category = models.ForeignKey(
+    #    'Category', null=True, blank=True, on_delete=models.SET_NULL)
     # In case that category is deleted, the product will stay as NULL
     sku = models.CharField(max_length=254, null=True, blank=True)
     gender = models.CharField(max_length=25, null=True, blank=True)
-    category = models.CharField(max_length=50, null=True, blank=True)
-    sub_category = models.CharField(max_length=50, null=True, blank=True)
+    categories = models.CharField(max_length=50, null=True, blank=True)
+    sub_categories = models.CharField(max_length=50, null=True, blank=True)
     brand = models.CharField(max_length=50, null=True, blank=True)
     article_type = models.CharField(max_length=150, null=True, blank=True)
     base_colour = models.CharField(max_length=50, null=True, blank=True)
