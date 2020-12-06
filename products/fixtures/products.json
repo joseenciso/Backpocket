@@ -10,13 +10,12 @@
             "brand": "Pumba",
             "article_type": "Backpacks",
             "base_colour": "Navy Blue",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Casual",
             "product_name": "deck_backpack",
-            "description": "Deck Navy Blue Backpack"
+            "description": "Deck Navy Blue Backpack",
+            "image": "products/1525.jpg",
+            "image_url": ""
         }
     },
     {
@@ -30,13 +29,12 @@
             "brand": "Pumba",
             "article_type": "Backpacks",
             "base_colour": "Black",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Sports",
             "product_name": "big_cat_backpack",
-            "description": "Big Cat Backpack"
+            "description": "Big Cat Backpack",
+            "image": "products/1526.jpg",
+            "image_url": ""
         }
     },
     {
@@ -50,13 +48,12 @@
             "brand": "Pumba",
             "article_type": "Jackets",
             "base_colour": "Black",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Sports",
             "product_name": "pumba_black_ferrari_fleece",
-            "description": "Pumba Black Ferrari Fleece"
+            "description": "Pumba Black Ferrari Fleece",
+            "image": "products/1528.jpg",
+            "image_url": ""
         }
     },
     {
@@ -70,13 +67,12 @@
             "brand": "Pumba",
             "article_type": "Tshirts",
             "base_colour": "Grey",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Casual",
             "product_name": "pumba_grey_solsku_round_neck",
-            "description": "Pumba Men Grey Solsku Round Neck T-Shirt"
+            "description": "Pumba Men Grey Solsku Round Neck T-Shirt",
+            "image": "products/.1531jpg",
+            "image_url": ""
         }
     },
     {
@@ -90,13 +86,12 @@
             "brand": "Pumba",
             "article_type": "Tshirts",
             "base_colour": "Red",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Casual",
             "product_name": "",
-            "description": "Pumba Men Cat Red T-shirt"
+            "description": "Pumba Men Cat Red T-shirt",
+            "image": "products/1533.jpg",
+            "image_url": ""
         }
     },
     {
@@ -110,13 +105,12 @@
             "brand": "Pumba",
             "article_type": "Tshirts",
             "base_colour": "Black",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Casual",
             "product_name": "",
-            "description": "Pumba Men Black Leaping Cat T-shirt"
+            "description": "Pumba Men Black Leaping Cat T-shirt",
+            "image": "products/1534.jpg",
+            "image_url": ""
         }
     },
     {
@@ -130,13 +124,12 @@
             "brand": "Pumba",
             "article_type": "Caps",
             "base_colour": "Black",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Sports",
             "product_name": "",
-        "description": "Pumba Unisex Logo Cap"
+        "description": "Pumba Unisex Logo Cap",
+            "image": "products/1535.jpg",
+            "image_url": ""
         }
     },
     {
@@ -150,13 +143,12 @@
             "brand": "Pumba",
             "article_type": "Tshirts",
             "base_colour": "Black",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Sports",
-            "product_name": "",
-            "description": "Pumba Men Black Net Jersey"
+            "product_name": "pumba_men_black_net",
+            "description": "Pumba Men Black Net Jersey",
+            "image": "products/1536.jpg",
+            "image_url": ""
         }
     },
     {
@@ -170,13 +162,12 @@
             "brand": "Pumba",
             "article_type": "Tshirts",
             "base_colour": "Blue",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Casual",
-            "product_name": "",
-            "description": "Pumba Men Ferrari Track Black T-shirt"
+            "product_name": "pumba_men_ferrari_tshirt",
+            "description": "Pumba Men Ferrari Track Black T-shirt",
+            "image": "products/1538.jpg",
+            "image_url": ""
         }
     },
     {
@@ -190,13 +181,12 @@
             "brand": "Pumba",
             "article_type": "Sports Shoes",
             "base_colour": "White",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Sports",
-            "product_name": "",
-            "description": "Pumba Men's Ballistic Spike White Green Shoe"
+            "product_name": "pumba_men_ballistic_white_shoe",
+            "description": "Pumba Men's Ballistic Spike White Green Shoe",
+            "image": "products/1541.jpg",
+            "image_url": ""
         }
     },
     {
@@ -210,13 +200,12 @@
             "brand": "Pumba",
             "article_type": "Sports Shoes",
             "base_colour": "White",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Sports",
             "product_name": "",
-            "description": "Pumba Men's Ballistic Rubber Shoe"
+            "description": "Pumba Men's Ballistic Rubber Shoe",
+            "image": "products/1542.jpg",
+            "image_url": ""
         }
     },
     {
@@ -230,13 +219,12 @@
             "brand": "Pumba",
             "article_type": "Casual Shoes",
             "base_colour": "Black",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Casual",
-            "product_name": "",
-            "description": "Pumba Men Basket-Biz Sneaker"
+            "product_name": "pumba_men_basket_sneaker",
+            "description": "Pumba Men Basket-Biz Sneaker",
+            "image": "products/1543.jpg",
+            "image_url": ""
         }
     },
     {
@@ -250,13 +238,12 @@
             "brand": "Pumba",
             "article_type": "Casual Shoes",
             "base_colour": "White",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Casual",
-            "product_name": "",
-            "description": "Pumba Men's Speed Cat Shoe"
+            "product_name": "pumba_men_speed_cat_shoe",
+            "description": "Pumba Men's Speed Cat Shoe",
+            "image": "products/1545.jpg",
+            "image_url": ""
         }
     },
     {
@@ -270,13 +257,12 @@
             "brand": "Pumba",
             "article_type": "Sports Shoes",
             "base_colour": "White",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Sports",
             "product_name": "pumba_cell_exsis",
-            "description": "Pumba Men's Cell Exsis Sneaker"
+            "description": "Pumba Men's Cell Exsis Sneaker",
+            "image": "products/1548.jpg",
+            "image_url": ""
         }
     },
     {
@@ -290,13 +276,12 @@
             "brand": "Pumba",
             "article_type": "Footballs",
             "base_colour": "White",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Sports",
             "product_name": "pumba_cat_trainer",
-            "description": "Pumba Cat Trainer-WBL Football"
+            "description": "Pumba Cat Trainer-WBL Football",
+            "image": "products/1550.jpg",
+            "image_url": ""
         }
     },
     {
@@ -310,13 +295,12 @@
             "brand": "Pumba",
             "article_type": "Footballs",
             "base_colour": "Orange",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Sports",
             "product_name": "pumba_power_cat_ob",
-            "description": "Pumba Power Cat Trainer-OB Football"
+            "description": "Pumba Power Cat Trainer-OB Football",
+            "image": "products/1551.jpg",
+            "image_url": ""
         }
     },
     {
@@ -330,13 +314,12 @@
             "brand": "Pumba",
             "article_type": "Footballs",
             "base_colour": "White",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Sports",
             "product_name": "puba_power_cat_wr",
-            "description": "Pumba Power Cat Trainer-WR Football"
+            "description": "Pumba Power Cat Trainer-WR Football",
+            "image": "products/1552.jpg",
+            "image_url": ""
         }
     },
     {
@@ -350,13 +333,12 @@
             "brand": "Quechua",
             "article_type": "Backpacks",
             "base_colour": "Black",
-            "season": "Summer",
             "price": 0.00,
-            "rating": 0,
-            "year": 2011,
             "usage": "Sports",
             "product_name": "quechua_forclaz",
-            "description": "Quechua Forclaz Large  Backpack - 50 ltr Orange"
+            "description": "Quechua Forclaz Large  Backpack - 50 ltr Orange",
+            "image": "products/1556.jpg",
+            "image_url": ""
         }
     },
     {
@@ -370,13 +352,12 @@
             "brand": "Quechua",
             "article_type": "Backpacks",
             "base_colour": "Black",
-            "season": "Summer",
             "price": 0.00,
-            "rating": 0,
-            "year": 2011,
             "usage": "Travel",
             "product_name": "quechua_spacious",
-            "description": "Quechua Spacious Blue-Black Backpack"
+            "description": "Quechua Spacious Blue-Black Backpack",
+            "image": "products/1557.jpg",
+            "image_url": ""
         }
     },
     {
@@ -390,13 +371,12 @@
             "brand": "Quechua",
             "article_type": "Tshirts",
             "base_colour": "White",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Sports",
             "product_name": "quechua_sweat_proof",
-            "description": "Quechua Women Sweat Proof White T-shirt"
+            "description": "Quechua Women Sweat Proof White T-shirt",
+            "image": "products/1561.jpg",
+            "image_url": ""
         }
     },
     {
@@ -410,13 +390,12 @@
             "brand": "Artengo",
             "article_type": "Caps",
             "base_colour": "Black",
-            "season": "Summer",
             "price": 0.00,
-            "rating": 0,
-            "year": 2011,
             "usage": "Sports",
             "product_name": "artengo_black_cap",
-            "description": "Artengo Men Black Cap"
+            "description": "Artengo Men Black Cap",
+            "image": "products/1566.jpg",
+            "image_url": ""
         }
     },
     {
@@ -430,13 +409,12 @@
             "brand": "Artengo",
             "article_type": "Shorts",
             "base_colour": "Black",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Sports",
             "product_name": "artengo_training_short",
-            "description": "Artengo Men Training Shorts"
+            "description": "Artengo Men Training Shorts",
+            "image": "products/1567.jpg",
+            "image_url": ""
         }
     },
     {
@@ -450,13 +428,12 @@
             "brand": "Artengo",
             "article_type": "Tshirts",
             "base_colour": "Black",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Sports",
             "product_name": "artengo_tennis_singlet",
-            "description": "Artengo Women Tennis Singlet"
+            "description": "Artengo Women Tennis Singlet",
+            "image": "products/1570.jpg",
+            "image_url": ""
         }
     },
     {
@@ -470,13 +447,12 @@
             "brand": "Kalenji",
             "article_type": "Sports Shoes",
             "base_colour": "White",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Sports",
             "product_name": "kalenji_sport_shoes",
-            "description": "Kalenji Men's Super Soft Sports Shoes"
+            "description": "Kalenji Men's Super Soft Sports Shoes",
+            "image": "products/1571.jpg",
+            "image_url": ""
         }
     },
     {
@@ -490,13 +466,12 @@
             "brand": "Kalenji",
             "article_type": "Track Pants",
             "base_colour": "Black",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Sports",
             "product_name": "kalenji_traning_track_pants",
-            "description": "Kalenji Mens Essential Training Track Pants"
+            "description": "Kalenji Mens Essential Training Track Pants",
+            "image": "products/1572.jpg",
+            "image_url": ""
         }
     },
     {
@@ -510,13 +485,12 @@
             "brand": "Kalenji",
             "article_type": "Track Pants",
             "base_colour": "Grey",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Sports",
             "product_name": "kalenji_thletes_track_pants",
-            "description": "Kalenji Women Athletes Grey Track Pants"
+            "description": "Kalenji Women Athletes Grey Track Pants",
+            "image": "products/1573.jpg",
+            "image_url": ""
         }
     },
     {
@@ -530,13 +504,12 @@
             "brand": "Geonaute",
             "article_type": "Handbags",
             "base_colour": "Blue",
-            "season": "Summer",
             "price": 0.00,
-            "rating": 0,
-            "year": 2011,
             "usage": "Sports",
             "product_name": "geonaute_outdoor_bag",
-            "description": "Geonaute Women Large Outdoor Bag"
+            "description": "Geonaute Women Large Outdoor Bag",
+            "image": "products/1939.jpg",
+            "image_url": ""
         }
     },
     {
@@ -550,13 +523,12 @@
             "brand": "Domyos",
             "article_type": "Handbags",
             "base_colour": "Brown",
-            "season": "Summer",
             "price": 0.00,
-            "rating": 0,
-            "year": 2011,
             "usage": "Sports",
             "product_name": "domyos_bag",
-            "description": "Domyos Brown Bag"
+            "description": "Domyos Brown Bag",
+            "image": "products/1941.jpg",
+            "image_url": ""
         }
     },
     {
@@ -570,13 +542,12 @@
             "brand": "Pumba",
             "article_type": "Sports Shoes",
             "base_colour": "Purple",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2011,
             "usage": "Sports",
             "product_name": "pumba_eco_funky",
-            "description": "Pumba Women Eco Funky Shoes"
+            "description": "Pumba Women Eco Funky Shoes",
+            "image": "products/1951.jpg",
+            "image_url": ""
         }
     },
     {
@@ -590,13 +561,12 @@
             "brand": "Tribord",
             "article_type": "Shorts",
             "base_colour": "White",
-            "season": "Summer",
             "price": 0.00,
-            "rating": 0,
-            "year": 2011,
             "usage": "Casual",
             "product_name": "tribord_cargo_shorts",
-            "description": "Tribord Mens Short Cargo Shorts"
+            "description": "Tribord Mens Short Cargo Shorts",
+            "image": "products/1976.jpg",
+            "image_url": ""
         }
     },
     {
@@ -610,13 +580,12 @@
             "brand": "Tribord",
             "article_type": "Shorts",
             "base_colour": "Grey",
-            "season": "Summer",
             "price": 0.00,
-            "rating": 0,
-            "year": 2011,
             "usage": "Casual",
             "product_name": "tribord_cargo_shorts_grey",
-                "description": "Tribord Mens Grey Cargo Shorts"
+                "description": "Tribord Mens Grey Cargo Shorts",
+            "image": "products/1977.jpg",
+            "image_url": ""
         }
     },
     {
@@ -630,13 +599,12 @@
             "brand": "Pumba",
             "article_type": "Shorts",
             "base_colour": "Green",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Casual",
             "product_name": "pumba_island_shorts_green",
-            "description": "Pumba Women's Island Green Shorts"
+            "description": "Pumba Women's Island Green Shorts",
+            "image": "products/1981.jpg",
+            "image_url": ""
         }
     },
     {
@@ -650,13 +618,12 @@
             "brand": "Pumba",
             "article_type": "Shorts",
             "base_colour": "Purple",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Casual",
             "product_name": "pumba_island_shorts_purple",
-            "description": "Pumba Island Shorts Purple"
+            "description": "Pumba Island Shorts Purple",
+            "image": "products/1982.jpg",
+            "image_url": ""
         }
     },
     {
@@ -670,13 +637,12 @@
             "brand": "Adskuas",
             "article_type": "Tshirts",
             "base_colour": "Purple",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Sports",
-            "product_name": "adskuas_pocket_polo",
-            "description": "Adskuas Pocket Polo T-shirt"
+            "product_name": "adskuas_pocket_purple_polo",
+            "description": "Adskuas Pocket Polo T-shirt",
+            "image": "products/2089.jpg",
+            "image_url": ""
         }
     },
     {
@@ -690,13 +656,12 @@
             "brand": "Lee",
             "article_type": "Shirts",
             "base_colour": "Blue",
-            "season": "Winter",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Casual",
-            "product_name": "lee_checks_shirt",
-            "description": "Lee checks Blue Shirt"
+            "product_name": "lee_checks_blue_shirt",
+            "description": "Lee checks Blue Shirt",
+            "image": "products/2093.jpg",
+            "image_url": ""
         }
     },
     {
@@ -710,13 +675,12 @@
             "brand": "Lee",
             "article_type": "Shirts",
             "base_colour": "White",
-            "season": "Winter",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Casual",
-            "product_name": "lee_checks_shirt",
-            "description": "Lee Checks Shirt"
+            "product_name": "lee_checks_white_shirt",
+            "description": "Lee Checks Shirt",
+            "image": "products/2094.jpg",
+            "image_url": ""
         }
     },
     {
@@ -730,13 +694,12 @@
             "brand": "ADskuAS",
             "article_type": "Track Pants",
             "base_colour": "Black",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Sports",
             "product_name": "adskuas_slim_fit_lycra_track_pans",
-            "description": "ADskuAS Slim Fit Lycra Track Pants"
+            "description": "ADskuAS Slim Fit Lycra Track Pants",
+            "image": "products/2109.jpg",
+            "image_url": ""
         }
     },
     {
@@ -750,13 +713,12 @@
             "brand": "ADskuAS",
             "article_type": "Track Pants",
             "base_colour": "Tan",
-            "season": "Fall",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Sports",
             "product_name": "adskuas_berry_lycra_track_pants",
-            "description": "ADskuAS Very Berry Lycra Track Pants"
+            "description": "ADskuAS Very Berry Lycra Track Pants",
+            "image": "products/2110.jpg",
+            "image_url": ""
         }
     },
     {
@@ -770,13 +732,12 @@
             "brand": "Lee",
             "article_type": "Shirts",
             "base_colour": "Pink",
-            "season": "Winter",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Casual",
             "product_name": "lee_pink_shirt",
-            "description": "Lee Pink Shirt"
+            "description": "Lee Pink Shirt",
+            "image": "products/2119.jpg",
+            "image_url": ""
         }
     },
     {
@@ -790,13 +751,12 @@
             "brand": "Lee",
             "article_type": "Tops",
             "base_colour": "Navy Blue",
-            "season": "Winter",
             "price": 0.00,
-            "rating": 0,
-            "year": 2010,
             "usage": "Casual",
             "product_name": "lee_navy_blue_top",
-            "description": "Lee Navy Blue Top"
+            "description": "Lee Navy Blue Top",
+            "image": "products/2120.jpg",
+            "image_url": ""
         }
     }
 ]

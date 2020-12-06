@@ -1,0 +1,50 @@
+[
+    {
+        "pk": 1,
+        "model":"products.sub_category",
+        "fields":{
+            "sub_category_name":"bags",
+            "friendly_name":"Bags"
+        }
+    },
+    {
+        "pk": 2,
+        "model":"products.sub_category",
+        "fields":{
+            "sub_category_name":"topwear",
+            "friendly_name":"Topwear"
+        }
+    },
+    {
+        "pk": 3,
+        "model":"products.sub_category",
+        "fields":{
+            "sub_category_name":"headwear",
+            "friendly_name":"Headwear"
+        }
+    },
+    {
+        "pk": 4,
+        "model":"products.sub_category",
+        "fields":{
+            "sub_category_name":"shoes",
+            "friendly_name":"Shoes"
+        }
+    },
+    {
+        "pk": 5,
+        "model":"products.sub_category",
+        "fields":{
+            "sub_category_name":"sports_equipment",
+            "friendly_name":"Sports Equipment"
+        }
+    },
+    {
+        "pk": 6,
+        "model":"products.sub_category",
+        "fields":{
+            "sub_category_name":"bottomwear",
+            "friendly_name":"Bottomwear"
+        }
+    }
+]

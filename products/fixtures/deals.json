@@ -1,0 +1,34 @@
+[
+    {
+        "pk":1,
+        "model":"products.dela",
+        "fields":{
+            "name":"clearance",
+            "friendly_name":"Clearance"
+        }
+    },
+    {
+        "pk":2,
+        "model":"products.deal",
+        "fields":{
+            "name":"deals",
+            "friendly_name":"Deals"
+        }
+    },
+    {
+        "pk":3,
+        "model":"products.deal",
+        "fields":{
+            "name":"new_arrivals",
+            "friendly_name":"New Arrivals"
+        }
+    },
+    {
+        "pk":4,
+        "model":"products.deal",
+        "fields":{
+            "name":"essentials",
+            "friendly_name":"Essentials"
+        }
+    }
+]
