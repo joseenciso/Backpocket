@@ -12,8 +12,8 @@
             "base_colour": "Navy Blue",
             "price": 0.00,
             "usage": "Casual",
-            "product_name": "deck_backpack",
-            "description": "Deck Navy Blue Backpack",
+            "description": "deck_backpack",
+            "product_name": "Deck Navy Blue Backpack",
             "image": "products/1525.jpg",
             "image_url": ""
         }
@@ -31,8 +31,8 @@
             "base_colour": "Black",
             "price": 0.00,
             "usage": "Sports",
-            "product_name": "big_cat_backpack",
-            "description": "Big Cat Backpack",
+            "description": "big_cat_backpack",
+            "product_name": "Big Cat Backpack",
             "image": "products/1526.jpg",
             "image_url": ""
         }
@@ -50,8 +50,8 @@
             "base_colour": "Black",
             "price": 0.00,
             "usage": "Sports",
-            "product_name": "pumba_black_ferrari_fleece",
-            "description": "Pumba Black Ferrari Fleece",
+            "description": "Pumba black_ferrari_fleece",
+            "product_name": "Pumba Black Ferrari Fleece",
             "image": "products/1528.jpg",
             "image_url": ""
         }
@@ -69,9 +69,9 @@
             "base_colour": "Grey",
             "price": 0.00,
             "usage": "Casual",
-            "product_name": "pumba_grey_solsku_round_neck",
-            "description": "Pumba Men Grey Solsku Round Neck T-Shirt",
-            "image": "products/.1531jpg",
+            "description": "Pumba grey_solsku_round_neck",
+            "product_name": "Pumba Men Grey Solsku Round Neck T-Shirt",
+            "image": "products/1531.jpg",
             "image_url": ""
         }
     },
@@ -88,8 +88,8 @@
             "base_colour": "Red",
             "price": 0.00,
             "usage": "Casual",
-            "product_name": "",
-            "description": "Pumba Men Cat Red T-shirt",
+            "description": "",
+            "product_name": "Pumba Men Cat Red T-shirt",
             "image": "products/1533.jpg",
             "image_url": ""
         }
@@ -107,8 +107,8 @@
             "base_colour": "Black",
             "price": 0.00,
             "usage": "Casual",
-            "product_name": "",
-            "description": "Pumba Men Black Leaping Cat T-shirt",
+            "description": "",
+            "product_name": "Pumba Men Black Leaping Cat T-shirt",
             "image": "products/1534.jpg",
             "image_url": ""
         }
@@ -126,8 +126,8 @@
             "base_colour": "Black",
             "price": 0.00,
             "usage": "Sports",
-            "product_name": "",
-        "description": "Pumba Unisex Logo Cap",
+            "description": "",
+        "product_name": "Pumba Unisex Logo Cap",
             "image": "products/1535.jpg",
             "image_url": ""
         }
@@ -145,8 +145,8 @@
             "base_colour": "Black",
             "price": 0.00,
             "usage": "Sports",
-            "product_name": "pumba_men_black_net",
-            "description": "Pumba Men Black Net Jersey",
+            "description": "Pumba men_black_net",
+            "product_name": "Pumba Men Black Net Jersey",
             "image": "products/1536.jpg",
             "image_url": ""
         }
@@ -164,8 +164,8 @@
             "base_colour": "Blue",
             "price": 0.00,
             "usage": "Casual",
-            "product_name": "pumba_men_ferrari_tshirt",
-            "description": "Pumba Men Ferrari Track Black T-shirt",
+            "description": "Pumba men_ferrari_tshirt",
+            "product_name": "Pumba Men Ferrari Track Black T-shirt",
             "image": "products/1538.jpg",
             "image_url": ""
         }
@@ -183,8 +183,8 @@
             "base_colour": "White",
             "price": 0.00,
             "usage": "Sports",
-            "product_name": "pumba_men_ballistic_white_shoe",
-            "description": "Pumba Men's Ballistic Spike White Green Shoe",
+            "description": "Pumba men_ballistic_white_shoe",
+            "product_name": "Pumba Men's Ballistic Spike White Green Shoe",
             "image": "products/1541.jpg",
             "image_url": ""
         }
@@ -202,8 +202,8 @@
             "base_colour": "White",
             "price": 0.00,
             "usage": "Sports",
-            "product_name": "",
-            "description": "Pumba Men's Ballistic Rubber Shoe",
+            "description": "",
+            "product_name": "Pumba Men's Ballistic Rubber Shoe",
             "image": "products/1542.jpg",
             "image_url": ""
         }
@@ -221,8 +221,8 @@
             "base_colour": "Black",
             "price": 0.00,
             "usage": "Casual",
-            "product_name": "pumba_men_basket_sneaker",
-            "description": "Pumba Men Basket-Biz Sneaker",
+            "description": "Pumba men_basket_sneaker",
+            "product_name": "Pumba Men Basket-Biz Sneaker",
             "image": "products/1543.jpg",
             "image_url": ""
         }
@@ -240,8 +240,8 @@
             "base_colour": "White",
             "price": 0.00,
             "usage": "Casual",
-            "product_name": "pumba_men_speed_cat_shoe",
-            "description": "Pumba Men's Speed Cat Shoe",
+            "description": "Pumba men_speed_cat_shoe",
+            "product_name": "Pumba Men's Speed Cat Shoe",
             "image": "products/1545.jpg",
             "image_url": ""
         }
@@ -259,8 +259,8 @@
             "base_colour": "White",
             "price": 0.00,
             "usage": "Sports",
-            "product_name": "pumba_cell_exsis",
-            "description": "Pumba Men's Cell Exsis Sneaker",
+            "description": "Pumba cell_exsis",
+            "product_name": "Pumba Men's Cell Exsis Sneaker",
             "image": "products/1548.jpg",
             "image_url": ""
         }
@@ -278,8 +278,8 @@
             "base_colour": "White",
             "price": 0.00,
             "usage": "Sports",
-            "product_name": "pumba_cat_trainer",
-            "description": "Pumba Cat Trainer-WBL Football",
+            "description": "Pumba cat_trainer",
+            "product_name": "Pumba Cat Trainer-WBL Football",
             "image": "products/1550.jpg",
             "image_url": ""
         }
@@ -297,8 +297,8 @@
             "base_colour": "Orange",
             "price": 0.00,
             "usage": "Sports",
-            "product_name": "pumba_power_cat_ob",
-            "description": "Pumba Power Cat Trainer-OB Football",
+            "description": "Pumba power_cat_ob",
+            "product_name": "Pumba Power Cat Trainer-OB Football",
             "image": "products/1551.jpg",
             "image_url": ""
         }
@@ -316,8 +316,8 @@
             "base_colour": "White",
             "price": 0.00,
             "usage": "Sports",
-            "product_name": "puba_power_cat_wr",
-            "description": "Pumba Power Cat Trainer-WR Football",
+            "description": "puba_power_cat_wr",
+            "product_name": "Pumba Power Cat Trainer-WR Football",
             "image": "products/1552.jpg",
             "image_url": ""
         }
@@ -335,8 +335,8 @@
             "base_colour": "Black",
             "price": 0.00,
             "usage": "Sports",
-            "product_name": "quechua_forclaz",
-            "description": "Quechua Forclaz Large  Backpack - 50 ltr Orange",
+            "description": "quechua_forclaz",
+            "product_name": "Quechua Forclaz Large  Backpack - 50 ltr Orange",
             "image": "products/1556.jpg",
             "image_url": ""
         }
@@ -354,8 +354,8 @@
             "base_colour": "Black",
             "price": 0.00,
             "usage": "Travel",
-            "product_name": "quechua_spacious",
-            "description": "Quechua Spacious Blue-Black Backpack",
+            "description": "quechua_spacious",
+            "product_name": "Quechua Spacious Blue-Black Backpack",
             "image": "products/1557.jpg",
             "image_url": ""
         }
@@ -373,8 +373,8 @@
             "base_colour": "White",
             "price": 0.00,
             "usage": "Sports",
-            "product_name": "quechua_sweat_proof",
-            "description": "Quechua Women Sweat Proof White T-shirt",
+            "description": "quechua_sweat_proof",
+            "product_name": "Quechua Women Sweat Proof White T-shirt",
             "image": "products/1561.jpg",
             "image_url": ""
         }
@@ -392,8 +392,8 @@
             "base_colour": "Black",
             "price": 0.00,
             "usage": "Sports",
-            "product_name": "artengo_black_cap",
-            "description": "Artengo Men Black Cap",
+            "description": "artengo_black_cap",
+            "product_name": "Artengo Men Black Cap",
             "image": "products/1566.jpg",
             "image_url": ""
         }
@@ -411,8 +411,8 @@
             "base_colour": "Black",
             "price": 0.00,
             "usage": "Sports",
-            "product_name": "artengo_training_short",
-            "description": "Artengo Men Training Shorts",
+            "description": "artengo_training_short",
+            "product_name": "Artengo Men Training Shorts",
             "image": "products/1567.jpg",
             "image_url": ""
         }
@@ -430,8 +430,8 @@
             "base_colour": "Black",
             "price": 0.00,
             "usage": "Sports",
-            "product_name": "artengo_tennis_singlet",
-            "description": "Artengo Women Tennis Singlet",
+            "description": "artengo_tennis_singlet",
+            "product_name": "Artengo Women Tennis Singlet",
             "image": "products/1570.jpg",
             "image_url": ""
         }
@@ -449,8 +449,8 @@
             "base_colour": "White",
             "price": 0.00,
             "usage": "Sports",
-            "product_name": "kalenji_sport_shoes",
-            "description": "Kalenji Men's Super Soft Sports Shoes",
+            "description": "kalenji_sport_shoes",
+            "product_name": "Kalenji Men's Super Soft Sports Shoes",
             "image": "products/1571.jpg",
             "image_url": ""
         }
@@ -468,8 +468,8 @@
             "base_colour": "Black",
             "price": 0.00,
             "usage": "Sports",
-            "product_name": "kalenji_traning_track_pants",
-            "description": "Kalenji Mens Essential Training Track Pants",
+            "description": "kalenji_traning_track_pants",
+            "product_name": "Kalenji Mens Essential Training Track Pants",
             "image": "products/1572.jpg",
             "image_url": ""
         }
@@ -487,8 +487,8 @@
             "base_colour": "Grey",
             "price": 0.00,
             "usage": "Sports",
-            "product_name": "kalenji_thletes_track_pants",
-            "description": "Kalenji Women Athletes Grey Track Pants",
+            "description": "kalenji_thletes_track_pants",
+            "product_name": "Kalenji Women Athletes Grey Track Pants",
             "image": "products/1573.jpg",
             "image_url": ""
         }
@@ -506,8 +506,8 @@
             "base_colour": "Blue",
             "price": 0.00,
             "usage": "Sports",
-            "product_name": "geonaute_outdoor_bag",
-            "description": "Geonaute Women Large Outdoor Bag",
+            "description": "geonaute_outdoor_bag",
+            "product_name": "Geonaute Women Large Outdoor Bag",
             "image": "products/1939.jpg",
             "image_url": ""
         }
@@ -525,8 +525,8 @@
             "base_colour": "Brown",
             "price": 0.00,
             "usage": "Sports",
-            "product_name": "domyos_bag",
-            "description": "Domyos Brown Bag",
+            "description": "domyos_bag",
+            "product_name": "Domyos Brown Bag",
             "image": "products/1941.jpg",
             "image_url": ""
         }
@@ -544,8 +544,8 @@
             "base_colour": "Purple",
             "price": 0.00,
             "usage": "Sports",
-            "product_name": "pumba_eco_funky",
-            "description": "Pumba Women Eco Funky Shoes",
+            "description": "Pumba eco_funky",
+            "product_name": "Pumba Women Eco Funky Shoes",
             "image": "products/1951.jpg",
             "image_url": ""
         }
@@ -563,8 +563,8 @@
             "base_colour": "White",
             "price": 0.00,
             "usage": "Casual",
-            "product_name": "tribord_cargo_shorts",
-            "description": "Tribord Mens Short Cargo Shorts",
+            "description": "tribord_cargo_shorts",
+            "product_name": "Tribord Mens Short Cargo Shorts",
             "image": "products/1976.jpg",
             "image_url": ""
         }
@@ -582,8 +582,8 @@
             "base_colour": "Grey",
             "price": 0.00,
             "usage": "Casual",
-            "product_name": "tribord_cargo_shorts_grey",
-                "description": "Tribord Mens Grey Cargo Shorts",
+            "description": "tribord_cargo_shorts_grey",
+                "product_name": "Tribord Mens Grey Cargo Shorts",
             "image": "products/1977.jpg",
             "image_url": ""
         }
@@ -601,8 +601,8 @@
             "base_colour": "Green",
             "price": 0.00,
             "usage": "Casual",
-            "product_name": "pumba_island_shorts_green",
-            "description": "Pumba Women's Island Green Shorts",
+            "description": "Pumba island_shorts_green",
+            "product_name": "Pumba Women's Island Green Shorts",
             "image": "products/1981.jpg",
             "image_url": ""
         }
@@ -620,8 +620,8 @@
             "base_colour": "Purple",
             "price": 0.00,
             "usage": "Casual",
-            "product_name": "pumba_island_shorts_purple",
-            "description": "Pumba Island Shorts Purple",
+            "description": "Pumba island_shorts_purple",
+            "product_name": "Pumba Island Shorts Purple",
             "image": "products/1982.jpg",
             "image_url": ""
         }
@@ -639,8 +639,8 @@
             "base_colour": "Purple",
             "price": 0.00,
             "usage": "Sports",
-            "product_name": "adskuas_pocket_purple_polo",
-            "description": "Adskuas Pocket Polo T-shirt",
+            "description": "adskuas_pocket_purple_polo",
+            "product_name": "Adskuas Pocket Polo T-shirt",
             "image": "products/2089.jpg",
             "image_url": ""
         }
@@ -658,8 +658,8 @@
             "base_colour": "Blue",
             "price": 0.00,
             "usage": "Casual",
-            "product_name": "lee_checks_blue_shirt",
-            "description": "Lee checks Blue Shirt",
+            "description": "lee_checks_blue_shirt",
+            "product_name": "Lee checks Blue Shirt",
             "image": "products/2093.jpg",
             "image_url": ""
         }
@@ -677,8 +677,8 @@
             "base_colour": "White",
             "price": 0.00,
             "usage": "Casual",
-            "product_name": "lee_checks_white_shirt",
-            "description": "Lee Checks Shirt",
+            "description": "lee_checks_white_shirt",
+            "product_name": "Lee Checks Shirt",
             "image": "products/2094.jpg",
             "image_url": ""
         }
@@ -696,8 +696,8 @@
             "base_colour": "Black",
             "price": 0.00,
             "usage": "Sports",
-            "product_name": "adskuas_slim_fit_lycra_track_pans",
-            "description": "ADskuAS Slim Fit Lycra Track Pants",
+            "description": "adskuas_slim_fit_lycra_track_pans",
+            "product_name": "ADskuAS Slim Fit Lycra Track Pants",
             "image": "products/2109.jpg",
             "image_url": ""
         }
@@ -715,8 +715,8 @@
             "base_colour": "Tan",
             "price": 0.00,
             "usage": "Sports",
-            "product_name": "adskuas_berry_lycra_track_pants",
-            "description": "ADskuAS Very Berry Lycra Track Pants",
+            "description": "adskuas_berry_lycra_track_pants",
+            "product_name": "ADskuAS Very Berry Lycra Track Pants",
             "image": "products/2110.jpg",
             "image_url": ""
         }
@@ -734,8 +734,8 @@
             "base_colour": "Pink",
             "price": 0.00,
             "usage": "Casual",
-            "product_name": "lee_pink_shirt",
-            "description": "Lee Pink Shirt",
+            "description": "lee_pink_shirt",
+            "product_name": "Lee Pink Shirt",
             "image": "products/2119.jpg",
             "image_url": ""
         }
@@ -753,8 +753,8 @@
             "base_colour": "Navy Blue",
             "price": 0.00,
             "usage": "Casual",
-            "product_name": "lee_navy_blue_top",
-            "description": "Lee Navy Blue Top",
+            "description": "lee_navy_blue_top",
+            "product_name": "Lee Navy Blue Top",
             "image": "products/2120.jpg",
             "image_url": ""
         }

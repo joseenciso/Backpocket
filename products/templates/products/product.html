@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+
+{% endblock %}
+
+{% block content %}
+
+
+<main>
+<div class="container-fluid py-5">
+    <div class="row">
+        <div class="col-lg-4 col-md-12">
+            <img src="{{ product.image.url }}" alt="{{ product.product_name }}" class="w-100 w-md-50">
+        </div>
+
+        <div class="col-lg-6   pt-4">
+            <div class="sticky-top" style="top: 100px;">
+                <h1 class="mb-4">{{ product.product_name }}</h1>
+                <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between mb-4">
+                <ul class="list-inline mb-2 mb-sm-0">
+                    <li class="list-inline-item h4 font-weight-light mb-0">Price: &#163;{{ product.price }}</li>
+                    <li class="list-inline-item text-muted font-weight-light"> 
+                        <del>$90.00</del>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center text-sm">
+                    <ul class="list-inline mr-2 mb-0">
+                    <li class="list-inline-item mr-0"><i class="fa fa-star text-primary"></i></li>
+                    <li class="list-inline-item mr-0"><i class="fa fa-star text-primary"></i></li>
+                    <li class="list-inline-item mr-0"><i class="fa fa-star text-primary"></i></li>
+                    <li class="list-inline-item mr-0"><i class="fa fa-star text-primary"></i></li>
+                    <li class="list-inline-item mr-0"><i class="fa fa-star text-gray-300"></i></li>
+                    </ul>
+                    <!--span class="text-muted text-uppercase">25 reviews</!--span-->
+                </div>
+            </div>
+            <p class="mb-4 text-muted">Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame.</p>
+            <form id="buyForm" action="#">
+                <div class="row by-2">
+                    <div class="col-lg-6 col-md-12 mb-2">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text text-light bg-dark" for="inputGroupSelect01">
+                                    <i class="fas fa-expand-alt fa-lg pt-2 mr-2"></i>
+                                    Size <!--span>(required)</!--span-->
+                                </label>
+                            </div>
+                            <select class="input-group-append custom-select form-control form-control-lg" id="inputGroupSelect01" name="size" >
+                                    <option value="value_0">Small</option>
+                                    <option value="value_1">Medium</option>
+                                    <option value="value_2">Large</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-12 mb-2">
+                        <div class="input-group">
+                            <input class="form-control form-control-lg  text-center " name="items" type="number" value="1">
+                            <div class="input-group-append">
+                                <button class="btn btn-dark btn-block" type="submit">
+                                    <i class="fa fa-shopping-cart fa-lg mr-2"></i>
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                        
+                <div class="row my-4">
+                    <div class="col-6">
+                        <a href="#">
+                            <i class="far fa-heart mr-2"></i>
+                            Add to wishlist
+                        </a>
+                    </div>
+                    
+                </div>
+
+                    <ul class="list-unstyled">
+                        <li><strong>Category:</strong> <a class="text-muted" href="#">{{ product.categories}}</a></li>
+                        <li><strong>Tags:</strong> <a class="text-muted" href="#">{{ product.sub_categories }}</a>
+                    </ul>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</main>
+
+{% endblock %}
