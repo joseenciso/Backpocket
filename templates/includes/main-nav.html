@@ -1,19 +1,19 @@
-<div class="search-container input-group mt-2 mt-md-0 mx-auto">
+<div class="search-container input-group flex-wrap mt-2 mt-md-0 mx-auto">
     <input class="form-control " type="text" placeholder="Search" aria-label="Search">
     <div class="input-group-append search ">
-        <a class="input-group-text" ><i class="fas fa-search"></i></a>
+        <a class="input-group-text bg-warning" ><i class="fas fa-search text-light"></i></a>
     </div>
 </div>
 
 
 
-<div class="collapse navbar-collapse ml-auto" id="navbarCollapse">
+<div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav">
         <li class="nav-item active">
             <a class="nav-link text-info" href="#">Home <!--span class="sr-only">(current)</!--span--></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-info" href="{% url 'allproducts' %}">All<i class="fas fa-user "></i></a>
+            <a class="nav-link text-info" href="{% url 'allproducts' %}"><i class="fas fa-user "></i></a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-info" href="#"><i class="fas fa-shopping-cart"></i></a>

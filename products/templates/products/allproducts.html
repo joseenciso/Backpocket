@@ -18,37 +18,24 @@
                             <img class="" src="{{ product.image.url }}" alt="product">
                         </div>
                         <div class="product-info">
-                            <p class="text-muted text-sm mb-1">{{ product.article_type }}</p>
+                            <span class="text-muted text-sm mb-1">{{ product.article_type }}</span>
+                            
+                            <div class="product-rating d-flex align-items-center text-sm">
+                                <div class="product-rating d-flex align-items-center text-sm">
+                                    <i class="fas fa-star text-warning mx-0"></i>
+                                    <i class="fas fa-star text-warning mx-0"></i>
+                                    <i class="fas fa-star text-warning mx-0"></i>
+                                    <i class="fas fa-star text-warning mx-0"></i>
+                                    <i class="far fa-star text-warning mx-0"></i>
+                                </div>
+                            </div>
                             <h3 class="h6 text-uppercase mb-1">
                                 <a class="text-dark" href="{% url 'product' product.pk %}">{{ product.product_name }}</a>
                             </h3>
+                            <p>{{ product.description|truncatechars:50 }}</p>
 
-                            <div class="row p-2">
-                                <div class="col-lg-3 py-1">
-                                    <span class="text-muted">&#163;{{ product.price }}</span>
-                                </div>
-                                <div class="col-sm-8 col-lg-9">
-                                    <div class="add-reomve input-group">
-                                        <div class="input-group-prepend text-center">
-                                            <a href="#" class="btn btn-outline-dark outline-dark minus">-</a>
-                                        </div>
-                                        <input type="text" class="quantity form-control text-center" placeholder="0">
-                                        <div class="input-group-append">
-                                            <a href="#" class="btn btn-outline-dark plus input-group-append text-center">+</a>
-                                        </div>
-                                    </div>
-                                </div>
 
-                            </div>
-                            <div class="row p-2">
-                                <div class="col-lg-6 py-1">
-                                    <span>Total: {{ product.price }}</span>
-                                </div>
-                                
-                                <div class="col-sm-2">
-                                    <a class="btn btn-add-cart btn-outline-dark fa fa-shopping-cart" href="#"></a>
-                                </div>
-                            </div>
+                            <span class="product-price"><strong>Price: </strong>&#163;{{ product.price }}</span>
                         </div>
                     </div>
                 </div>
