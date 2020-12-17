@@ -15,10 +15,10 @@
             <img src="{{ product.image.url }}" alt="{{ product.product_name }}" class="">
         </div>
 
-        <div class="col-lg-6   pt-4">
+        <div class="col-lg-6 pt-4">
             <div class="sticky-top" style="top: 100px;">
                 <h1 class="mb-2">{{ product.product_name }}</h1>
-                <p class="my-2 text-muted">Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame.</p>
+                <p class="my-2 text-muted">{{ product.description }}</p>
                 
                 <div class="d-flex align-items-center text-sm my-2">
                     <span class="mr-2">Rating</span>

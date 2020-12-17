@@ -7,43 +7,45 @@
 
 {% block content %}
 
-<main class="py-5">
+<main class="py-5 px-2 mt-5">
 
-    <div class="container header-container">
-        <div class="row">
+    <div class="container-fluid header-container">
+        <div class="row d-flex">
+        <div class="col-12">
+            <select name="" id="sort-selector"></select>
+        </div>
+        
             {% for product in products %}
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                    <div class="product-card p-1">
-                        <div class="product-image">
-                            <img class="" src="{{ product.image.url }}" alt="product">
-                        </div>
+                <div class="product-card p-1">
+                    <div class="product-image">
+                        <img class="" src="{{ product.image.url }}" alt="product">
+                    </div>
 
-                        <div class="product-info">
-                            
-                            <div class=" d-flex">
-                                <div class="product-rating d-flex align-items-center text-sm">
-                                    <i class="fas fa-star text-warning mx-0"></i>
-                                    <i class="fas fa-star text-warning mx-0"></i>
-                                    <i class="fas fa-star text-warning mx-0"></i>
-                                    <i class="fas fa-star text-warning mx-0"></i>
-                                    <i class="far fa-star text-warning mx-0"></i>
-                                </div>
-
-                                <span class="product-price ml-auto"><strong>Price: </strong>&#163;{{ product.price }}</span>
+                    <div class="product-info">
+                        
+                        <div class=" d-flex">
+                            <div class="product-rating d-flex align-items-center text-sm">
+                                <i class="fas fa-star text-warning mx-0"></i>
+                                <i class="fas fa-star text-warning mx-0"></i>
+                                <i class="fas fa-star text-warning mx-0"></i>
+                                <i class="fas fa-star text-warning mx-0"></i>
+                                <i class="far fa-star text-warning mx-0"></i>
                             </div>
-                            <span class="text-muted text-sm mb-1">
-                                {{ product.article_type }}
-                            </span>
-                            
-                            <h6 class=" mb-1">
-                                <a class="text-dark" href="{% url 'product' product.pk %}">
-                                    {{ product.product_name }}
-                                </a>
-                            </h6>
-                            <p>{{ product.description|truncatechars:50 }}</p>
 
-
+                            <span class="product-price ml-auto"><strong>Price: </strong>&#163;{{ product.price }}</span>
                         </div>
+                        <span class="text-muted text-sm mb-1">
+                            {{ product.article_type }}
+                        </span>
+                        
+                        <h6 class=" mb-1">
+                            <a class="text-dark" href="{% url 'product' product.pk %}">
+                                {{ product.product_name }}
+                            </a>
+                        </h6>
+                        <p>{{ product.description|truncatechars:50 }}</p>
+
+
                     </div>
                 </div>
             {% endfor %}

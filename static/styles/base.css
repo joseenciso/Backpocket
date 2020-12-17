@@ -379,11 +379,11 @@ template {
     display: none;
 }
 
-
-
-
-
-/**********/
+/**********************************************************/
+/**********************************************************/
+/**********************************************************/
+/**********************************************************/
+/**********************************************************/
 html {
     height: 100%;
 }
@@ -394,11 +394,6 @@ body {
     */height: calc(100vh - 60px);
 
 }
-
-.fa-2x {
-    width: 50px !important;
-}
-
 .far,
 .fab,
 .fas {
@@ -407,11 +402,15 @@ body {
     text-align: center;
 }
 
+header a,
 .navbar a,
 .navbar-nav a {
     font-size: 1.5rem;
 }
 
+.navbar {
+    margin: 0 auto;
+}
 
 footer h4 {
     border-bottom: solid white 2px;
@@ -421,12 +420,6 @@ main {
     margin-top: 3rem;
     min-height: 100%;
 }
-
-/*.fa-map-marker-alt,
-.fa-tiktok {
-    color: red;
-}*/
-
 .product-card {
     background-color: rgb(250, 250, 250);
     border: solid;
@@ -450,31 +443,6 @@ main {
 .product-info {
     padding: 5px;
 }
-
-/*
-.product-price {
-    position: absolute;
-    bottom: 20px;
-    right: 40px;
-    }
-
-    .fa-star {
-        height: 20px;
-        width: 20px;
-    }
-
-    */
-    /*
-.product-rating {
-    position: absolute;
-    bottom: 50px;
-    right: 10px;
-}
-.product-rating {
-    float: left;
-}
-*/
-
 .price-cart-section {
     display: inline-block;
     width: 100%;
@@ -506,27 +474,29 @@ main {
     height: 40px;
     width: 40px;
 }
-
-.search-container {
-    display: flex;
-}
-
 [class*="col-"] {
     padding: 0;
     margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-    body {
-        height: calc(100vh - 103px);
-    }
-    .dropdown:hover .dropdown-menu {
-        display: block;
-    }
-    .logo-font {
-        display: none;
+    @media (max-width: 768px) {
+        main {
+            margin-top: calc(100vh - 200px);
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .logo-font {
+            display: none;
+        }
+
     }
 
+    @media (max-width: 573px) {
+        .navbar-brand {
+            margin: 0;
+            display: inline-block;
+        }
     }
 
     @media only screen and (max-width : 320px) {

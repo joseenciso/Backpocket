@@ -37,28 +37,51 @@
     <title>BackPocket{% block extra_title %}{% endblock %}</title>
 </head>
 <body>
-    <header class="container-fluid text-info fixed-top mb-5">
-        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-dark text-light">
-                
-            <a class="navbar-brand text-info" href="{% url 'home' %}">
-                <i class="fab fa-shirtsinbulk fa-sm"></i>
-                <span class="logo-font">
-                    BackPocket
-                </span>
-            </a>
-            
-            <a class="nav-link text-info" href="{% url 'allproducts' %}"><i class="fas fa-user "></i></a>
+    <header class="fixed-top bg-dark text-info p-2">
+        <div class="container-fluid">
+    
+            <div class="row">
+                <div class="col-sm-2 col-lg-2">
+                    <a class="text-info" href="{% url 'home' %}">
+                        <i class="fab fa-shirtsinbulk fa-lg"></i>
+                        <span class="logo-font">
+                            BackPocket
+                        </span>
+                    </a>
+                </div>
 
-            <a class="nav-link text-info" href="#"><i class="fas fa-shopping-cart"></i></a>
-            
-            <button class="navbar-toggler text-info" type="button" data-toggle="collapse" data-target="#navbarCollapse" 
-                                                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon  text-info"></span>
-            </button>
+                <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                    <form action="{% url 'allproducts' %}" method="GET" class="search-form w-auto">
+                        <div class="input-group">
+                            <input name="q" class="form-control" type="text" placeholder="Search" aria-label="Search">
+                            <div class="input-group-append search ">
+                                <a class="input-group-text bg-warning" >
+                                    <i class="fas fa-search fa-lg pt-1 text-light"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
 
-            {% include 'includes/main-nav.html'%}
+                <div class="col-sm-2 col-lg-2 text-center">
+                    <a class="text-info mx-1" href="{% url 'allproducts' %}"><i class="fas fa-user "></i></a>
 
-        </nav>
+                    <a class="text-info mx-1" href="{% url 'shopping_bag' %}"><i class="fas fa-shopping-bag"></i></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <button class="navbar-toggler text-warning mr-auto" type="button" data-toggle="collapse" data-target="#navbarCollapse" 
+                                                            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon text-warning"></span>
+                    </button>
+                    
+                    {% include 'includes/main-nav.html'%}
+                </nav>
+            </div>
+        </div>
+
     </header>
 
     {% if messages %}
@@ -122,7 +145,7 @@
 
     <!--script defer
         src="https://maps.googleapis.com/maps/api/js?key= AIzaSyCjFJQZu1bk-mSmZmVssCYn2OSqUjDIBqs &callback=initMap">
-    </!--script>
+    </!--script-->
     {% block postload_js %}{% endblock %}
 </body>
 </html>

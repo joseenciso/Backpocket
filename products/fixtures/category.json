@@ -27,32 +27,8 @@
         "pk":4,
         "model":"products.category",
         "fields":{
-            "category_name":"essentials",
-            "friendly_name":"Essentials"
+            "category_name":"sports_equipment",
+            "friendly_name":"Sports Equipment"
         }
     },
-    {
-        "pk":5,
-        "model":"products.category",
-        "fields":{
-            "category_name":"jeans",
-            "friendly_name":"Jeans"
-        }
-    },
-    {
-        "pk":6,
-        "model":"products.category",
-        "fields":{
-            "category_name":"new_arrivals",
-            "friendly_name":"New Arrivals"
-        }
-    },
-    {
-        "pk":7,
-        "model":"products.category",
-        "fields":{
-            "category_name":"shirts",
-            "friendly_name":"Shirts"
-        }
-    }
 ]
