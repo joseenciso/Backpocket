@@ -7,51 +7,133 @@
 
 {% block content %}
 
-<main class="py-5 px-2 mt-5">
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-sm-12 col-md-3 px-md-0 col-lg-2">
+                <div class="container-fluid filter-container">
+                    <div class="navbar-collapse offcanvas-collapse bg-light " id="navbarsExampleDefault">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <form action="" class="side-filter">
+                                <legend><i class="fas fa-filter"></i> Filters</legend>
+                    
+                                <li class="nav-item dropdown">
+                                    <a class="dropdown-toggle font-weight-bold nav-link text-black mr-5" href="#sortBy" id="all-products-link" data-bs-toggle="collapse" aria-controls="sortBy" aria-haspopup="true" aria-expanded="false">
+                                        Sort by
+                                    </a>
+                                    <ul class="collapse multi-collapse border-0" id="sortBy" aria-labelledby="all-products-link">
+                                        <li><a href="{% url 'allproducts' %}?sort=price&direction=asc" class="dropdown-item">By Price</a></li>
+                                        <li><a href="{% url 'allproducts' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a></li>
+                                        <li><a href="{% url 'allproducts' %}?sort=categories&direction=asc" class="dropdown-item ">By Category</a></li>
+                                    </ul>
+                                </li>
 
-    <div class="container-fluid header-container">
-        <div class="row d-flex">
-        <div class="col-12">
-            <select name="" id="sort-selector"></select>
-        </div>
-        
-            {% for product in products %}
-                <div class="product-card p-1">
-                    <div class="product-image">
-                        <img class="" src="{{ product.image.url }}" alt="product">
-                    </div>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle font-weight-bold text-black mr-5" href="#" id="clothing-link" data-bs-toggle="collapse" aria-controls="byDeals" aria-controls="filterBy" aria-haspopup="true" aria-expanded="false">
+                                        Clothing
+                                    </a>
+                                    <ul class="collapse border-0" aria-labelledby="clothing-link">
+                                        <li><a href="{% url 'allproducts' %}?categories=Accessories" class="dropdown-item">Accessories</a></li>
+                                        <li><a href="{% url 'allproducts' %}?categories=Apparel" class="dropdown-item">Apparel</a></li>
+                                        <li><a href="{% url 'allproducts' %}?categories=Footware" class="dropdown-item">Footware</a></li>
+                                        <li><a href="{% url 'allproducts' %}?categories=Accessories,Apparel,Footware" class="dropdown-item">All</a></li>
+                                    </ul>
+                                </li>
 
-                    <div class="product-info">
-                        
-                        <div class=" d-flex">
-                            <div class="product-rating d-flex align-items-center text-sm">
-                                <i class="fas fa-star text-warning mx-0"></i>
-                                <i class="fas fa-star text-warning mx-0"></i>
-                                <i class="fas fa-star text-warning mx-0"></i>
-                                <i class="fas fa-star text-warning mx-0"></i>
-                                <i class="far fa-star text-warning mx-0"></i>
-                            </div>
+                                <li class="nav-item dropdown">
+                                    <a class="dropdown-toggle font-weight-bold nav-link text-black mr-5" href="#byGender" id="homeware-link" role="button" data-bs-toggle="collapse" aria-controls="byGender" aria-haspopup="true" aria-expanded="false">
+                                        By Gender
+                                    </a>
+                                    <ul class="collapse border-0" id="byGender" aria-labelledby="homeware-link">
+                                        <li><a href="{% url 'allproducts' %}?gender=Unisex" class="dropdown-item">Unisex</a></li>
+                                        <li><a href="{% url 'allproducts' %}?gender=Women" class="dropdown-item">Women</a></li>
+                                        <li><a href="{% url 'allproducts' %}?gender=Men" class="dropdown-item">Men</a></li>
+                                    </ul>
+                                </li>
 
-                            <span class="product-price ml-auto"><strong>Price: </strong>&#163;{{ product.price }}</span>
-                        </div>
-                        <span class="text-muted text-sm mb-1">
-                            {{ product.article_type }}
-                        </span>
-                        
-                        <h6 class=" mb-1">
-                            <a class="text-dark" href="{% url 'product' product.pk %}">
-                                {{ product.product_name }}
-                            </a>
-                        </h6>
-                        <p>{{ product.description|truncatechars:50 }}</p>
-
-
+                                <li class="nav-item dropdown">
+                                    <a class="dropdown-toggle font-weight-bold nav-link text-black" href="#byDeals" id="specials-link" data-bs-toggle="collapse" aria-controls="byDeals" aria-haspopup="true" aria-expanded="false">
+                                        Special Offers
+                                    </a>
+                                    <ul class="collapse border-0" id="byDeals" aria-labelledby="specials-link">
+                                        <li><a href="" class="dropdown-item">New Arrivals</a></li>
+                                        <li><a href="" class="dropdown-item">Deals</a></li>
+                                        <li><a href="" class="dropdown-item">Clearance</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a href="" class="dropdown-item">All Specials</a></li>
+                                    </ul>
+                                </li>
+                            </form>
+                        </ul>
                     </div>
                 </div>
-            {% endfor %}
+
+            
+        </div>
+        
+        <div class="col-sm-12 col-md-9">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expanden-sm bg-light">
+                        <button class="navbar-toggler filter-button btn p-0 border-0" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
+                            <i class="fas fa-filter"></i>
+                        </button>
+                        <form action="">
+                            <select name="" id=""></select>
+                        </form>
+                    </nav>
+                </div>
+            </div>
+            <div class="row product-cards">
+                <div class="d-flex flex-wrap justify-content-around">
+                {% for product in products %}
+                    <div class="card product-card mb-3 mx-2" >
+                            <a class="" href="{% url 'product' product.pk %}">
+                        <div class="card-image">
+                                <img src="{{ product.image.url }}" class="" alt="..." >
+                        </div>
+                            </a>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a class="text-dark" href="{% url 'product' product.pk %}">
+                                    {{ product.product_name }}
+                                </a>
+                            </h5>
+                            <span class="text-muted text-sm mb-1">
+                                {{ product.article_type }}
+                            </span>
+
+                            <p class="card-text">{{ product.description|truncatechars:50 }}</p>
+                            <!--p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></!--p-->
+                            
+                            <div class="price-rating">
+                            
+                                <div class="product-rating d-flex align-items-center text-sm">
+                                    <i class="fas fa-star text-warning mx-0"></i>
+                                    <i class="fas fa-star text-warning mx-0"></i>
+                                    <i class="fas fa-star text-warning mx-0"></i>
+                                    <i class="fas fa-star text-warning mx-0"></i>
+                                    <i class="far fa-star text-warning mx-0"></i>
+                                </div>
+                                <span class="product-price ml-auto"><strong>Price: </strong>&#163;{{ product.price }}</span>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    
+                {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
+</div>
 
-</main>
+<script>
+    (function () {
+        'use strict'
 
+        document.querySelector('[data-bs-toggle="offcanvas"]').addEventListener('click', function () {
+            document.querySelector('.offcanvas-collapse').classList.toggle('open')
+        })
+    })()
+</script>
 {% endblock %}

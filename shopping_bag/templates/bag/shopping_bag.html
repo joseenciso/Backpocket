@@ -12,12 +12,25 @@
 
 {% block content %}
 <main style="margin-top:150px;">
-    <div class="container m-2">
+    <div class="container">
         <div class="row">
             <div class="col-12">
                 <h1 class="">
                     Shopping Bag
                 </h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+            
+                {% if bag_items %}
+                    <div class="bag-item">
+                    </div>
+                {% else %}
+                    <p class="message-empty">Your bag is empty</p>
+                    <h3><a href="{% url 'allproducts'%}"></a></h3>
+                {% endif %}
             </div>
         </div>
     </div>

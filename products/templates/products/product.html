@@ -8,11 +8,11 @@
 {% block content %}
 
 
-<main>
+<main style="margin-top: 250px;">
 <div class="container py-5">
     <div class="row">
         <div class="col-lg-4 col-md-12">
-            <img src="{{ product.image.url }}" alt="{{ product.product_name }}" class="">
+            <img src="{{ product.image.url }}" alt="{{ product.product_name }}" class="product-img">
         </div>
 
         <div class="col-lg-6 pt-4">
@@ -44,14 +44,12 @@
             <form id="buyForm" action="#">
                 <div class="row by-2">
                     <div class="col-lg-6 col-md-12 mb-2">
-                        <div class="input-group my-3">
-                            <div class="input-group-prepend">
-                                <label class="input-group-text text-light bg-dark" for="inputGroupSelect01">
-                                    <i class="fas fa-expand-alt fa-lg pt-2 mr-2"></i>
-                                    Size <!--span>(required)</!--span-->
-                                </label>
-                            </div>
-                            <select class="input-group-append custom-select form-control form-control-lg" id="inputGroupSelect01" name="size" >
+                        <div class="input-group input-group-lg my-3">
+                            <span class="input-group-text text-light bg-dark" for="inputGroupSelect01">
+                                <i class="fas fa-expand-alt fa-lg pt-2 mr-2"></i>
+                                Size <!--span>(required)</!--span-->
+                            </span>
+                            <select class="form-select custom-select form-control form-control-lg" name="size" >
                                     <option value="value_0">Small</option>
                                     <option value="value_1">Medium</option>
                                     <option value="value_2">Large</option>
@@ -60,12 +58,10 @@
                         
                         <div class="input-group input-group-lg my-3">
                             <input class="form-control form-control-lg  text-center " name="items" type="number" value="1">
-                            <div class="input-group-append">
-                                <button class="btn btn-dark btn-block" type="submit">
-                                    <i class="fa fa-shopping-cart fa-lg mr-2"></i>
-                                    Add to Cart
-                                </button>
-                            </div>
+                            <button class="btn btn-dark btn-block input-group-text" type="submit">
+                                <i class="fa fa-shopping-cart fa-lg mr-2"></i>
+                                Add to Cart
+                            </button>
                         </div>
                     </div>
                     
