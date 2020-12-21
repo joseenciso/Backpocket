@@ -1,56 +1,56 @@
 [
     {
         "pk": 1,
-        "model":"products.sub_category",
+        "model":"products.sub_categories",
         "fields":{
             "name":"bags",
             "friendly_name":"Bags",
-            "category": 1
+            "categories": 1
         }
     },
     {
         "pk": 2,
-        "model":"products.sub_category",
+        "model":"products.sub_categories",
         "fields":{
             "name":"topwear",
             "friendly_name":"Topwear",
-            "category": 2
+            "categories": 2
         }
     },
     {
         "pk": 3,
-        "model":"products.sub_category",
+        "model":"products.sub_categories",
         "fields":{
             "name":"headwear",
             "friendly_name":"Headwear",
-            "category": 1
+            "categories": 1
         }
     },
     {
         "pk": 4,
-        "model":"products.sub_category",
+        "model":"products.sub_categories",
         "fields":{
             "name":"shoes",
             "friendly_name":"Shoes",
-            "category": 3
+            "categories": 3
         }
     },
     {
         "pk": 5,
-        "model":"products.sub_category",
+        "model":"products.sub_categories",
         "fields":{
             "name":"sports_equipment",
             "friendly_name":"Sports Equipment",
-            "category": 4
+            "categories": 4
         }
     },
     {
         "pk": 6,
-        "model":"products.sub_category",
+        "model":"products.sub_categories",
         "fields":{
             "name":"bottomwear",
             "friendly_name":"Bottomwear",
-            "category": 2
+            "categories": 2
         }
     }
 ]

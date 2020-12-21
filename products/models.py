@@ -14,7 +14,7 @@ class Category(models.Model):
 
     # String method
     def __str__(self):
-        return self.category_name
+        return self.name
 
     def get_product_display_name(self):
         return self.friendly_name
@@ -27,7 +27,7 @@ class Sub_Category(models.Model):
         'Category', null=True, blank=True, on_delete=models.SET_NULL)
 
     def __str__(self):
-        return self.sub_category_name
+        return self.name
 
 
 class Articles(models.Model):
@@ -37,7 +37,7 @@ class Articles(models.Model):
         'Sub_Category', null=True, blank=True, on_delete=models.SET_NULL)
 
     def __str__(self):
-        return self.sub_category_name
+        return self.name
 
 class Product(models.Model):
     categories = models.ForeignKey(
@@ -63,4 +63,4 @@ class Product(models.Model):
     image = models.ImageField(blank=True)
 
     def __str__(self):
-        return self.product_name
+        return self.name
