@@ -3,48 +3,54 @@
         "pk": 1,
         "model":"products.sub_category",
         "fields":{
-            "sub_category_name":"bags",
-            "friendly_name":"Bags"
+            "name":"bags",
+            "friendly_name":"Bags",
+            "category": 1
         }
     },
     {
         "pk": 2,
         "model":"products.sub_category",
         "fields":{
-            "sub_category_name":"topwear",
-            "friendly_name":"Topwear"
+            "name":"topwear",
+            "friendly_name":"Topwear",
+            "category": 2
         }
     },
     {
         "pk": 3,
         "model":"products.sub_category",
         "fields":{
-            "sub_category_name":"headwear",
-            "friendly_name":"Headwear"
+            "name":"headwear",
+            "friendly_name":"Headwear",
+            "category": 1
         }
     },
     {
         "pk": 4,
         "model":"products.sub_category",
         "fields":{
-            "sub_category_name":"shoes",
-            "friendly_name":"Shoes"
+            "name":"shoes",
+            "friendly_name":"Shoes",
+            "category": 3
         }
     },
     {
         "pk": 5,
         "model":"products.sub_category",
         "fields":{
-            "sub_category_name":"sports_equipment",
-            "friendly_name":"Sports Equipment"
+            "name":"sports_equipment",
+            "friendly_name":"Sports Equipment",
+            "category": 4
         }
     },
     {
         "pk": 6,
         "model":"products.sub_category",
         "fields":{
-            "sub_category_name":"bottomwear",
-            "friendly_name":"Bottomwear"
+            "name":"bottomwear",
+            "friendly_name":"Bottomwear",
+            "category": 2
         }
     }
 ]

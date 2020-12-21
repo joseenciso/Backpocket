@@ -3,15 +3,15 @@
         "pk":1,
         "model":"products.category",
         "fields":{
-            "category_name":"accesories",
-            "friendly_name":"Accesories"
+            "name":"accessories",
+            "friendly_name":"Accessories"
         }
     },
     {
         "pk":2,
         "model":"products.category",
         "fields":{
-            "category_name":"apparel",
+            "name":"apparel",
             "friendly_name":"Apparel"
         }
     },
@@ -19,7 +19,7 @@
         "pk":3,
         "model":"products.category",
         "fields":{
-            "category_name":"footware",
+            "name":"footware",
             "friendly_name":"Footware"
         }
     },
@@ -27,8 +27,8 @@
         "pk":4,
         "model":"products.category",
         "fields":{
-            "category_name":"sports_equipment",
-            "friendly_name":"Sports Equipment"
+            "name":"sporting_goods",
+            "friendly_name":"Sporting Goods"
         }
-    },
+    }
 ]

@@ -12,6 +12,7 @@ def all_products(request):
     products = Product.objects.all()
     query = None
     category = None
+    categories = None
     article_type = None
     gender = None
     sort = None
@@ -21,9 +22,11 @@ def all_products(request):
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
+
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
+
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
@@ -44,7 +47,8 @@ def all_products(request):
             categories = request.GET['categories'].split(',')
             # Creating a list
             products = products.filter(categories__in=categories)
-            categories = Category.objects.filter(category_name__in=catgories)
+            # categories = Category.objects.filter(category_name__in=catgories)
+            categories = Product.objects.filter(category_name__in=catgories)
 
         if 'q' in request.GET:  # q for Query
             query = request.GET['q']
@@ -65,7 +69,7 @@ def all_products(request):
     context = {
         'products': products,
         'search_term': query,
-        #  'current_category': categories,
+        'current_category': categories,
         #  'current_sort': current_sort,
     }
 

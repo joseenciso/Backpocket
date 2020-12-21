@@ -2,3 +2,5 @@
 *.pyc
 __pycache__
 media_copy
+base
+products

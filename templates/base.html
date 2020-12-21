@@ -16,7 +16,6 @@
 </head>
 <body>
 <header>
-    
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand align-middle" href="{% url 'home' %}">
@@ -69,7 +68,6 @@
         </div>
     </nav>
 </header>
-    <h1></h1>
 
 {% block content %}{% endblock %}
 
@@ -122,7 +120,7 @@
     </footer>
     {% block corejs%}
     <!--script defer
-        src="https://maps.googleapis.com/maps/api/js?key= AIzaSyCjFJQZu1bk-mSmZmVssCYn2OSqUjDIBqs &callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key= + AIzaSyCjFJQZu1bk-mSmZmVssCYn2OSqUjDIBqs + &callback=initMap">
     </!--script-->
     <!-- Optional JavaScript; choose one of the two! -->
 

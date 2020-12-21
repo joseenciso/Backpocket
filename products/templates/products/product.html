@@ -8,16 +8,16 @@
 {% block content %}
 
 
-<main style="margin-top: 250px;">
-<div class="container py-5">
+<main class="my-2 py-2">
+<div class="container">
     <div class="row">
-        <div class="col-lg-4 col-md-12">
-            <img src="{{ product.image.url }}" alt="{{ product.product_name }}" class="product-img">
+        <div class="col-sm-12 px-sm-0 col-md-6 col-lg-6">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
         </div>
 
-        <div class="col-lg-6 pt-4">
-            <div class="sticky-top" style="top: 100px;">
-                <h1 class="mb-2">{{ product.product_name }}</h1>
+        <div class="col-sm-12 col-md-6 col-lg-6 pt-4">
+            <div class="" >
+                <h1 class="mb-2">{{ product.name }}</h1>
                 <p class="my-2 text-muted">{{ product.description }}</p>
                 
                 <div class="d-flex align-items-center text-sm my-2">
@@ -41,34 +41,27 @@
                 </ul>
             </div>
 
-            <form id="buyForm" action="#">
-                <div class="row by-2">
-                    <div class="col-lg-6 col-md-12 mb-2">
-                        <div class="input-group input-group-lg my-3">
-                            <span class="input-group-text text-light bg-dark" for="inputGroupSelect01">
-                                <i class="fas fa-expand-alt fa-lg pt-2 mr-2"></i>
-                                Size <!--span>(required)</!--span-->
-                            </span>
-                            <select class="form-select custom-select form-control form-control-lg" name="size" >
-                                    <option value="value_0">Small</option>
-                                    <option value="value_1">Medium</option>
-                                    <option value="value_2">Large</option>
-                            </select>
-                        </div>
-                        
-                        <div class="input-group input-group-lg my-3">
-                            <input class="form-control form-control-lg  text-center " name="items" type="number" value="1">
-                            <button class="btn btn-dark btn-block input-group-text" type="submit">
-                                <i class="fa fa-shopping-cart fa-lg mr-2"></i>
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-6 col-md-12 mb-2">
-                    </div>
-
+            <form id="buyForm" action="#" class="my-2">
+                <div class="input-group size-select input-group-lg my-3">
+                    <span class="input-group-text text-light bg-dark" for="inputGroupSelect01">
+                        <i class="fas fa-expand-alt fa-lg pt-2 mr-2"></i>
+                        Size <!--span>(required)</!--span-->
+                    </span>
+                    <select class="form-select custom-select form-control form-control-lg" name="size" >
+                            <option value="value_0">Small</option>
+                            <option value="value_1">Medium</option>
+                            <option value="value_2">Large</option>
+                    </select>
                 </div>
+                
+                <div class="input-group add-to-cart input-group-lg my-3">
+                    <input class="form-control form-control-lg form-select-size text-center " name="items" type="number" value="1">
+                    <button class="btn btn-dark btn-block input-group-text" type="submit">
+                        <i class="fa fa-shopping-cart fa-lg mr-2"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
                         
                 <div class="row my-4">
                     <div class="col-6">
@@ -80,11 +73,10 @@
                 </div>
 
                 <div class="list-unstyled">
-                    <span><strong>Category: </strong><a class="text-muted" href="#">{{ product.categories}}</a></span>
-                    <span><strong>&#62;</strong> <a class="text-muted" href="#">{{ product.sub_categories }}</a>
+                    <span><strong>Category: </strong><a class="text-muted" href="#">{{ product.categories.name }}</a></span>
+                    <span><strong>&#62;</strong> <a class="text-muted" href="#">{{ product.sub_categories.name }}</a>
                 </ul>
             </form>
-            </div>
         </div>
     </div>
 </div>

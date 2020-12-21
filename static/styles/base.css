@@ -2,25 +2,36 @@ li {
     list-style: none;
 }
 
+img {
+    max-width: 100%;
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
 .card {
     padding: 0;
     width: 288px;
+    max-height: 360px;
 }
 
 .card .card-image {
     text-align: center;
+    height: 240px;
 } 
 
 .card-image img {
-    max-width: 280px;
-    height: 262px;
     padding: 5px;
-    background-size: contain;
 }
 
-.price-rating {
-    position: absolute;
-    bottom: 0;
+.product-rating {
+    bottom: 5px;
+    left: 10px;
+}
+
+.product-price {
+    bottom: 5px;
+    right: 10px;
 }
 
 .offcanvas-collapse .nav-item {
@@ -44,8 +55,9 @@ li {
         display: none;
     }
 
-    .filter-container {
-        min-width: 125px;
+    .add-to-cart,
+    .size-select {
+        width: 60%;
     }
 }
 
@@ -83,5 +95,11 @@ li {
 
     .filter-container {
         padding: 0 10px !important;
+    }
+}
+@media (max-width: 576px) {
+
+    .card .card-body {
+        height: 80px;
     }
 }

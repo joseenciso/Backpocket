@@ -9,7 +9,7 @@ class Category(models.Model):
         verbose_name_plural = 'Categories'
 
     # sku = models.CharField(max_length=254, null=False)
-    category_name = models.CharField(max_length=150)
+    name = models.CharField(max_length=150)
     friendly_name = models.CharField(max_length=254)
 
     # String method
@@ -21,30 +21,42 @@ class Category(models.Model):
 
 
 class Sub_Category(models.Model):
-    sub_category_name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50)
     friendly_name = models.CharField(max_length=50)
+    categories = models.ForeignKey(
+        'Category', null=True, blank=True, on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.sub_category_name
 
 
+class Articles(models.Model):
+    name = models.CharField(max_length=50)
+    friendly_name = models.CharField(max_length=50)
+    sub_categories = models.ForeignKey(
+        'Sub_Category', null=True, blank=True, on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return self.sub_category_name
+
 class Product(models.Model):
-    category = models.ForeignKey(
+    categories = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.SET_NULL)
     # In case that category is deleted, the product will stay as NULL
+    sub_categories = models.ForeignKey(
+        'Sub_Category', null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, blank=False, default='SKU')
     gender = models.CharField(
         max_length=25, blank=False, default='Men, Women, Unisex')
-    categories = models.CharField(
-        max_length=50, blank=False, default='Category')
-    sub_categories = models.CharField(max_length=50, blank=True)
     brand = models.CharField(max_length=50, blank=False, default='Band')
-    article_type = models.CharField(
-        max_length=150, blank=False, default='Article Type')
+    articles = models.ForeignKey(
+        'Articles', null=True, blank=True, on_delete=models.SET_NULL)
     base_colour = models.CharField(max_length=50, blank=True)
-    price = models.DecimalField(max_digits=3, decimal_places=2)
+    price = models.DecimalField(max_digits=5, decimal_places=2)
+    rating = models.DecimalField(
+        max_digits=3, decimal_places=2, blank=True)
     usage = models.CharField(max_length=50, blank=True)
-    product_name = models.CharField(
+    name = models.CharField(
         max_length=250, blank=False, default='Product Name')
     description = models.TextField(blank=False, default='Description')
     image_url = models.URLField(blank=True)
