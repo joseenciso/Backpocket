@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q  # to generate a seach query
 from django.db.models.functions import Lower
-from .models import Product
+from .models import Product, Category
 # Create your views here.
 
 
@@ -33,22 +33,23 @@ def all_products(request):
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
 
-        if 'gender' in request.GET:
-            gender = request.GET['gender'].split(',')
-            # Creating a list
-            products = products.filter(gender__in=gender)
-
-        # if 'type' in request.GET:
-        #    article = request.GET['categories'].split(',')
-        #    # Creating a list
-        #    products = products.filter(categories__in=categories)
-
         if 'categories' in request.GET:
             categories = request.GET['categories'].split(',')
             # Creating a list
-            products = products.filter(categories__in=categories)
+            categories = categories.filter(categories__in=categories)
             # categories = Category.objects.filter(category_name__in=catgories)
             categories = Product.objects.filter(category_name__in=catgories)
+
+        #if 'gender' in request.GET:
+        #    gender = request.GET['gender'].split(',')
+            # Creating a list
+        #    products = products.filter(gender__in=gender)
+
+        #if 'type' in request.GET:
+        #    article = request.GET['categories'].split(',')
+            # Creating a list
+        #     products = products.filter(categories__in=categories)
+
 
         if 'q' in request.GET:  # q for Query
             query = request.GET['q']
@@ -57,20 +58,22 @@ def all_products(request):
                 print(messages)
                 return redirect(reverse('allproducts'))
 
-            queries = Q(product_name__icontains=query) | Q(
+            queries = Q(name__icontains=query) | Q(
                 description__icontains=query)
             # the i makes the queries case insensitive
             products = products.filter(queries)
 
-        current_sort = f'{sort}_{direction}'
+            
+    current_sort = f'{sort}_{direction}'
 
-        print(products)
+    # print(products)
+    print(current_sort)
 
     context = {
         'products': products,
         'search_term': query,
         'current_category': categories,
-        #  'current_sort': current_sort,
+        'current_sort': current_sort,
     }
 
     return render(request, 'products/allproducts.html', context)

@@ -1,7 +1,7 @@
 [
     {
         "pk": 1,
-        "model":"products.sub_categories",
+        "model":"products.sub_category",
         "fields":{
             "name":"bags",
             "friendly_name":"Bags",
@@ -10,7 +10,7 @@
     },
     {
         "pk": 2,
-        "model":"products.sub_categories",
+        "model":"products.sub_category",
         "fields":{
             "name":"topwear",
             "friendly_name":"Topwear",
@@ -19,7 +19,7 @@
     },
     {
         "pk": 3,
-        "model":"products.sub_categories",
+        "model":"products.sub_category",
         "fields":{
             "name":"headwear",
             "friendly_name":"Headwear",
@@ -28,7 +28,7 @@
     },
     {
         "pk": 4,
-        "model":"products.sub_categories",
+        "model":"products.sub_category",
         "fields":{
             "name":"shoes",
             "friendly_name":"Shoes",
@@ -37,7 +37,7 @@
     },
     {
         "pk": 5,
-        "model":"products.sub_categories",
+        "model":"products.sub_category",
         "fields":{
             "name":"sports_equipment",
             "friendly_name":"Sports Equipment",
@@ -46,7 +46,7 @@
     },
     {
         "pk": 6,
-        "model":"products.sub_categories",
+        "model":"products.sub_category",
         "fields":{
             "name":"bottomwear",
             "friendly_name":"Bottomwear",

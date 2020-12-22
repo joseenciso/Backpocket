@@ -73,8 +73,10 @@
                 </div>
 
                 <div class="list-unstyled">
-                    <span><strong>Category: </strong><a class="text-muted" href="#">{{ product.categories.name }}</a></span>
-                    <span><strong>&#62;</strong> <a class="text-muted" href="#">{{ product.sub_categories.name }}</a>
+                    <span><strong>Category: </strong><a class="text-muted" href="#">{{ product.categories.friendly_name }}</a></span>
+                    <span><strong>&#62;</strong> <a class="text-muted" href="#">{{ product.sub_categories.friendly_name }}</a></span>
+                    <span><strong>&#62;</strong> <a class="text-muted" href="#">{{ product.articles.friendly_name }}</a></span>
+                    
                 </ul>
             </form>
         </div>

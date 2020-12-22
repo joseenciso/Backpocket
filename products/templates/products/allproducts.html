@@ -14,7 +14,12 @@
                 <div class="navbar-collapse offcanvas-collapse bg-light " id="navbarsExampleDefault">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <form action="" class="side-filter">
-                            <legend><i class="fas fa-filter"></i> Filters</legend>
+                            <legend>
+                                <button class="navbar-toggler btn-offcanvas my-1" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
+                                    <i class="fas fa-filter"></i>
+                                </button> 
+                                Filters
+                            </legend>
                 
                             <li class="nav-item dropdown">
                                 <a class="dropdown-toggle font-weight-bold nav-link text-black mr-5" href="#sortBy" id="all-products-link" data-bs-toggle="collapse" aria-controls="sortBy" aria-haspopup="true" aria-expanded="false">
@@ -68,22 +73,37 @@
             </div>
         </div>
         
-        <div class="col-sm-12-col-md-9 col-lg-10 mt-2">
+        <div class="col-sm-12 col-md-9 col-lg-10 mt-2">
             <div class="row py-sm-0 bg-light">
                 <div class="col-12">
-                    <nav class="navbar navbar-expanden-sm bg-light">
+                    <nav class="navbar navbar-expanden-md bg-light">
                         <div class="container-fluid">
-                            <button class="navbar-toggler d-md-none d-sm-inline" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
+                            <button class="navbar-toggler btn-offcanvas my-1" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
                                 <i class="fas fa-filter"></i>
                             </button>
-                            <form action="" class="float-end float-sm-end">
-                                <select name="" id=""></select>
-                            </form>
+                            
+                            {% if search_term != 'None' %}
+                                <span><strong>{{ products|length }}</strong>&nbsp;results found for &nbsp;<strong>"{{ search_term }}"</strong></span>
+                            {% else %}
+                                <span>All products</span>
+                            {% endif %}
+                            <select id="sort-selector" class="form-select rounded-0 border border-{% if current_sort != 'None_None' %}info{% else %}black{% endif %}">
+                                <option value="reset" {% if current_sort == 'None_None' %}selected{% endif %}>Sort by...</option>
+                                <option value="price_asc" {% if current_sort == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                                <option value="price_desc" {% if current_sort == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                                <option value="rating_asc" {% if current_sort == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
+                                <option value="rating_desc" {% if current_sort == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
+                                <option value="name_asc" {% if current_sort == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                                <option value="name_desc" {% if current_sort == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                                <option value="category_asc" {% if current_sort == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
+                                <option value="category_desc" {% if current_sort == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+                            </select>
+                            
                         </div>
                     </nav>
                 </div>
             </div>
-            <div class="row">
+            <div class="row mt-2">
                 <div class="d-flex flex-wrap justify-content-around">
                 {% for product in products %}
                     <div class="card product-card mb-3 mx-2" >
@@ -112,11 +132,16 @@
                                 {#% endfor %#}
                                 <div class="d-flex justify-content-between postition-relative">
                                     <div class="product-rating text-sm position-absolute">
+                                        {#% set rating = product.rating %#}
+                                        {{ product.rating }}
+                                        {% for rate in product.rating|int %}
+                                            <i class="fas fa-star text-warning mx-0"></i>
+                                        {% endfor %}
+                                        <!--i class="fas fa-star text-warning mx-0"></!--i>
                                         <i class="fas fa-star text-warning mx-0"></i>
                                         <i class="fas fa-star text-warning mx-0"></i>
                                         <i class="fas fa-star text-warning mx-0"></i>
-                                        <i class="fas fa-star text-warning mx-0"></i>
-                                        <i class="far fa-star text-warning mx-0"></i>
+                                        <i-- class="far fa-star text-warning mx-0"></i-->
                                     </div>
                                     <div class="product-price position-absolute" >
                                         <strong>Price: </strong>&#163;{{ product.price }}
@@ -133,13 +158,36 @@
     </div>
 </div>
 
-<script>
-    (function () {
-        'use strict'
+    <script>
+        $('#sort-selector').change(function(){
+            var sortSelect = $(this)
+            var currentURL = new URL(window.location);
+            
+            var selectedValue = sortSelect.val();
+            /* If selectedValue is NOT equals to REset */
+            if ( selectedValue != 'reset'){
+                var sortValue = selectedValue.split("_")[0]/* sort by value is in the first value of the array*/
+                var directionValue = selectedValue.split("_")[1]/* ascending or decsending will be on the second value of the array  */
+                
+                currentURL.searchParams.set("sort", sortValue);
+                currentURL.searchParams.set("direction", directionValue);
 
-        document.querySelector('[data-bs-toggle="offcanvas"]').addEventListener('click', function () {
-            document.querySelector('.offcanvas-collapse').classList.toggle('open')
+
+                console.log(currentURL)
+                console.log(sortValue+'+'+directionValue);
+                window.location.replace(currentURL);
+            } else {
+                currentURL.searchParams.delete("sort", sortValue);
+                currentURL.searchParams.delete("direction", directionValue);
+                console.log(currentURL);
+                window.location.replace(currentURL);
+            }
         })
-    })()
-</script>
+    </script>
+{% block postloadjs %}
+    {{ block.super }}
+    
 {% endblock %}
+
+{% endblock %}
+ 
