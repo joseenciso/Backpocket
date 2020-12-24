@@ -60,8 +60,7 @@ class Product(models.Model):
         'Articles', null=True, blank=True, on_delete=models.SET_NULL)
     base_colour = models.CharField(max_length=50, blank=True)
     price = models.DecimalField(max_digits=5, decimal_places=2)
-    rating = models.DecimalField(
-        max_digits=3, decimal_places=0, blank=True)
+    rating = models.IntegerField(blank=True)
     usage = models.CharField(max_length=50, blank=True)
     name = models.CharField(
         max_length=250, blank=False, default='Product Name')

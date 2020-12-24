@@ -17,6 +17,7 @@ def all_products(request):
     gender = None
     sort = None
     direction = None
+    rate = 0
 
     if request.GET:
         if 'sort' in request.GET:
@@ -31,6 +32,7 @@ def all_products(request):
                 direction = request.GET['direction']
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
+            # products.order_by(category__name)
             products = products.order_by(sortkey)
 
         if 'categories' in request.GET:
@@ -40,16 +42,15 @@ def all_products(request):
             # categories = Category.objects.filter(category_name__in=catgories)
             categories = Product.objects.filter(category_name__in=catgories)
 
-        #if 'gender' in request.GET:
+        # if 'gender' in request.GET:
         #    gender = request.GET['gender'].split(',')
             # Creating a list
         #    products = products.filter(gender__in=gender)
 
-        #if 'type' in request.GET:
+        # if 'type' in request.GET:
         #    article = request.GET['categories'].split(',')
             # Creating a list
         #     products = products.filter(categories__in=categories)
-
 
         if 'q' in request.GET:  # q for Query
             query = request.GET['q']
@@ -63,9 +64,8 @@ def all_products(request):
             # the i makes the queries case insensitive
             products = products.filter(queries)
 
-            
     current_sort = f'{sort}_{direction}'
-
+    rating = products.filter()
     # print(products)
     print(current_sort)
 
@@ -76,6 +76,7 @@ def all_products(request):
         'current_sort': current_sort,
     }
 
+    print(query)
     return render(request, 'products/allproducts.html', context)
 
 
@@ -86,5 +87,7 @@ def product(request, pk):
     context = {
         'product': product,
     }
+
+    print(product)
 
     return render(request, 'products/product.html', context)

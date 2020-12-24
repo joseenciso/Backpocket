@@ -82,10 +82,12 @@
                                 <i class="fas fa-filter"></i>
                             </button>
                             
-                            {% if search_term != 'None' %}
-                                <span><strong>{{ products|length }}</strong>&nbsp;results found for &nbsp;<strong>"{{ search_term }}"</strong></span>
-                            {% else %}
+                            {% if search_term == 'None' %}
+                                <span>{{search_term}}</span>
                                 <span>All products</span>
+                            {% else %}
+                                <span>{{search_term}}</span>
+                                <span><strong class="products-count" data-search-count="{{ products|length }}">{{ products|length }}</strong>&nbsp;results found for &nbsp;<strong>"{{ search_term }}"</strong></span>
                             {% endif %}
                             <select id="sort-selector" class="form-select rounded-0 border border-{% if current_sort != 'None_None' %}info{% else %}black{% endif %}">
                                 <option value="reset" {% if current_sort == 'None_None' %}selected{% endif %}>Sort by...</option>
@@ -106,8 +108,8 @@
             <div class="row mt-2">
                 <div class="d-flex flex-wrap justify-content-around">
                 {% for product in products %}
-                    <div class="card product-card mb-3 mx-2" >
-                        <div class="col-12">
+                    <div id="product-{{ product.pk }}" class="card product-card mb-3 mx-2" >
+                        <div id="product{{ value|add:2}}" class="col-12">
                             <a class="" href="{% url 'product' product.pk %}">
                                 <div class="card-image">
                                         <img src="{{ product.image.url }}" class="" alt="..." >
@@ -131,17 +133,8 @@
                                     <!--p>{{ product.categories }}>{{ product.sub_categories }}</!--p-->
                                 {#% endfor %#}
                                 <div class="d-flex justify-content-between postition-relative">
-                                    <div class="product-rating text-sm position-absolute">
-                                        {#% set rating = product.rating %#}
-                                        {{ product.rating }}
-                                        {% for rate in product.rating|int %}
-                                            <i class="fas fa-star text-warning mx-0"></i>
-                                        {% endfor %}
-                                        <!--i class="fas fa-star text-warning mx-0"></!--i>
-                                        <i class="fas fa-star text-warning mx-0"></i>
-                                        <i class="fas fa-star text-warning mx-0"></i>
-                                        <i class="fas fa-star text-warning mx-0"></i>
-                                        <i-- class="far fa-star text-warning mx-0"></i-->
+                                    <div class="product-rating text-sm position-absolute" value="{{ product.pk }}" data-rating="{{ product.rating }}">
+                                        {# {{ product.pk }} - {{ product.rating }} #}
                                     </div>
                                     <div class="product-price position-absolute" >
                                         <strong>Price: </strong>&#163;{{ product.price }}
@@ -159,6 +152,32 @@
 </div>
 
     <script>
+        $( document ).ready(function(){
+            
+            
+
+        })
+        /* Stars Counter Django-JS */
+        /* From the ratin to the stars */
+        var productCount = $(".products-count").data();
+            console.log(productCount);
+            for (i = 0; i <= productCount.searchCount; i++){
+                
+                $(`#product-${ i }`).each(function(){
+                    var a = $(this).find(".product-rating").data();;
+                    var rate = a.rating;
+
+                        console.log(i + " " + rate);
+                    for( j = 0; j < rate; j++) {
+                        $(`#product-${ i }`).find(".product-rating").append('<i class="fas fa-star text-warning mx-0"></i>');
+                    }
+
+                });
+                
+            }
+        /* End -- Stars Counter Django-JS */
+
+        /* Code Institute Sort Filter */
         $('#sort-selector').change(function(){
             var sortSelect = $(this)
             var currentURL = new URL(window.location);
@@ -183,6 +202,7 @@
                 window.location.replace(currentURL);
             }
         })
+        /* End -- Code Institute Sort Filter */
     </script>
 {% block postloadjs %}
     {{ block.super }}
