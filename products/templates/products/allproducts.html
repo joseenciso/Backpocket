@@ -1,13 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static "products/styles/style.css" %}" type="text/css">
+{% endblock %}
+
 {% block page_header %}
 
 {% endblock %}
 
 {% block content %}
 
-<div class="container-fluid">
+<div class="container-fluid products-wrapper">
     <div class="row">
         <div class="col-sm-12 col-md-3 px-md-0 col-lg-2 mt-2">
             <div class="container-fluid filter-container bg-light">
