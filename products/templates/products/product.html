@@ -7,85 +7,87 @@
 
 {% block content %}
 
-
-<main class="my-2 py-2">
-<div class="container">
+<div class="container products-wrapper">
     <div class="row">
-        <div class="col-sm-12 px-sm-0 col-md-6 col-lg-6">
+        <div class="col-sm-12 px-sm-0 col-md-5 col-lg-5">
             <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
         </div>
 
-        <div class="col-sm-12 col-md-6 col-lg-6 pt-4">
+        <div class="col-sm-12 col-md-7 col-lg-7 pt-4">
             <div class="" >
-                <h1 class="mb-2">{{ product.name }}</h1>
-                <p class="my-2 text-muted">{{ product.description }}</p>
-                
-                <div class="d-flex align-items-center text-sm my-2">
-                    <span class="mr-2">Rating</span>
-                    <ul class="list-inline mr-2 mb-0">
-                        <li class="list-inline-item mr-0"><i class="fa fa-star text-primary"></i></li>
-                        <li class="list-inline-item mr-0"><i class="fa fa-star text-primary"></i></li>
-                        <li class="list-inline-item mr-0"><i class="fa fa-star text-primary"></i></li>
-                        <li class="list-inline-item mr-0"><i class="fa fa-star text-primary"></i></li>
-                        <li class="list-inline-item mr-0"><i class="fa fa-star "></i></li>
-                    </ul>
-                    <!--span class="text-muted text-uppercase">25 reviews</!--span-->
-                </div>
-
-                <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between mb-4">
-                        <span class="list-inline-item text-muted font-weight-light"> 
-                            RRP: <del>&#163;90.00</del>
-                <ul class="list-inline mb-2 mb-sm-0">
-                        </span>
-                    <li class="list-inline-item h4 font-weight-light mb-0">Price: &#163;{{ product.price }}</li>
-                </ul>
-            </div>
-
-            <form id="add_to_bag_form" action="{% url 'add_to_bag' product.pk %}" method="POST" class="my-2">
-                {% csrf_token %}
-                <div class="input-group size-select input-group-lg my-3">
-                    <span class="input-group-text text-light bg-dark" for="inputGroupSelect01">
-                        <i class="fas fa-expand-alt fa-lg pt-2 mr-2"></i>
-                        Size <!--span>(required)</!--span-->
-                    </span>
-                    <select class="form-select custom-select form-control form-control-lg" name="size" >
-                            <option value="value_0">Small</option>
-                            <option value="value_1">Medium</option>
-                            <option value="value_2">Large</option>
-                    </select>
-                </div>
-                
-                <div class="input-group add-to-cart input-group-lg my-3">
-                    <input class="form-control form-control-lg form-select-size text-center " name="quantity" type="number" value="1" min="1" max="99" data-item-id="{{ product.pk }}" id="id_qty_{{ product.pk }}">
-                    <button class="btn btn-dark btn-block input-group-text" type="submit">
-                        <i class="fa fa-shopping-cart fa-lg mr-2"></i>
-                        Add to Cart
-                    </button>
-                    
-                </div>
-                <input type="hidden" name="redirect_url" value="{{ request.path }}">
-            </div>
-                        
-                <div class="row my-4">
-                    <div class="col-6">
-                        <a href="#">
-                            <i class="far fa-heart mr-2"></i>
-                            Add to wishlist
-                        </a>
-                    </div>
-                </div>
-
                 <div class="list-unstyled">
                     <span><strong>Category: </strong><a class="text-muted" href="#">{{ product.categories.friendly_name }}</a></span>
                     <span><strong>&#62;</strong> <a class="text-muted" href="#">{{ product.sub_categories.friendly_name }}</a></span>
                     <span><strong>&#62;</strong> <a class="text-muted" href="#">{{ product.articles.friendly_name }}</a></span>
                     
-                </ul>
-            </form>
+                </div>
+
+                <h1 class="mb-2">{{ product.name }}</h1>
+                <div class="p text-muted">SKU: {{ product.sku }}</div>
+                <h4>Description</h4>
+                <p class="my-2">{{ product.description }}</p>
+                
+                <div class="d-flex align-items-center text-sm my-2">
+                    <span class="mr-2">Rating</span>
+                    <ul class="list-inline mr-2 mb-0">
+                        <!--li class="list-inline-item mr-0"><i class="fa fa-star text-primary"></i></!--li>
+                        <li class="list-inline-item mr-0"><i class="fa fa-star text-primary"></i></li>
+                        <li class="list-inline-item mr-0"><i class="fa fa-star text-primary"></i></li>
+                        <li class="list-inline-item mr-0"><i class="fa fa-star text-primary"></i></li>
+                        <li class="list-inline-item mr-0"><i class="fa fa-star "></i></li>
+                        <!--span class="text-muted text-uppercase">25 reviews</!--span-->
+                    </ul>
+                </div>
+
+                <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between mb-4">
+                        <span class="list-inline-item text-muted font-weight-light"> 
+                            RRP: <del>&#163;90.00</del>
+                    <ul class="list-inline mb-2 mb-sm-0">
+                            </span>
+                        <li class="list-inline-item h4 font-weight-light mb-0">Price: &#163;{{ product.price }}</li>
+                    </ul>
+                </div>
+
+                <form id="add_to_bag_form" action="{% url 'add_to_bag' product.pk %}" method="POST" class="my-2">
+                    {% csrf_token %}
+                    {% if product.has_size == False %}
+
+                    {% else %}
+                    <div class="input-group size-select input-group-lg my-3">
+                        <span class="input-group-text text-light bg-dark" for="inputGroupSelect01">
+                            <i class="fas fa-expand-alt fa-lg pt-2 mr-2"></i>
+                            Size <!--span>(required)</!--span-->
+                        </span>
+                        <select class="form-select custom-select form-control form-control-lg" name="product_size" >
+                                <option value="sm">Small</option>
+                                <option value="md">Medium</option>
+                                <option value="lg">Large</option>
+                        </select>
+                    </div>
+                    {% endif %}
+                    
+                    <div class="input-group add-to-cart input-group-lg my-3">
+                        <input class="form-control form-control-lg form-select-size text-center " name="quantity" type="number" value="1" min="1" max="99" data-item-id="{{ product.pk }}" id="id_qty_{{ product.pk }}">
+                        <button class="btn btn-dark btn-block input-group-text" type="submit">
+                            <i class="fa fa-shopping-cart fa-lg mr-2"></i>
+                            Add to Cart
+                        </button>
+                        
+                    </div>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            
+                    <div class="row my-4">
+                        <div class="col-6">
+                            <a href="#">
+                                <i class="far fa-heart mr-2"></i>
+                                Add to wishlist
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
-
-</main>
 
 {% endblock %}

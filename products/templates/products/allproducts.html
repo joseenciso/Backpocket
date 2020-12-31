@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static "products/styles/style.css" %}" type="text/css">
+    <link rel="stylesheet" href="{% static "products/styles/styles.css" %}" type="text/css">
 {% endblock %}
 
 {% block page_header %}
@@ -15,11 +15,11 @@
     <div class="row">
         <div class="col-sm-12 col-md-3 px-md-0 col-lg-2 mt-2">
             <div class="container-fluid filter-container bg-light">
-                <div class="navbar-collapse offcanvas-collapse bg-light " id="navbarsExampleDefault">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <div class="navbar-collapse offcanvas-collapse bg-light" id="navbarsExampleDefault">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0t">
                         <form action="" class="side-filter">
                             <legend>
-                                <button class="navbar-toggler btn-offcanvas my-1" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
+                                <button class="navbar-toggler btn btn-offcanvas my-1" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
                                     <i class="fas fa-filter"></i>
                                 </button> 
                                 Filters
@@ -78,21 +78,20 @@
         </div>
         
         <div class="col-sm-12 col-md-9 col-lg-10 mt-2">
-            <div class="row py-sm-0 bg-light">
+            <div class="row py-sm-0">
                 <div class="col-12">
-                    <nav class="navbar navbar-expanden-md bg-light">
+                    <nav class="navbar navbar-expanden-md">
                         <div class="container-fluid">
                             <button class="navbar-toggler btn-offcanvas my-1" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
                                 <i class="fas fa-filter"></i>
                             </button>
                             
                             {% if search_term == 'None' %}
-                                <span>{{search_term}}</span>
                                 <span>All products</span>
                             {% else %}
-                                <span>{{search_term}}</span>
                                 <span><strong class="products-count" data-search-count="{{ products|length }}">{{ products|length }}</strong>&nbsp;results found for &nbsp;<strong>"{{ search_term }}"</strong></span>
                             {% endif %}
+
                             <select id="sort-selector" class="form-select rounded-0 border border-{% if current_sort != 'None_None' %}info{% else %}black{% endif %}">
                                 <option value="reset" {% if current_sort == 'None_None' %}selected{% endif %}>Sort by...</option>
                                 <option value="price_asc" {% if current_sort == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
@@ -154,13 +153,12 @@
         </div>
     </div>
 </div>
+    
 
+{% endblock %}
+
+{% block extra_js %}
     <script>
-        $( document ).ready(function(){
-            
-            
-
-        })
         /* Stars Counter Django-JS */
         /* From the ratin to the stars */
         var productCount = $(".products-count").data();
@@ -180,6 +178,16 @@
                 
             }
         /* End -- Stars Counter Django-JS */
+    </script>
+{% endblock %}
+
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script>
+            $('.btn-offcanvas').click(function(){
+                $('.offcanvas-collapse').toggleClass('open');
+            })
 
         /* Code Institute Sort Filter */
         $('#sort-selector').change(function(){
@@ -208,10 +216,4 @@
         })
         /* End -- Code Institute Sort Filter */
     </script>
-{% block postloadjs %}
-    {{ block.super }}
-    
 {% endblock %}
-
-{% endblock %}
- 

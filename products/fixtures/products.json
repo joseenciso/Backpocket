@@ -4,7 +4,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1525",
-            "gender": "Unisex",
+            "gender": 1,
             "categories": 1,
             "sub_categories": 1,
             "brand": "Pumba",
@@ -13,10 +13,11 @@
             "price": 31.00,
             "rating": 5,
             "usage": "Casual",
-            "description": "deck_backpack",
+            "description": "This stylish backpack - with its modern form and subtle colour scheme - is truly one for all occasions. And you can pack it for all occasions, too, thanks to its roomy interior and scores of compartments. A two-way zip opens the largest of them, which houses a sleeve for laptops, while a front pocket and two mesh pouches line the bag’s exterior. The straps are adjustable and padded, and the bottom is covered in sturdy Durabase material.",
             "name": "Deck Navy Blue Backpack",
             "image": "products/1525.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": false
         }
     },
     {
@@ -24,7 +25,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1526",
-            "gender": "Unisex",
+            "gender": 1,
             "categories": 1,
             "sub_categories": 1,
             "brand": "Pumba",
@@ -33,10 +34,11 @@
             "price": 17.99,
             "rating": 4,
             "usage": "Sports",
-            "description": "big_cat_backpack",
+            "description": "Puma's Phase Backpack is the perfect everyday pick for leisure, sport and travel. The Puma Phase sports a statement Puma logo on the front, front zipped pocket, padded back and shoulder straps for comfort!",
             "name": "Big Cat Backpack",
             "image": "products/1526.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": false
         }
     },
     {
@@ -44,7 +46,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1528",
-            "gender": "Men",
+            "gender": 3,
             "categories": 2,
             "sub_categories": 2,
             "brand": "Pumba",
@@ -53,10 +55,11 @@
             "price": 58.00,
             "rating": 5,
             "usage": "Sports",
-            "description": "Pumba black_ferrari_fleece",
+            "description": "Cool, understated Scuderia Ferrari branding and practical details such as zipped pockets make this hoodie an instant favourite. You'll want to wear it again and again.",
             "name": "Pumba Black Ferrari Fleece",
             "image": "products/1528.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -64,7 +67,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1531",
-            "gender": "Men",
+            "gender": 3,
             "categories": 2,
             "sub_categories": 2,
             "brand": "Pumba",
@@ -73,10 +76,11 @@
             "price": 18.00,
             "rating": 4,
             "usage": "Casual",
-            "description": "Pumba grey_solsku_round_neck",
+            "description": "This men's tee is suitable for everyday wear, while lightweight, breathable materials mean that it works just as well as part of a sportswear outfit. The regular fit of this t-shirt",
             "name": "Pumba Men Grey Solsku Round Neck T-Shirt",
             "image": "products/1531.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -84,7 +88,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1533",
-            "gender": "Men",
+            "gender": 3,
             "categories": 2,
             "sub_categories": 2,
             "brand": "Pumba",
@@ -93,10 +97,11 @@
             "price": 12.45,
             "rating": 2,
             "usage": "Casual",
-            "description": "",
+            "description": "This men's tee is suitable for everyday wear, while lightweight, breathable materials mean that it works just as well as part of a sportswear outfit. The regular fit of this top promotes freedom of movement and flexibility, while the large PUMA No. 1 Logo and solid block colour scheme will see it pair well with a variety of bottoms and styles.",
             "name": "Pumba Men Cat Red T-shirt",
             "image": "products/1533.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -104,7 +109,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1534",
-            "gender": "Men",
+            "gender": 3,
             "categories": 2,
             "sub_categories": 2,
             "brand": "Pumba",
@@ -113,10 +118,11 @@
             "price": 20.00,
             "rating": 3,
             "usage": "Casual",
-            "description": "",
+            "description": "Revamp your casual wardrobe with this classic Puma Big Cat QT T Shirt - styled with a lightweight, predominantly cotton construction that features short sleeves and a crew neckline. Located to the front of the chest is a large Puma logo for a striking finish.",
             "name": "Pumba Men Black Leaping Cat T-shirt",
             "image": "products/1534.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -124,7 +130,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1535",
-            "gender": "Unisex",
+            "gender": 1,
             "categories": 1,
             "sub_categories": 3,
             "brand": "Pumba",
@@ -133,10 +139,11 @@
             "price": 10.00,
             "rating": 4,
             "usage": "Sports",
-            "description": "",
-        "name": "Pumba Unisex Logo Cap",
+            "description": "The Puma No 1 Logo Cap has a hook and loop tape fastening to reverse for a customisable fit, curved peak for a classic baseball style, and stitched ventilation eyelets for a comfortable fit. The front features an embroidered Puma logo for brand styling.",
+            "name": "Pumba Unisex Logo Cap",
             "image": "products/1535.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": false
         }
     },
     {
@@ -144,7 +151,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1536",
-            "gender": "Men",
+            "gender": 3,
             "categories": 2,
             "sub_categories": 2,
             "brand": "Pumba",
@@ -153,10 +160,11 @@
             "price": 9.99,
             "rating": 4,
             "usage": "Sports",
-            "description": "Pumba men_black_net",
+            "description": "Puma short sleeve football jersey made of functional polyester with sublimated prints on the sleeves, front and back. EN NOIR is one of the first luxury streetwear brands. For PUMA x EN NOIR it's a blend of EN NOIR's monochromatic minimalist style with PUMA's rich sportswear history. ",
             "name": "Pumba Men Black Net Jersey",
             "image": "products/1536.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -164,7 +172,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1538",
-            "gender": "Men",
+            "gender": 3,
             "categories": 2,
             "sub_categories": 2,
             "brand": "Pumba",
@@ -173,10 +181,11 @@
             "price": 24.95,
             "rating": 3,
             "usage": "Casual",
-            "description": "Pumba men_ferrari_tshirt",
+            "description": "Sport sleek fashion with subtle nods to your true passion in our Scuderia Ferrari Style Polo, featuring a classic cut with a touch of Scuderia Ferrari edge.",
             "name": "Pumba Men Ferrari Track Blue T-shirt",
             "image": "products/1538.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -184,7 +193,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1541",
-            "gender": "Men",
+            "gender": 3,
             "categories": 3,
             "sub_categories": 4,
             "brand": "Pumba",
@@ -193,10 +202,11 @@
             "price": 75.00,
             "rating": 5,
             "usage": "Sports",
-            "description": "Pumba men_ballistic_white_shoe",
+            "description": "The newly engineered PUMA Spike 19.2 is a true performance shoe for cricket athletes. The mesh and synthetic upper construction supports multi-directional movements",
             "name": "Pumba Men's Ballistic Spike White Green Shoe",
             "image": "products/1541.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -204,7 +214,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1542",
-            "gender": "Men",
+            "gender": 3,
             "categories": 3,
             "sub_categories": 4,
             "brand": "Pumba",
@@ -213,10 +223,11 @@
             "price": 85.00,
             "rating": 4,
             "usage": "Sports",
-            "description": "",
+            "description": "The newly engineered PUMA Spike 19.2 is a true performance shoe for cricket athletes. The mesh and synthetic upper construction supports multi-directional movements",
             "name": "Pumba Men's Ballistic Rubber Shoe",
             "image": "products/1542.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -224,7 +235,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1543",
-            "gender": "Men",
+            "gender": 3,
             "categories": 3,
             "sub_categories": 4,
             "brand": "Pumba",
@@ -233,10 +244,11 @@
             "price": 33.00,
             "rating": 4,
             "usage": "Casual",
-            "description": "Pumba men_basket_sneaker",
+            "description": "Keep it stealthy in these men's Basket Classic trainers from Puma. In a black colourway, these trainers are built with a leather upper for durability and a premium look. Featuring a tonal lace up fastening for a locked-in fit, these creps are sat on a tonal low riding midsole for essential cushioning and feature grippy rubber tread underfoot. Finished with a black Puma Formstrip to the sidewalls, and a gold Cat logo to the heel.",
             "name": "Pumba Men Basket-Biz Sneaker",
             "image": "products/1543.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -244,7 +256,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1545",
-            "gender": "Men",
+            "gender": 3,
             "categories": 3,
             "sub_categories": 4,
             "brand": "Pumba",
@@ -253,10 +265,11 @@
             "price": 61.00,
             "rating": 5,
             "usage": "Casual",
-            "description": "Pumba men_speed_cat_shoe",
+            "description": "Motorsport maniacs, rejoice. The iconic motorsport-inspired lifestyle shoe that first hit the streets in 2000 is back: the SpeedCat Sparco.",
             "name": "Pumba Men's Speed Cat Shoe",
             "image": "products/1545.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -264,7 +277,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1548",
-            "gender": "Men",
+            "gender": 3,
             "categories": 3,
             "sub_categories": 4,
             "brand": "Pumba",
@@ -273,10 +286,11 @@
             "price": 45.00,
             "rating": 4,
             "usage": "Sports",
-            "description": "Pumba cell_exsis",
+            "description": "Pumba Men's Cell Exsis Sneaker",
             "name": "Pumba Men's Cell Exsis Sneaker",
             "image": "products/1548.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -284,7 +298,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1550",
-            "gender": "Unisex",
+            "gender": 1,
             "categories": 4,
             "sub_categories": 5,
             "brand": "Pumba",
@@ -293,10 +307,11 @@
             "price": 14.95,
             "rating": 5,
             "usage": "Sports",
-            "description": "Pumba cat_trainer",
+            "description": "Whether you're an amateur or a future star, the ftblPLAY Big Cat Football is designed to enhance on-pitch performance.",
             "name": "Pumba Cat Trainer-WBL Football",
             "image": "products/1550.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": false
         }
     },
     {
@@ -304,7 +319,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1551",
-            "gender": "Unisex",
+            "gender": 1,
             "categories": 4,
             "sub_categories": 5,
             "brand": "Pumba",
@@ -313,10 +328,11 @@
             "price": 12.00,
             "rating": 3,
             "usage": "Sports",
-            "description": "Pumba power_cat_ob",
+            "description": "A football for soccer games in all weather conditions, puma's hi-tech airlock valve to keep the ball bouncy at 8-12 PSI, 0.6-0.8 bar, This fluorescent orange, black and white coloured ball can be spotted effortlessly during night games",
             "name": "Pumba Power Cat Trainer-OB Football",
             "image": "products/1551.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": false
         }
     },
     {
@@ -324,7 +340,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1552",
-            "gender": "Unisex",
+            "gender": 1,
             "categories": 4,
             "sub_categories": 5,
             "brand": "Pumba",
@@ -333,10 +349,11 @@
             "price": 12.00,
             "rating": 4,
             "usage": "Sports",
-            "description": "puba_power_cat_wr",
+            "description": "Constructed by Puma from 32 PU panels with equal surface areas for reduced seam-stress and a perfectly round shape, the PowerCat 5.12 Trainer ball is ideal for training.",
             "name": "Pumba Power Cat Trainer-WR Football",
             "image": "products/1552.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": false
         }
     },
     {
@@ -344,7 +361,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1556",
-            "gender": "Unisex",
+            "gender": 1,
             "categories": 1,
             "sub_categories": 1,
             "brand": "Quechua",
@@ -353,10 +370,11 @@
             "price": 39.99,
             "rating": 5,
             "usage": "Sports",
-            "description": "quechua_forclaz",
+            "description": "LARGE CAPACITY – The 120 litre capacity ensures your able to fit all your equipment in comfortably. Multiple zipped front compartments and 3 accessory clips keep items secure and separate, along with more compartments suited for storage of your valuables.",
             "name": "Quechua Forclaz Large  Backpack - 50 ltr Orange",
             "image": "products/1556.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": false
         }
     },
     {
@@ -364,7 +382,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1557",
-            "gender": "Unisex",
+            "gender": 1,
             "categories": 1,
             "sub_categories": 1,
             "brand": "Quechua",
@@ -373,10 +391,11 @@
             "price": 29.99,
             "rating": 4,
             "usage": "Travel",
-            "description": "quechua_spacious",
+            "description": "This versatile backpack is both stylish and functional with enough capacity for your needs.  Packed with features, including raincover and fully adjustable hip belt, you'll be fully equipped to take on the Great Outdoors.Tough, lightweight and comfortable daypack for trekkers and mountain walkers, with a fully ventilated back system that maximises airflow next to your back.",
             "name": "Quechua Spacious Blue-Black Backpack",
             "image": "products/1557.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": false
         }
     },
     {
@@ -384,7 +403,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1561",
-            "gender": "Women",
+            "gender": 2,
             "categories": 2,
             "sub_categories": 2,
             "brand": "Quechua",
@@ -393,10 +412,11 @@
             "price": 26.99,
             "rating": 4,
             "usage": "Sports",
-            "description": "quechua_sweat_proof",
+            "description": "When customers asked us to design something that was meant for women, Sweatshield Undershirts talked to top designers around the world to make something we could be proud of: it's versatile, comfortable, easy to layer, and most importantly, feels and looks great.",
             "name": "Quechua Women Sweat Proof White T-shirt",
             "image": "products/1561.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -404,7 +424,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1566",
-            "gender": "Men",
+            "gender": 3,
             "categories": 1,
             "sub_categories": 3,
             "brand": "Artengo",
@@ -413,10 +433,11 @@
             "price": 5.00,
             "rating": 3,
             "usage": "Sports",
-            "description": "artengo_black_cap",
+            "description": "Run with comfort and protection in the Under Armour Run Shadow. Built-in HeatGear technology actively wicks sweat away to leave you cool and dry while a UPF30+ rating protects your skin from the harmful rays of the sun. A reflective logo improves safety and visibility in low light conditions.",
             "name": "Artengo Men Black Cap",
             "image": "products/1566.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": false
         }
     },
     {
@@ -424,7 +445,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1567",
-            "gender": "Men",
+            "gender": 3,
             "categories": 2,
             "sub_categories": 6,
             "brand": "Artengo",
@@ -433,10 +454,11 @@
             "price": 4.99,
             "rating": 3,
             "usage": "Sports",
-            "description": "artengo_training_short",
+            "description": "Artengo Men's Running Shorts Running Shorts With Tights Athletic Shorts Bottoms 2 in 1 Liner Split Spandex Gym Workout Running Active Training Jogging Trail Breathable Quick Dry Reflective Strips",
             "name": "Artengo Men Training Shorts",
             "image": "products/1567.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -444,7 +466,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1570",
-            "gender": "Women",
+            "gender": 2,
             "categories": 2,
             "sub_categories": 2,
             "brand": "Artengo",
@@ -453,10 +475,11 @@
             "price": 8.99,
             "rating": 3,
             "usage": "Sports",
-            "description": "artengo_tennis_singlet",
+            "description": "The environmental impact of this product is calculated for its entire lifespan using various indicators. An overall rating (ABCDE) is given, allowing you to easily identify products with the best environmental performance by comparing similar products to each other (T-shirts, trousers, backpacks, ...).",
             "name": "Artengo Women Tennis Singlet",
             "image": "products/1570.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -464,7 +487,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1571",
-            "gender": "Men",
+            "gender": 3,
             "categories": 3,
             "sub_categories": 4,
             "brand": "Kalenji",
@@ -473,10 +496,11 @@
             "price": 29.99,
             "rating": 4,
             "usage": "Sports",
-            "description": "kalenji_sport_shoes",
+            "description": "Our design teams developed these lightweight men's running shoes with cushioning for running up to 10km per week.",
             "name": "Kalenji Men's Super Soft Sports Shoes",
             "image": "products/1571.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -484,7 +508,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1572",
-            "gender": "Men",
+            "gender": 3,
             "categories": 2,
             "sub_categories": 6,
             "brand": "Kalenji",
@@ -493,10 +517,11 @@
             "price": 17.85,
             "rating": 4,
             "usage": "Sports",
-            "description": "kalenji_traning_track_pants",
+            "description": "Men Pants Running Run Joggers Training Sports Sportswear Fitness Exercise Gym Elastic Pants Pocket Clothes Zipper",
             "name": "Kalenji Mens Essential Training Track Pants",
             "image": "products/1572.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -504,7 +529,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1573",
-            "gender": "Women",
+            "gender": 2,
             "categories": 2,
             "sub_categories": 6,
             "brand": "Kalenji",
@@ -513,10 +538,11 @@
             "price": 12.99,
             "rating": 3,
             "usage": "Sports",
-            "description": "kalenji_thletes_track_pants",
+            "description": "These jogging bottoms offer great value for money. Perfect for a stylish look at the gym - or anywhere else! A timeless cut, drawstring waist, two pockets and high-quality fabric make these bottoms a favourite you'll never want to take off!",
             "name": "Kalenji Women Athletes Grey Track Pants",
             "image": "products/1573.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -524,7 +550,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1939",
-            "gender": "Women",
+            "gender": 2,
             "categories": 1,
             "sub_categories": 1,
             "brand": "Geonaute",
@@ -533,10 +559,11 @@
             "price": 7.00,
             "rating": 5,
             "usage": "Sports",
-            "description": "geonaute_outdoor_bag",
+            "description": "Material -The perfect date night companion with beautiful smooth PU leather & sumptuous suede panels, this handbag features a button-snap closure, an adjustable strap.",
             "name": "Geonaute Women Large Outdoor Bag",
             "image": "products/1939.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": false
         }
     },
     {
@@ -544,7 +571,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1941",
-            "gender": "Women",
+            "gender": 2,
             "categories": 1,
             "sub_categories": 1,
             "brand": "Domyos",
@@ -553,10 +580,11 @@
             "price": 32.80,
             "rating": 4,
             "usage": "Sports",
-            "description": "domyos_bag",
+            "description": "Domyos Brown handgag",
             "name": "Domyos Brown Bag",
             "image": "products/1941.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": false
         }
     },
     {
@@ -564,7 +592,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1951",
-            "gender": "Women",
+            "gender": 2,
             "categories": 3,
             "sub_categories": 4,
             "brand": "Pumba",
@@ -573,10 +601,11 @@
             "price": 89.99,
             "rating": 4,
             "usage": "Sports",
-            "description": "Pumba eco_funky",
+            "description": "Keep the game going in the shoe that launched a movement, our Rider Play On Trainers. This shoe is dedicated to pared-down performance, featuring a super-light nylon.",
             "name": "Pumba Women Eco Funky Shoes",
             "image": "products/1951.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -584,7 +613,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1976",
-            "gender": "Men",
+            "gender": 3,
             "categories": 2,
             "sub_categories": 6,
             "brand": "Tribord",
@@ -593,10 +622,11 @@
             "price": 36.90,
             "rating": 3,
             "usage": "Casual",
-            "description": "tribord_cargo_shorts",
+            "description": "Our teams designed these Bermuda shorts to allow regatta racers to manoeuvre freely!",
             "name": "Tribord Mens Short Cargo Shorts",
             "image": "products/1976.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -604,7 +634,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1977",
-            "gender": "Men",
+            "gender": 3,
             "categories": 2,
             "sub_categories": 6,
             "brand": "Tribord",
@@ -613,10 +643,11 @@
             "price": 19.99,
             "rating": 5,
             "usage": "Casual",
-            "description": "tribord_cargo_shorts_grey",
+            "description": "These lightweight and highly breathable BDU 2.0 Shorts from Pentagon are made of hardwearing 215 gsm pre-washed Ripstop fabric and feature re-designed double back seat, multiple storage pockets and triple stitching on stress points for added durability during highly demanding tactical duties.",
                 "name": "Tribord Mens Grey Cargo Shorts",
             "image": "products/1977.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -624,7 +655,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1981",
-            "gender": "Women",
+            "gender": 2,
             "categories": 2,
             "sub_categories": 6,
             "brand": "Pumba",
@@ -633,10 +664,11 @@
             "price": 26.50,
             "rating": 4,
             "usage": "Casual",
-            "description": "Pumba island_shorts_green",
+            "description": "The Puma running shorts feature a loose fit with a stylish abstract graphic design. The shorts include various shades of pale grey, with a reflective trim on the end of each leg.",
             "name": "Pumba Women's Island Green Shorts",
             "image": "products/1981.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -644,7 +676,7 @@
         "model":"products.product",
         "fields":{
             "sku": "1982",
-            "gender": "Women",
+            "gender": 2,
             "categories": 2,
             "sub_categories": 6,
             "brand": "Pumba",
@@ -653,10 +685,11 @@
             "price": 16.75,
             "rating": 3,
             "usage": "Casual",
-            "description": "Pumba island_shorts_purple",
+            "description": "Pumba Island Shorts Purple",
             "name": "Pumba Island Shorts Purple",
             "image": "products/1982.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -664,7 +697,7 @@
         "model":"products.product",
         "fields":{
             "sku": "2089",
-            "gender": "Men",
+            "gender": 3,
             "categories": 2,
             "sub_categories": 2,
             "brand": "Adskuas",
@@ -673,10 +706,11 @@
             "price": 24.50,
             "rating": 3,
             "usage": "Sports",
-            "description": "adskuas_pocket_purple_polo",
+            "description": "These plain polo shirt's with a single chest pocket and 3 button fastening by KAM Jeans are a perfect addition to any big men's clothing collection",
             "name": "Adskuas Pocket Polo T-shirt",
             "image": "products/2089.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -684,7 +718,7 @@
         "model":"products.product",
         "fields":{
             "sku": "2093",
-            "gender": "Men",
+            "gender": 3,
             "categories": 2,
             "sub_categories": 2,
             "brand": "Lee",
@@ -693,10 +727,11 @@
             "price": 24.95,
             "rating": 4,
             "usage": "Casual",
-            "description": "lee_checks_blue_shirt",
+            "description": "lA customer favourite design, this shirt was created to add variety to your daily wardrobe.",
             "name": "Lee checks Blue Shirt",
             "image": "products/2093.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -704,7 +739,7 @@
         "model":"products.product",
         "fields":{
             "sku": "2094",
-            "gender": "Men",
+            "gender": 3,
             "categories": 2,
             "sub_categories": 2,
             "brand": "Lee",
@@ -713,10 +748,11 @@
             "price": 10.50,
             "rating": 3,
             "usage": "Casual",
-            "description": "lee_checks_white_shirt",
+            "description": "Much more than a great-looking Oxford shirt. This is a cleverly-made piece so full of secrets, only you will know what it’s all about.",
             "name": "Lee Checks Shirt",
             "image": "products/2094.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -724,7 +760,7 @@
         "model":"products.product",
         "fields":{
             "sku": "2109",
-            "gender": "Women",
+            "gender": 2,
             "categories": 2,
             "sub_categories": 6,
             "brand": "ADskuAS",
@@ -733,10 +769,11 @@
             "price": 45.00,
             "rating": 4,
             "usage": "Sports",
-            "description": "adskuas_slim_fit_lycra_track_pans",
+            "description": "Step out in a signature look from adidas Originals with these women's 3-Stripes Slim Joggers. In a black and white colourway for mono vibes.",
             "name": "ADskuAS Slim Fit Lycra Track Pants",
             "image": "products/2109.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -744,7 +781,7 @@
         "model":"products.product",
         "fields":{
             "sku": "2110",
-            "gender": "Women",
+            "gender": 2,
             "categories": 2,
             "sub_categories": 6,
             "brand": "ADskuAS",
@@ -753,10 +790,11 @@
             "price": 0.00,
             "rating": 5,
             "usage": "Sports",
-            "description": "adskuas_berry_lycra_track_pants",
+            "description": "aPerformance is everything with track pants that deliver both style and substance. dryCELL moisture-wicking technology keeps you cool and comfortable.",
             "name": "ADskuAS Very Berry Lycra Track Pants",
             "image": "products/2110.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -764,7 +802,7 @@
         "model":"products.product",
         "fields":{
             "sku": "2119",
-            "gender": "Women",
+            "gender": 2,
             "categories": 2,
             "sub_categories": 2,
             "brand": "Lee",
@@ -773,10 +811,11 @@
             "price": 50.00,
             "rating": 5,
             "usage": "Casual",
-            "description": "lee_pink_shirt",
+            "description": "This tailored fit shirt is sure to become a staple in your work wear wardrobe.",
             "name": "Lee Pink Shirt",
             "image": "products/2119.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     },
     {
@@ -784,7 +823,7 @@
         "model":"products.product",
         "fields":{
             "sku": "2120",
-            "gender": "Women",
+            "gender": 2,
             "categories": 2,
             "sub_categories": 2,
             "brand": "Lee",
@@ -793,10 +832,11 @@
             "price": 35.99,
             "rating": 4,
             "usage": "Casual",
-            "description": "lee_navy_blue_top",
+            "description": "Women's Top Tunic Blouse Navy Blue Krista Lee Newport Embroidery Notch Neck ",
             "name": "Lee Navy Blue Top",
             "image": "products/2120.jpg",
-            "image_url": ""
+            "image_url": "",
+            "has_size": true
         }
     }
 ]
