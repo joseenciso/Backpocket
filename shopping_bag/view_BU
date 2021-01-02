@@ -20,3 +20,109 @@ quantity = int(request.POST.get('quantity'))
             bag[product_id] += quantity
         else:
             bag[product_id] = quantity
+
+
+
+            ****************************************************************
+            ***************************************************************
+            *************************************************************
+
+
+
+
+
+
+
+.img-wrapper img {
+    height: auto;
+    max-height: 190px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+
+    margin: 4px auto;
+    vertical-align: middle;
+
+}
+
+.card-texts {
+    width: 80%;
+    margin: 0;
+}
+
+.edit-item {}
+
+.remove-item {}
+
+
+/*.edit-section {
+    position: absolute;
+    bottom: 10px;
+}*/
+
+.price-wrapper {
+    width: 80px;
+    text-align: right;
+    padding-left: 10px;
+}
+
+.price-wrapper hr,
+.price-wrapper p {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.edit-section {
+    max-width: 300px;
+    float: left;
+}
+
+@media(min-width: 576px) and (max-width: 768px) {
+    .container {
+        max-width: 90% !important;
+    }
+
+    .card-product {
+        height: 160px;
+    }
+.img-wrapper {
+    height: 150px;
+    max-width: 150px;
+}
+
+.img-wrapper img {
+    height: 140px;
+}
+}
+
+@media(min-width: 230px) and (max-width: 575px) {
+
+    .img-wrapper {
+        max-width: 90px;
+    }
+
+    .card-body-wrapper {
+        min-width: 100px;
+        width: auto;
+        max-width: 250px;
+    }
+
+    .card-product img {
+        height: auto;
+        max-height: 90px;
+        width: auto;
+        max-width: 90%;
+        object-fit: contain;
+
+        margin: 10px auto;
+        vertical-align: middle;
+
+        }
+.card-texts {
+    width: 50%;
+}
+
+.price-wrapper {
+    margin-left: auto;
+}
+}

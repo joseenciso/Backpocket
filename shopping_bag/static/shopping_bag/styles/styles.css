@@ -1,10 +1,13 @@
-.card-product {
-    height: 206px;
+.products-row {
+    height: 210px;
     padding: 5px;
+    border: 1px #F8F9FA solid;
+    border-radius: 10px;
 }
 
 .img-wrapper {
     max-width: 200px;
+    max-height: 200px;
 }
 
 .img-wrapper img {
@@ -14,45 +17,7 @@
     max-width: 100%;
     object-fit: contain;
 
-    margin: 10px auto;
+    margin: 4px auto;
     vertical-align: middle;
 
-}
-
-.edit-item {}
-
-.remove-item {}
-
-
-/*.edit-section {
-    position: absolute;
-    bottom: 10px;
-}*/
-
-@media(max-width: 768px) {
-    .container {
-        max-width: 90% !important;
-    }
-
-    .card-product {
-        height: 160px;
-    }
-}
-
-@media(min-width: 280px) and (max-width: 575px) {
-    .card-product {
-        max-height: 350px;
-    }
-
-    .card-product img {
-        height: auto;
-        max-height: 90px;
-        width: auto;
-        max-width: 90%;
-        object-fit: contain;
-
-        margin: 10px auto;
-        vertical-align: middle;
-
-    }
 }
