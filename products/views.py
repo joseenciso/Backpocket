@@ -89,5 +89,5 @@ def product(request, pk):
     }
 
     print(product)
-
+    print(context)
     return render(request, 'products/product.html', context)

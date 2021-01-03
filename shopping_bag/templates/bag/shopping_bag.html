@@ -42,7 +42,7 @@
                                 <a href="" class="edit-item me-1">
                                     <span class="edit-item">Edit</span>
                                 </a>
-                                <a href="" class="remove-item me-1">
+                                <a href="" class="remove-item me-1" data-product_size="{{ item.product.size }}">
                                     <span class="edit-item">Remove</span>
                                 </a>
                             </div>
@@ -59,40 +59,41 @@
                     </tr>
                 {% endfor %}
             </table>
+            
+            <div class="row">
+                <div class="col-md-9 col-lg-9"></div>
+                <div class="col-md-3 col-lg-3">
+                    <table class="">
+                        <tr>
+                            <td>
+                                <span class="">Sub total: </span>
+                            </td>
+                            <td>&#163;{{ total }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Delivery: </span>
+                            </td>
+                            <td>
+                                <span class="text-left">{{delivery}}{% if delivery == 0 %} Free {% else %} &#163;{{ delivery }} {% endif %}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Total ({% if products_count > 1 %}{{ products_count }} items{% else %} {{ products_count }} item {% endif %}): </span>
+                            </td>
+                            <td>
+                                <span>&#163;{{grand_total}}</span>
+                            </td>
+                        </tr>
+                    
+                    </table>
+                </div>
+            </div>
         {% else %}
             <p class="message-empty">Your bag is empty</p>
             <h3><a href="{% url 'allproducts'%}"></a></h3>
         {% endif %}
-        <div class="row">
-            <div class="col-md-9 col-lg-9"></div>
-            <div class="col-md-3 col-lg-3">
-                <table class="">
-                    <tr>
-                        <td>
-                            <span class="">Sub total: </span>
-                        </td>
-                        <td>&#163;{{ total }}</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span>Delivery: </span>
-                        </td>
-                        <td>
-                            <span class="text-left">{{delivery}}{% if delivery == 0 %} Free {% else %} &#163;{{ delivery }} {% endif %}</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span>Total ({% if products_count > 1 %}{{ products_count }} items{% else %} {{ products_count }} item {% endif %}): </span>
-                        </td>
-                        <td>
-                            <span>&#163;{{grand_total}}</span>
-                        </td>
-                    </tr>
-                
-                </table>
-            </div>
-        </div>
     </div>
 
 {% endblock %}

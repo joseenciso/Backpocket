@@ -11,225 +11,142 @@
 
 {% block content %}
 
-<main class="pt-1">
-<div class="container-fluid">
-    
-    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="4000">
-                <img src="{% static '/media/backgrounds/People-fireworks.jpg' %}" class="d-block w-100" alt="...">
-                <div class="container">
-                    <p>1</p>
-                </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="4000">
-                <img src="..." class="d-block w-100" alt="...">
-                <div class="container">
-                    <p>2</p>
-                </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="4000">
-                <img src="..." class="d-block w-100" alt="...">
-                <div class="container">
-                    <p>3</p>
-                </div>
+
+<!--div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" height="512">
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="4000">
+            <img src="{{ MEDIA_URL }}/backgrounds/People-fireworks.jpg" class="d-block" alt="..." height="512">
+            <div class="container">
+                <p>1</p>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </a>
+        <div class="carousel-item" data-bs-interval="4000">
+            <img src="{{ MEDIA_URL }}/backgrounds/bg02.jpg" class="d-block " alt="...">
+            <div class="container">
+                <p>2</p>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="4000">
+            <img src="{{ MEDIA_URL }}/backgrounds/bg01.jpg" class="d-block mx-auto" alt="...">
+            <div class="container">
+                <p>3</p>
+            </div>
+        </div>
     </div>
+    <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </a>
+</!--div-->
 
-
+<div class="container">
+    
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <div class="container marketing">
-        <div class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-                </div>
-                <div class="col-md-5">
-                {% for handbags in products%}
-
-                {% endfor %}
-                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-            </div>
+    <div class="row featurette" >
+        <div class="col-md-7 text-wrapper">
+            <a href="{% url 'product' item1.pk %}">
+                <h2 class="featurette-heading">{{ item1.name }}</h2>
+                <p class="lead d-none d-sm-block">{{ item1.description }}</p>
+            </a>
         </div>
-    </div><!-- /.row -->
-
-    <hr class="featurette-divider">
-
-    <div class="row">
-        <div class="col-lg-3">
-            <div class="card mx-auto" style="width: 15rem;">
-                <img src="{{ item1.image.url }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <a href="#" class="btn btn-info bg-indigo w-100">{{ item1.articles|capfirst }}</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="card mx-auto" style="width: 15rem;">
-                <img src="{{ item2.image.url }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <a href="#" class="btn btn-info bg-indigo w-100">{{ item2.articles|capfirst }}</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="card mx-auto" style="width: 15rem;">
-                <img src="{{ item3.image.url }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <a href="#" class="btn btn-info bg-indigo w-100">{{ item3.articles|capfirst }}</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="card mx-auto" style="width: 15rem;">
-                <img src="{{ item4.image.url }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <a href="#" class="btn btn-info bg-indigo w-100">{{ item4.articles|capfirst }}</a>
-                </div>
-            </div>
+        <div class="col-md-5">
+            <a href="{% url 'product' item1.pk %}">
+                <img class="card-img mx-auto" src="{{ item1.image.url }}"></img>
+            </a>
         </div>
     </div>
 
+
     <hr class="featurette-divider">
 
-    <!-- START THE FEATURETTES -->
+    <div class="articles-wrapper">
+        <div class="card mx-auto">
+            <img src="{{ item2.image.url }}" class="card-img mx-auto" alt="...">
+            <a href="#" class="btn btn-info bg-indigo w-100">{{ item2.articles.friendly_name|capfirst }}</a>
+        </div>
+    
+        <div class="card mx-auto">
+            <img src="{{ item3.image.url }}" class="card-img mx-auto" alt="...">
+            <a href="#" class="btn btn-info bg-indigo w-100">{{ item3.articles|capfirst }}</a>
+        </div>
+    
+        <div class="card mx-auto">
+            <img src="{{ item4.image.url }}" class="card-img mx-auto" alt="...">
+            <a href="#" class="btn btn-info bg-indigo w-100">{{ item4.articles|capfirst }}</a>
+        </div>
+    
+        <div class="card mx-auto">
+            <img src="{{ item5.image.url }}" class="card-img mx-auto" alt="...">
+            <a href="#" class="btn btn-info bg-indigo w-100">{{ item5.articles|capfirst }}</a>
+        </div>
+    </div>
 
     <hr class="featurette-divider">
 
     <div class="row featurette">
-        <div class="col-md-7">
-        <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        <div class="col-md-7 promo-wrapper">
+            <a href="{% url 'product' item6.pk %}">
+                <h2 class="featurette-heading">{{ item6.name }}</h2>
+                <p class="lead d-none d-sm-block">{{ item6.description }}</p>
+            </a>
         </div>
         <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
+            <a href="{% url 'product' item6.pk %}">
+                <img class="card-img mx-auto" src="{{ item6.image.url }}"></img>
+            </a>
         </div>
     </div>
 
     <hr class="featurette-divider">
 
-    <div class="row">
-        <div class="col-lg-3">
-            <div class="card mx-auto" style="width: 15rem;">
-                <img src="{{ item1.image.url }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <a href="#" class="btn btn-info bg-indigo w-100">{{ item1.articles|capfirst }}</a>
-                </div>
-            </div>
+    <div class="articles-wrapper">
+        <div class="card mx-auto">
+            <img src="{{ item7.image.url }}" class="card-img mx-auto" alt="...">
+            <a href="#" class="btn btn-info bg-indigo w-100">{{ item7.articles|capfirst }}</a>
         </div>
-        <div class="col-lg-3">
-            <div class="card mx-auto" style="width: 15rem;">
-                <img src="{{ item2.image.url }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <a href="#" class="btn btn-info bg-indigo w-100">{{ item2.articles|capfirst }}</a>
-                </div>
-            </div>
+    
+        <div class="card mx-auto">
+            <img src="{{ item8.image.url }}" class="card-img mx-auto" alt="...">
+            <a href="#" class="btn btn-info bg-indigo w-100">{{ item8.articles|capfirst }}</a>
         </div>
-        <div class="col-lg-3">
-            <div class="card mx-auto" style="width: 15rem;">
-                <img src="{{ item3.image.url }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <a href="#" class="btn btn-info bg-indigo w-100">{{ item3.articles|capfirst }}</a>
-                </div>
-            </div>
+
+        <div class="card mx-auto">
+            <img src="{{ item9.image.url }}" class="card-img mx-auto" alt="...">
+            <a href="#" class="btn btn-info bg-indigo w-100">{{ item9.articles|capfirst }}</a>
         </div>
-        <div class="col-lg-3">
-            <div class="card mx-auto" style="width: 15rem;">
-                <img src="{{ item4.image.url }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <a href="#" class="btn btn-info bg-indigo w-100">{{ item4.articles|capfirst }}</a>
-                </div>
-            </div>
+    
+        <div class="card mx-auto">
+            <img src="{{ item10.image.url }}" class="card-img mx-auto" alt="...">
+            <a href="#" class="btn btn-info bg-indigo w-100">{{ item10.articles|capfirst }}</a>
         </div>
     </div>
 
     <hr class="featurette-divider">
     
     <div class="row featurette">
-        <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5 order-md-1">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
-        </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-        <div class="row">
-        <div class="col-lg-3">
-            <div class="card mx-auto" style="width: 15rem;">
-                <img src="{{ item1.image.url }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{ item1.name }}</h5>
-                    <a href="#" class="btn btn-info bg-indigo w-100">{{ item1.articles|capfirst }}</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="card mx-auto" style="width: 15rem;">
-                <img src="{{ item2.image.url }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{ item2.name }}</h5>
-                    <a href="#" class="btn btn-info bg-indigo w-100">{{ item2.articles|capfirst }}</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="card mx-auto" style="width: 15rem;">
-                <img src="{{ item3.image.url }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{ item3.name }}</h5>
-                    <a href="#" class="btn btn-info bg-indigo w-100">{{ item3.articles|capfirst }}</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3">
-            <div class="card mx-auto" style="width: 15rem;">
-                <img src="{{ item4.image.url }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{ item4.name }}</h5>
-                    <a href="#" class="btn btn-info bg-indigo w-100">{{ item4.articles|capfirst }}</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-
-    <div class="row featurette">
         <div class="col-md-7">
-            <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <a href="{% url 'product' item11.pk %}">
+                <h2 class="featurette-heading">{{ item11.name }}</h2>
+                <p class="lead d-none d-sm-block">{{ item11.description }}</p>
+            </a>
         </div>
-        <div class="col-md-5">
-            svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
+        <div class="col-md-5 img-wrapper">
+            <a href="{% url 'product' item11.pk %}">
+                <img class="card-img mx-auto" src="{{ item11.image.url }}"></img>
+            </a>
         </div>
     </div>
 
     <!-- /END THE FEATURETTES -->
 
 </div><!-- /.container -->
-
-
-</main>
 
 {% endblock %}
 
