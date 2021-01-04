@@ -38,8 +38,6 @@ def index(request):
         'item9': item9,
         'item10': item10,
         'item11': item11,
-        'item12': item12,
-        'rand_product1': rand_product1,
     }
 
     # print(products)

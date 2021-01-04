@@ -6,25 +6,37 @@ from products.models import Product
 
 def bag_context(request):
 
-    # Empty list bag container
+    # Empty list bags container
     bag_items = []
-    delivery = 0
+    bag = request.session.get('bag', {})
 
-    # Initializing total and products count
+    delivery = 0
     total = 0
     products_count = 0
+    size = None
 
-    bag = request.session.get('bag', {})
-    for product_pk, quantity in bag.items():
-        product = get_object_or_404(Product, pk=product_pk)
-        total += quantity * product.price
-        products_count += quantity
-        bag_items.append({
-            'product_pk': product_pk,
-            'quantity': quantity,
-            'product': product,
-            'total': total,
-        })
+    #print(bag)
+    for product_pk, product_data in bag.items():
+        if isinstance(product_data, int):
+            product = get_object_or_404(Product, pk=product_pk)
+            total += product_data * product.price
+            product_count += product_data
+            bag_items.append({
+                'product_pk': product_pk,
+                'quantity': product_data,
+                'product': product,
+            })
+        else:
+            product = get_object_or_404(Product, pk=product_pk)
+            for size, quantity in product_data['items_by_size'].items():
+                total += quantity * product.price
+                product_count += quantity
+                bag_items.append({
+                    'product_pk': product_pk,
+                    'quantity': quantity,
+                    'product': product,
+                    'size': size,
+                })
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
         # Decimal is prefer for money because it is more accurate

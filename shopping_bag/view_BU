@@ -126,3 +126,161 @@ quantity = int(request.POST.get('quantity'))
     margin-left: auto;
 }
 }
+
+
+****************************************************************************
+****************************************************************************
+****************************************************************************
+
+Context PY
+#print(bag)
+    for product_pk, product_data in bag.items():
+        print(product_pk, product_data, bag)
+        if isinstance(product_data, int):
+            product = get_object_or_404(Product, pk=product_pk)
+            #print(product_data)
+            total += product_data * product.price
+            products_count += product_data
+            bag_items.append({
+                'product_pk': product_pk,
+                'quantity': product_data,
+                'product': product,
+                'total': total,
+            })
+            print(bag_items)
+            print(bag_items.product_pk)
+        else:
+            product = get_object_or_404(Product, pk=product_pk)
+            # print(bag)
+            print(product)
+            print(product_data)
+            for size, quantity in product_data['size'][size]['quantity'][quantity]:
+                #print(product_data)
+                total += quantity + product.price
+                products_count += quantity
+                bag_items.append({
+                    'product_pk': product_pk,
+                    'quantity': quantity,
+                    'product': product,
+                    'total': total,
+                    'size': size,
+                })
+
+    if total < settings.FREE_DELIVERY_THRESHOLD:
+        # Decimal is prefer for money because it is more accurate
+        deliver = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE/100)
+        free_delivery = settings.FREE_DELIVERY_THRESHOLD - total
+    else:
+        delivery = 0
+        free_delivery = 0
+
+    grand_total = delivery + total
+
+    # returning a dictionary rather than a view
+    # Context processor
+    context = {
+
+        'bag_items': bag_items,
+        'products_count': products_count,
+        'total': total,
+        'delivery': delivery,
+        'free_delivery': free_delivery,
+        'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
+        'grand_total': grand_total,
+    }
+
+    return context
+
+
+
+
+****************************************************************************
+****************************************************************************
+****************************************************************************
+
+
+    if 'product_size' in request.POST:
+        size = request.POST['product_size']
+
+    bag = request.session.get('bag', {})
+    print(product_id, bag)
+    # print(product_id)
+
+    if size:
+        # print(size)
+        if product_id in list(bag.keys()):
+            print(list(bag.keys()))
+            if size in bag[product_id]['quantity'].keys():
+                print(bag[product_id]['quantity'].keys())
+                bag['product_id'][product_id]['size'][size] += qty
+                print(bag)
+            else:
+                bag['product_id'][product_id]['size'][size]['quantity'][qty] = qty
+        else:
+            bag['product_id'][product_id] = {'size': size}
+            bag['product_id'][product_id] = {'quantity': qty}
+            print(bag)
+    else:
+        if product_id in list(bag.keys()):
+            bag[product_id] += qty
+        else:
+            bag[product_id] = qty
+
+    request.session['bag'] = bag
+    #print(request.session['bag'])
+    return redirect(redirect_url)
+
+
+def view_edit_bag(request, product_id):
+    """ A view to edit/modify the shopping bag """
+    qty = int(request.POST.get('qty'))
+
+    size = None
+
+    if 'product_size' in request.POST:
+        size = request.POST['product_size']
+
+    bag = request.session.get['bag', {}]
+
+    if size:
+        if qty > 0:
+            bag[product_id]['size'][size] = qty
+        else:
+            del bag[product_id]['size'][size]['quantity'][qty]
+            if not bag[product_id]['size']['quantity']:
+                bag.pop(bag)
+    else:
+        if qty > 0:
+            bag[product_id] = qty
+        else:
+            bag.pop(product_id)
+
+    request.session['bag'] = bag
+    return redirect(reverse('view_shopping_bag'))
+
+
+def view_remove_from_bag(request, product_id):
+    """ A view that delete an item from the shopping bag """
+    size = None
+
+    try:
+        if 'product_size' in request.POST:
+            size = request.POST['product_size']
+
+        bag = request.session.get['bag', {}]
+
+        if size:
+            del bag[product_id]['size'][size]
+
+            if not bag[product_id]['size']:
+                bag.pop(bag)
+        else:
+            bag.pop(product_id)
+
+        request.session['bag'] = bag
+        #print(bag)
+        # return redirect(reverse('view_shopping_bag'))
+
+        return HttpResponse(status=200)
+    except Exception as e:
+        return HttpResponse(status=500)

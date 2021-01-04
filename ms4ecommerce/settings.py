@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     # end Django-Allauth
     'home',
     'products',
-    'shopping_bag'
+    'shopping_bag',
+    'checkout',
 ]
 
 MIDDLEWARE = [

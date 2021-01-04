@@ -1,15 +1,19 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static "products/styles/details_styles.css" %}" type="text/css">
+{% endblock %}
+
 {% block page_header %}
 
 {% endblock %}
 
 {% block content %}
 
-<div class="container products-wrapper">
+<div class="container product-detail-wrapper">
     <div class="row">
-        <div class="col-sm-12 px-sm-0 col-md-5 col-lg-5">
+        <div class="col-sm-12 px-sm-0 col-md-5 col-lg-5 product-detail-image">
             <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
         </div>
 
@@ -42,8 +46,8 @@
                 <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between mb-4">
                         <span class="list-inline-item text-muted font-weight-light"> 
                             RRP: <del>&#163;90.00</del>
+                        </span>
                     <ul class="list-inline mb-2 mb-sm-0">
-                            </span>
                         <li class="list-inline-item h4 font-weight-light mb-0">Price: &#163;{{ product.price }}</li>
                     </ul>
                 </div>
@@ -58,7 +62,7 @@
                             <i class="fas fa-expand-alt fa-lg pt-2 mr-2"></i>
                             Size <!--span>(required)</!--span-->
                         </span>
-                        <select class="form-select custom-select form-control form-control-lg" name="product_size" >
+                        <select class="form-select custom-select form-control form-control-lg" name="product_size" id='id_product_size'>
                                 <option value="sm">Small</option>
                                 <option value="md">Medium</option>
                                 <option value="lg">Large</option>

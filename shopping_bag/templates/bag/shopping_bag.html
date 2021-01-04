@@ -7,60 +7,60 @@
 
 {% block content %}
 
-    <div class="container">
+    <div class="container py-5">
         <div class="row">
-            <div class="col-12">
-                <h1 class="">
-                    Shopping Bag
-                </h1>
-                {#{bag_items}#}
+            <div class="col-12 py-5">
+                <h1>Shopping Bag</h1>
             </div>
         </div>
 
-        {% if bag_items %}
-            <table class="w-100">
-                {% for item in bag_items %}
-                    <tr class="products-row ">
-                        <td>
-                            <div class="img-wrapper text-center">
-                                <img src="{{ item.product.image.url }}" alt="{{ item.product.name}}">
-                            </div>
-                        </td>
 
-                        <td class="">
-                            <div class="card-texts ">
-                                <p class="card-title">{{ item.product.name }}</p>
-                                {% if item.product.has_size %}
-                                    <p>Size: {{size}}</p>
-                                {% endif %}
-                                    <p class="card-text d-none d-md-block">{{ item.product.description|truncatechars:150 }}</p>
-                                <div class="description ">
+        {% if bag_items %}
+            <div class="row shopping-wrapper">
+                <table class="w-100">
+                    {% for item in bag_items %}
+                        <tr class="products-row ">
+                            <td>
+                                <div class="img-wrapper text-center">
+                                    <img src="{{ item.product.image.url }}" alt="{{ item.product.name}}">
                                 </div>
-                                
-                                <!--p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></!--p-->
-                            <div class="edit-section">
-                                <a href="" class="edit-item me-1">
-                                    <span class="edit-item">Edit</span>
-                                </a>
-                                <a href="" class="remove-item me-1" data-product_size="{{ item.product.size }}">
-                                    <span class="edit-item">Remove</span>
-                                </a>
-                            </div>
-                        </td>
-                        
-                        <td>
-                            <div class="price-wrapper p-2">
-                                <p class="d-inline-block d-sm-block">x{{ item.quantity }}</p>
-                                <p class="card-text d-inline-block d-sm-block">&#163;{{ item.product.price }}</p>
-                                <hr class="d-none d-sm-block">
-                                <p class="d-none d-sm-block">&#163;{{ item.total }}</p>
-                            </div>
-                        </td>
-                    </tr>
-                {% endfor %}
-            </table>
+                            </td>
+
+                            <td class="">
+                                <div class="card-texts ">
+                                    <p class="card-title">{{ item.product.name }}</p>
+                                    {% if item.product.has_size %}
+                                        <p>Size: {{size}}</p>
+                                    {% endif %}
+                                        <p class="card-text d-none d-md-block">{{ item.product.description|truncatechars:150 }}</p>
+                                    <div class="description ">
+                                    </div>
+                                    
+                                    <!--p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></!--p-->
+                                <div class="edit-section">
+                                    <a href="" class="edit-item me-1">
+                                        <span class="edit-item">Edit</span>
+                                    </a>
+                                    <a href="" class="remove-item me-1" data-product_size="{{ item.product.size }}">
+                                        <span class="edit-item">Remove</span>
+                                    </a>
+                                </div>
+                            </td>
+                            
+                            <td>
+                                <div class="price-wrapper p-2">
+                                    <p class="d-inline-block d-sm-block">x{{ item.quantity }}</p>
+                                    <p class="card-text d-inline-block d-sm-block">&#163;{{ item.product.price }}</p>
+                                    <hr class="d-none d-sm-block">
+                                    <p class="d-none d-sm-block">&#163;{{ item.total }}</p>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
             
-            <div class="row">
+            <div class="row shopping-wrapper my-4 py-4">
                 <div class="col-md-9 col-lg-9"></div>
                 <div class="col-md-3 col-lg-3">
                     <table class="">
@@ -91,8 +91,10 @@
                 </div>
             </div>
         {% else %}
-            <p class="message-empty">Your bag is empty</p>
-            <h3><a href="{% url 'allproducts'%}"></a></h3>
+            <div class="row">
+                <p class="message-empty">Your bag is empty</p>
+                <h3><a href="{% url 'allproducts'%}"></a></h3>
+            </div>
         {% endif %}
     </div>
 

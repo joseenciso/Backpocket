@@ -26,6 +26,14 @@ a:link{
     position: absolute;
     bottom: -1px;
     left: 0;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: large;
+}
+
+.card a:hover{
+    color: white;
 }
 
 .articles-wrapper {
@@ -73,9 +81,9 @@ a:link{
     padding: 5px;
 }
 
-
 .img-wrapper img{
     object-fit: cover;
+    max-height: 400px;
 }
 
 @media(max-width: 992px) {
