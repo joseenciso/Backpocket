@@ -23,7 +23,6 @@ def view_add_to_bag(request, product_pk):
 
     if size:
         if product_pk in list(bag.keys()):
-            print(bag)
             if size in bag[product_pk]['items_by_size'].keys():
                 bag[product_pk]['items_by_size'][size] += quantity
             else:
@@ -35,9 +34,7 @@ def view_add_to_bag(request, product_pk):
             bag[product_pk] += quantity
         else:
             bag[product_pk] = quantity
-
     request.session['bag'] = bag
-    # print(request.session['bag']=bag)
     return redirect(redirect_url)
 
 
@@ -88,8 +85,7 @@ def view_remove_from_bag(request, product_pk):
             bag.pop(product_pk)
 
         request.session['bag'] = bag
-        # print(bag)
-        # return redirect(reverse('view_shopping_bag'))
+        return redirect(reverse('view_shopping_bag'))
 
         return HttpResponse(status=200)
     except Exception as e:
