@@ -12,10 +12,10 @@ def bag_context(request):
 
     delivery = 0
     total = 0
-    products_count = 0
+    product_count = 0
     size = None
 
-    #print(bag)
+    # print(bag)
     for product_pk, product_data in bag.items():
         if isinstance(product_data, int):
             product = get_object_or_404(Product, pk=product_pk)
@@ -28,6 +28,7 @@ def bag_context(request):
             })
         else:
             product = get_object_or_404(Product, pk=product_pk)
+            print(product_data)
             for size, quantity in product_data['items_by_size'].items():
                 total += quantity * product.price
                 product_count += quantity
@@ -53,7 +54,7 @@ def bag_context(request):
     context = {
 
         'bag_items': bag_items,
-        'products_count': products_count,
+        'products_count': product_count,
         'total': total,
         'delivery': delivery,
         'free_delivery': free_delivery,

@@ -56,7 +56,7 @@
                 <p class="lead d-none d-sm-block">{{ item1.description }}</p>
             </a>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-5 img-wrapper">
             <a href="{% url 'product' item1.pk %}">
                 <img class="card-img mx-auto" src="{{ item1.image.url }}"></img>
             </a>
@@ -97,7 +97,7 @@
                 <p class="lead d-none d-sm-block">{{ item6.description }}</p>
             </a>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-5 img-wrapper">
             <a href="{% url 'product' item6.pk %}">
                 <img class="card-img mx-auto" src="{{ item6.image.url }}"></img>
             </a>

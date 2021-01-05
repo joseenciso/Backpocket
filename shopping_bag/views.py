@@ -20,23 +20,24 @@ def view_add_to_bag(request, product_pk):
 
     if 'product_size' in request.POST:
         size = request.POST['product_size']
-        
-        if item_id in list(bag.keys()):
-            if size in bag[item_id]['items_by_size'].keys():
-                bag[item_id]['items_by_size'][size] += quantity
+
+    if size:
+        if product_pk in list(bag.keys()):
+            print(bag)
+            if size in bag[product_pk]['items_by_size'].keys():
+                bag[product_pk]['items_by_size'][size] += quantity
             else:
-                bag[item_id]['items_by_size'][size] = quantity
+                bag[product_pk]['items_by_size'][size] = quantity
         else:
-            bag[item_id] = {'items_by_size': {size: quantity}}
+            bag[product_pk] = {'items_by_size': {size: quantity}}
     else:
-        if item_id in list(bag.keys()):
-            bag[item_id] += quantity
+        if product_pk in list(bag.keys()):
+            bag[product_pk] += quantity
         else:
-            bag[item_id] = quantity
-            
-    print(bag)
-    request.session['bag']=bag
-    #print(request.session['bag']=bag)
+            bag[product_pk] = quantity
+
+    request.session['bag'] = bag
+    # print(request.session['bag']=bag)
     return redirect(redirect_url)
 
 

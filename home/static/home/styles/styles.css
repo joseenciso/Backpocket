@@ -19,7 +19,7 @@ a:link{
 }
 
 .card img {
-    height: 200px;
+    height: 100%;
 }
 
 .card a {
@@ -82,7 +82,7 @@ a:link{
 }
 
 .img-wrapper img{
-    object-fit: cover;
+    object-fit: contain;
     max-height: 400px;
 }
 
