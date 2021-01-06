@@ -1,0 +1,44 @@
+.thumbnail-wrapper{
+        margin-right: 5px;
+    }
+
+    li img{
+        width: auto;
+        object-fit: contain;
+    }
+
+
+@media(min-width: 993px){
+
+
+    .summary-wrapper{
+        width: 350px;
+    }
+
+    .thumbnail-wrapper{
+        width: 100px;
+    }
+
+    li img{
+        max-height: 100px;
+    }
+
+    .form-payment-wrapper{
+        min-width: 550px;
+        width: 650px;
+    }
+}
+
+@media(min-width: 768px) and (max-width: 992px){
+    .thumbnail-wrapper{
+        width: 70px;
+    }
+
+    li img{
+        max-height: 70px;
+    }
+
+    .form{
+        width: 600px;
+    }
+}

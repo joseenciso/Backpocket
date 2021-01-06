@@ -81,6 +81,7 @@ TEMPLATES = [
                 'django.template.context_processors.media',
                 'django.template.context_processors.request',  # Required by django-allauth
                 'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.media',
                 'django.contrib.messages.context_processors.messages',
                 # Making the shopping bag context available for the entire project
                 # folder.file.function

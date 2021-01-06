@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link href="{% static "shopping_bag/styles/styles.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'shopping_bag/styles/styles.css' %}" rel="stylesheet" type="text/css">
 {% endblock %}
 
 {% block content %}
@@ -75,7 +75,7 @@
                                 <span>Delivery: </span>
                             </td>
                             <td>
-                                <span class="text-center">{{delivery}}{% if delivery == 0 %} Free {% else %} &#163;{{ delivery }} {% endif %}</span>
+                                <span class="text-center">{{ delivery }}{% if delivery == 0 %} Free {% else %} &#163;{{ delivery }} {% endif %}</span>
                             </td>
                         </tr>
                         <tr>
@@ -83,8 +83,11 @@
                                 <span class="text-right">Total ({% if products_count > 1 %}{{ products_count }} items{% else %} {{ products_count }} item {% endif %}): </span>
                             </td>
                             <td class="w-100">
-                                <p class="">&#163;{{grand_total}}</p>
+                                <p class="">&#163;{{ grand_total }}</p>
                             </td>
+                        </tr>
+                        <tr>
+                            <td><a href="{% url 'checkout' %}" class="btn btn-info">Checkout</a></td>
                         </tr>
                     
                     </table>
@@ -93,7 +96,7 @@
         {% else %}
             <div class="row">
                 <p class="message-empty">Your bag is empty</p>
-                <h3><a href="{% url 'allproducts'%}"></a></h3>
+                <h3><a href="{% url 'home'%}" class="btn btn-info">Back to the main page</a></h3>
             </div>
         {% endif %}
     </div>
