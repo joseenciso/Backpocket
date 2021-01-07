@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from .forms import OrderForm
+from shopping_bag.context import bag_context
 
 # Create your views here.
 
@@ -10,6 +11,11 @@ def checkout(request):
     if not bag:
         messages.error(request, "There is nothing in our bag at the moment.")
         return redirect(reverse(''))
+
+    current_bag = bag_context(request)
+
+    total = current_bag['grand_total']
+    stripe_total = round(total * 100)
 
     order_form = OrderForm()
     template = 'checkout/checkout.html'
