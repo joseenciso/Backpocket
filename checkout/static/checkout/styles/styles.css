@@ -44,8 +44,7 @@
         color: rgb(226, 56, 76);
     }
 
-    #card-errors span{
-
+    #card-errors .icon{
         margin-right: auto;
         margin-left: auto;
     }

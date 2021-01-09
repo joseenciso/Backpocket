@@ -35,10 +35,10 @@ class Order(models.Model):
     def update_total(sefl):
         """ Update grand total each time a line item is added, accounting for delivery costs """
         """ Adding a new field to the query set called lineitem_total__sum """
-        self.order_total = self.lineitems.aggregate(Sum('linitem_total'))[
-            'lineitem_total__sum']
+        # Preventing error if line items are deleted manually from the order by tsetting 0 instead of None
+        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
         if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
-            self.delivery_cost = self.order_total *settings.STANDARD_DELIVERY_PERCENTAGE/100
+            self.delivery_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
         else:
             self.delivery_cost = 0
 

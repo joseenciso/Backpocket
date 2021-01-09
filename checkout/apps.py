@@ -1,6 +1,8 @@
 from django.apps import AppConfig
 
 
+# Importing the signals module
+
 class CheckoutConfig(AppConfig):
     name = 'checkout'
 
