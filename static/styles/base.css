@@ -1,13 +1,18 @@
+body{
+    /*height: 100vh;*/
+    background: rgb(50,202,240);
+    background: linear-gradient(0deg, rgba(50,202,240,0.6446953781512605) 0%, rgba(22,208,249,0.5438550420168067) 41%, rgba(0,212,255,0.2413340336134454) 74%, rgba(248,249,250,1) 100%);
+}
 
+main{
+    min-height: 80vh;
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
 
 li {
     list-style: none;
 }
-
-main {
-    margin-top: 56px;
-}
-
 
 .basket-wrapper {
     max-width: 36px;

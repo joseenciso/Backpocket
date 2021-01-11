@@ -47,8 +47,11 @@ form.addEventListener('submit', function (ev) {
 
     /* Preventing multiple submissions*/
     card.update({ 'disabled': true });
-    $('submit-button').attr('disabled', true)
-
+    $('#checkout-button').attr('disabled', true)
+    /*** LoadingOverlay ***/
+    $('#checkout-form').fadeToggle(100);
+    $('#loading-overlay').fadeToggle(100)
+    /*** End LoadingOverlay */
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
@@ -68,8 +71,12 @@ form.addEventListener('submit', function (ev) {
                 <span>${result.error.message}</span>
             `;
             $(errorDiv).html(html);
+            /*** LoadingOverlay ***/
+            $('#checkout-form').fadeToggle(100);
+            $('#loading-overlay').fadeToggle(100)
+            /*** End LoadingOverlay */
             card.update({ 'disabled': false });
-            $('submit-button').attr('disabled', false)
+            $('#checkout-button').attr('disabled', false)
         } else {
             // The payment has been processed!
             if (result.paymentIntent.status === 'succeeded') {

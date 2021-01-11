@@ -1,8 +1,4 @@
-main{
-    /*height: 100vh;*/
-    background: rgb(50,202,240);
-    background: linear-gradient(0deg, rgba(50,202,240,0.6446953781512605) 0%, rgba(22,208,249,0.5438550420168067) 41%, rgba(0,212,255,0.2413340336134454) 74%, rgba(248,249,250,1) 100%);
-}
+
 .products-row {
     height: 210px;
     padding: 5px;

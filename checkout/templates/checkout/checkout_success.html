@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/styles/styles.css'%}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="success-messages-warpper">
+                <h2>Thank you, this is your order confirmation!!!</h2>
+                <hr>
+                <p>Your order details will be sent to your email <strong>{{ order.email }}</strong></p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-12">
+            <div class="order-info-wrapper">
+                <h3>Order details:</h3>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="order-date">
+                            <p><strong>Order No:</strong> <span>{{ order.order_number }}</span></p>
+                            <p><strong>Date:</strong> <span>{{ order.date|date:"D d M Y" }}</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr>
+
+                <div class="row">
+                    <div class="col-6">
+                        <p> </p>
+                    </div>
+                    <div class="col-6">
+                        <span class="ml-auto"></span>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <table>
+                            <tr>
+                                <th> Delivering to:</th>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>{{ order.full_name }}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Telephone</td>
+                                <td>{{ order.phone_number }}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Address line</td>
+                                <td>{{ order.street_address1 }}</td>
+                                {% if order.street_address2 %}
+                                    <td>{{ order.street2}}</td>
+                                {% endif %}
+                            </tr>
+                            
+                            <tr>
+                                <td>Post Code</td>
+                                <td>{{ order.postcode }}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Town/City</td>
+                                <td>{{ order.town_or_city }}</td>
+                            </tr>
+
+                            {% if order.county %}
+                            <tr>
+                                <td>County</td>
+                                <td>{{ order.county }}</td>
+                            </tr>
+                            {% endif %}
+
+                            <tr>
+                                <td>Country</td>
+                                <td>{{ order.country }}</td>
+                            </tr>
+                            
+                        </table>
+                    </div>
+                    <div class="col-sm-12 col-md-8">
+                        <table class="mt-2-sm">
+                            <tr>
+                                <th>Billing Info</th>
+                            </tr>
+
+                            <tr>
+                                <td>Order total</td>
+                                <td>{{ order.order_total }}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Delivery</td>
+                                <td>{% if order.delivery_cost %}{{ order.delivery_cost }}{% else %}Free{% endif %}</td>
+                            </tr>
+                            <tr>
+                                <td>Grand total</td>
+                                <td>{{ order.grand_order }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="row">
+                    <div class="col-12">
+                        <h3>This migh interested you</h3>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12"></div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+{% endblock %}

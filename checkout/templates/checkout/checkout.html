@@ -11,7 +11,7 @@
 
 {% block content %}
 
-<div class="container my-5">
+<div class="container">
     <div class="row d-flex justify-content-around py-5">
         <div class="summary-wrapper">
             <h4 class="d-flex  align-items-center mb-3">
@@ -27,6 +27,7 @@
                         </div>
                         <div class="w-100 px-1">
                             <h6 class="my-0">{{ item.product.name }}</h6>
+                            <small class="text-muted">Size: {{ item.size }}</small><br>
                             <small class="text-muted">Quantity: {{ item.quantity }}</small>
                         </div>
                         <div class="align-self-center">
@@ -58,18 +59,21 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6 mb-3">
+                    <div class="col-12 mb-3">
                         <div class="form-floating">
-                            <input type="email" class="form-control" id="email" placeholder="you@example.com"  name="email">
+                            <input type="email" class="form-control" id="email" placeholder="you@example.com"  name="email" required>
                             <label for="email">Email</label>
                             <div class="invalid-feedback">
                                 Please enter a valid email address for shipping updates.
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 mb-3">
+                </div>
+
+                <div class="row">
+                    <div class="col-6 mb-3">
                         <div class="form-floating">
-                            <input type="tel" class="form-control" id="phone-number" placeholder="Telephone"  name="phone_number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                            <input type="tel" class="form-control" id="phone-number" placeholder="Telephone"  name="phone_number" required>
                             <label for="email">Telephone <span class="text-muted">(123-456-7890)</span></label>
                             <div class="invalid-feedback">
                                 .
@@ -79,7 +83,17 @@
                 </div>
                 
                 <div class="row">
-                    <div class=" mb-3">
+                    <div class="col-md-3 mb-3">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="postcode" placeholder="Postcode" name="postcode" required>
+                            <label for="postcode">Postcode</label>
+                            <div class="invalid-feedback">
+                                Postcode code required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
                         <div class="form-floating">
                             <input type="text" class="form-control" id="address" placeholder="1234 Main St"  name="street_address1" required>
                             <label for="address">Address Line 1</label>
@@ -100,7 +114,7 @@
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <div class="form-floating">
-                            <input type="text" class="form-control" id="town-or-city" placeholder="Town or City"  name="town_or_city">
+                            <input type="text" class="form-control" id="town-or-city" placeholder="Town or City"  name="town_or_city" required>
                             <label for="address2">Town or City</label>
                             <div class="invalid-feedback">
                                 Please provide a valid state.
@@ -108,19 +122,10 @@
                         </div>
                     </div>
                     
-                    <div class="col-md-6 mb-3">
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="postcode" placeholder="Postcode" name="postcode" required>
-                            <label for="postcode">Postcode</label>
-                            <div class="invalid-feedback">
-                                Postcode code required.
-                            </div>
-                        </div>
-                    </div>
                     
                     <div class="col-md-6 mb-3">
                         <div class="form-floating">
-                            <input type="text" class="form-control" id="address2" placeholder="Country"  name="country">
+                            <input type="text" class="form-control" id="address2" placeholder="Country"  name="country" required>
                             <label for="address2">Country</label>
                             <div class="invalid-feedback">
                                 Please select a valid country.
@@ -129,7 +134,7 @@
                     </div>
                     <div class="col-md-6 mb-3">
                         <div class="form-floating">
-                            <input type="text" class="form-control" id="county" placeholder="County"  name="county">
+                            <input type="text" class="form-control" id="county" placeholder="County"  name="county" required>
                             <label for="address2">County</label>
                             <div class="invalid-feedback">
                                 Please provide a valid state.
@@ -172,6 +177,14 @@
                 </div>
             </form>
         </div>
+    </div>
+
+    <div id="loading-overlay">
+        <h1 class="text-light logo-font loading-spinner">
+            <span class="icon">
+                <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+            </span>
+        </h1>
     </div>
 </div>
 

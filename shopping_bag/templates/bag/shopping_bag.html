@@ -7,7 +7,7 @@
 
 {% block content %}
 
-    <div class="container py-5">
+    <div class="container">
         <div class="row">
             <div class="col-12 py-5">
                 <h1>Shopping Bag</h1>
@@ -30,7 +30,7 @@
                                 <div class="card-texts ">
                                     <p class="card-title">{{ item.product.name }}</p>
                                     {% if item.product.has_size %}
-                                        <p>Size: {{size}}</p>
+                                        <p>Size: {{item.size|upper}}</p>
                                     {% endif %}
                                         <p class="card-text d-none d-md-block">{{ item.product.description|truncatechars:150 }}</p>
                                     <div class="description ">
@@ -75,7 +75,7 @@
                                 <span>Delivery: </span>
                             </td>
                             <td>
-                                <span class="text-center">{{ delivery }}{% if delivery == 0 %} Free {% else %} &#163;{{ delivery }} {% endif %}</span>
+                                <span class="text-center">{% if delivery == 0 %} Free {% else %} &#163;{{ delivery }} {% endif %}</span>
                             </td>
                         </tr>
                         <tr>

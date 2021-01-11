@@ -32,7 +32,7 @@ class Order(models.Model):
         """ Random string of 32 bits """
         return uuid.uuid4().hex.upper()
 
-    def update_total(sefl):
+    def update_total(self):
         """ Update grand total each time a line item is added, accounting for delivery costs """
         """ Adding a new field to the query set called lineitem_total__sum """
         # Preventing error if line items are deleted manually from the order by tsetting 0 instead of None
@@ -48,6 +48,7 @@ class Order(models.Model):
     def save(self, *args, **kwargs):
         """ Override the save method to set the order number if it hasn't been set """
         if not self.order_number:
+            print(self)
             self.order_number = self._generate_order_number()
         super().save(*args, **kwargs)
 
