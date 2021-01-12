@@ -53,6 +53,9 @@ INSTALLED_APPS = [
     'products',
     'shopping_bag',
     'checkout',
+    # Django-Countries and Cities
+    'django_countries',
+    #'cities',
 ]
 
 MIDDLEWARE = [

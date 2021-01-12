@@ -77,6 +77,17 @@
         height: 100%;
     }
 
+    select,
+    select option{
+        color: #000;
+    }
+
+    select:invalid,
+    select option[value=""]{
+        color: #71777D;
+    }
+
+
 @media(min-width: 993px){
 
 

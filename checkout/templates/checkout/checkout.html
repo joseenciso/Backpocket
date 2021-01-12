@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load countries %}
 
 {#% load bag_tools %#}
 
@@ -109,30 +110,35 @@
                             <label for="address2">Address Line 2</label>
                         </div>
                     </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col-md-6 mb-3">
+
+                    <div class="col-md-8 mb-3">
                         <div class="form-floating">
                             <input type="text" class="form-control" id="town-or-city" placeholder="Town or City"  name="town_or_city" required>
-                            <label for="address2">Town or City</label>
+                            <label for="town-or-city">Town or City</label>
                             <div class="invalid-feedback">
                                 Please provide a valid state.
                             </div>
                         </div>
                     </div>
-                    
-                    
-                    <div class="col-md-6 mb-3">
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-8 mb-3">
                         <div class="form-floating">
-                            <input type="text" class="form-control" id="address2" placeholder="Country"  name="country" required>
-                            <label for="address2">Country</label>
+                            {% get_countries as countries %}
+                            <select name="country" id="country" placeholder="Country" class="form-select">
+                                {% for country in countries %}
+                                    <option value="{{ country.code }}">{{ country.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <label for="country">Country</label>
                             <div class="invalid-feedback">
                                 Please select a valid country.
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 mb-3">
+
+                    <div class="col-md-8 mb-3">
                         <div class="form-floating">
                             <input type="text" class="form-control" id="county" placeholder="County"  name="county" required>
                             <label for="address2">County</label>
@@ -141,6 +147,7 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
 
                 <hr class="mb-4">
