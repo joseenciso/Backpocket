@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'products',
     'shopping_bag',
     'checkout',
+    'profiles',
     # Django-Countries and Cities
     'django_countries',
     #'cities',
