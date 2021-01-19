@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, HttpResponse
+from django.shortcuts import render, redirect, reverse, HttpResponse, HttpResponse, get_object_or_404
+from django.contrib import messages
+from products.models import Product
 
 # Create your views here.
 
@@ -10,6 +12,8 @@ def view_shopping_bag(request):
 
 def view_add_to_bag(request, product_pk):
     """ A view to add quantities of the selected product to added to the shopping bag """
+    product = get_object_or_404(Product, pk=product_pk)
+    
     quantity = int(request.POST.get('quantity'))
 
     redirect_url = request.POST.get('redirect_url')
@@ -25,21 +29,28 @@ def view_add_to_bag(request, product_pk):
         if product_pk in list(bag.keys()):
             if size in bag[product_pk]['items_by_size'].keys():
                 bag[product_pk]['items_by_size'][size] += quantity
+                messages.success(request, f'PAM1 Size updated for {product.name} to {bag[product_pk]["items_by_size"][size]}')
             else:
                 bag[product_pk]['items_by_size'][size] = quantity
+                messages.success(
+                    request, f'PAM2{product.name} with the size of {size.upper()} added')
         else:
             bag[product_pk] = {'items_by_size': {size: quantity}}
+            messages.success(request, f'PAM3{product.name} with the size of {size.upper()} added')
     else:
         if product_pk in list(bag.keys()):
             bag[product_pk] += quantity
+            messages.success(request, f'PAM4{product.name} quantity updated to {bag[product_pk]}')
         else:
             bag[product_pk] = quantity
+            messages.success(request, f'PAM5{product.name} added to the bag')
     request.session['bag'] = bag
     return redirect(redirect_url)
 
 
 def view_edit_bag(request, product_pk):
     """ A view to edit/modify the shopping bag """
+    product = get_object_or_404(Product, pk=product_pk)
     quantity = int(request.POST.get('quantity'))
 
     size = None
@@ -52,16 +63,23 @@ def view_edit_bag(request, product_pk):
     if size:
         if quantity > 0:
             bag[product_pk]['size'][size] = quantity
+            messages.success(
+                request, f'PAM1 Size updated for {product.name} to {bag[product_pk]["items_by_size"][size]}')
         else:
             del bag[product_pk]['size'][size]['quantity'][quantity]
             if not bag[product_pk]['size']['quantity']:
                 bag.pop(bag)
+            messages.success(
+                request, f'PAM2{product.name}, size {size.upper()} removed')
     else:
         if quantity > 0:
             bag[product_pk] = quantity
+            messages.success(
+                request, f'PEM3 {product.name} quantity updated to {bag[product_pk]}')
         else:
             bag.pop(product_pk)
-
+            messages.success(
+                request, f'PEM4 {product.name} removed from the bag')
     request.session['bag'] = bag
     return redirect(reverse('view_shopping_bag'))
 
@@ -71,6 +89,7 @@ def view_remove_from_bag(request, product_pk):
     size = None
 
     try:
+        product = get_object_or_404(Product, pk=product_pk)
         if 'product_size' in request.POST:
             size = request.POST['product_size']
 
@@ -81,12 +100,18 @@ def view_remove_from_bag(request, product_pk):
 
             if not bag[product_pk]['size']:
                 bag.pop(bag)
+            
+            messages.success(
+                request, f'PRM1 {product.name}, size {size.upper()} removed')
         else:
             bag.pop(product_pk)
-
+            messages.success(
+                request, f'PRM2 {product.name} removed from the bag')
+            
         request.session['bag'] = bag
         return redirect(reverse('view_shopping_bag'))
 
         return HttpResponse(status=200)
     except Exception as e:
+        messages.error(request, f'Error removing item {e}')
         return HttpResponse(status=500)

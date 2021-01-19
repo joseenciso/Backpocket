@@ -56,7 +56,7 @@ def all_products(request):
             query = request.GET['q']
             if not query:  # If query is blank
                 messages.error(request, "You didn't enter any serch critiria")
-                print(messages)
+                print(messages.error(request, "You didn't enter any serch critiria"))
                 return redirect(reverse('allproducts'))
 
             queries = Q(name__icontains=query) | Q(
@@ -83,6 +83,8 @@ def all_products(request):
 def product(request, pk):
     """ A view to show a products detail """
     product = get_object_or_404(Product, pk=pk)
+    print(product)
+    print(pk)
 
     context = {
         'product': product,

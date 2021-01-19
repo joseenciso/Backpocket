@@ -92,9 +92,31 @@
 
 <main>
 
-{% block content %}
-{% endblock %}
+{% block content %}{% endblock %}
 
+<div class="container">
+        <div class="row">
+            <div class="col-12">
+                {% if messages %}
+                    <div class="message-container">
+                        {% for message in messages %}
+                            {% with message.level as level %}
+                                {% if level == 40 %}{# error message #}
+                                    {% include 'includes/toasts/toast_error.html' %}
+                                {% elif level == 30%}{# Warningn #}
+                                    {% include 'includes/toasts/toast_warning.html' %}
+                                {% elif level == 25 %}{# success #}
+                                    {% include 'includes/toasts/toast_success.html' %}
+                                {% else %}
+                                    {% include 'includes/toasts/toast_info.html' %}
+                                {% endif %}
+                            {% endwith %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
 </main>
 
 <footer class="page-footer lighten-3 bg-dark">
@@ -145,7 +167,6 @@
 
 </footer>
     
-
     {% block extra_js %}
         
         <script>
@@ -173,6 +194,12 @@
             */
         </script>
         
+
+        <script>
+            $(document).ready(function() {
+                $(".toast").toast('show');
+            });
+        </script>
     {% endblock %}
     </body>
 </html>
