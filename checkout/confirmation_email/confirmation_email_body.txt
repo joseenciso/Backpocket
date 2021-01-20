@@ -1,0 +1,15 @@
+Hello {{ order.full_name }}!
+
+This is your BackPockets confirmation order.
+
+Order Numer: {{ order.order_number }}
+Date: {{ order.date }}
+
+Your order will be shipped to next address:
+    {{ order.street_address1}}
+    {% if order.street_address2 %}{{ order.street_address2 }}{% endif %}
+    {{ order.town_or_city }}
+    {{ order.country }}
+
+Thanks for your order!
+BackPockets!

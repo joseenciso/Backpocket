@@ -117,19 +117,26 @@
 
                 <hr>
 
-                <div class="row">
-                    <div class="col-12">
-                        <h3>This migh interested you</h3>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12"></div>
-                </div>
                 
             </div>
         </div>
     </div>
+    
+    {% if from_profile %}
+        <div class="row">
+            <div class="col-12">
+                <a href="{% url 'profile' %}" class="btn btn-info"><i class="fa fa-angle-left"></i>Back to profile</a>
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="row">
+        <div class="col-12">
+            <h3>This migh interested you</h3>
+        </div>
+    </div>
+
+
     
 </div>
 
