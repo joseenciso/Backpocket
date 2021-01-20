@@ -6,7 +6,7 @@ from products.models import Product
 
 
 def view_shopping_bag(request):
-    """ A view ehich renders our shopping bag """
+    """ A view which renders the shopping bag """
     return render(request, 'bag/shopping_bag.html')
 
 
@@ -51,8 +51,8 @@ def view_add_to_bag(request, product_pk):
 def view_edit_bag(request, product_pk):
     """ A view to edit/modify the shopping bag """
     product = get_object_or_404(Product, pk=product_pk)
+    print("55", product)
     quantity = int(request.POST.get('quantity'))
-
     size = None
 
     if 'product_size' in request.POST:
@@ -81,6 +81,7 @@ def view_edit_bag(request, product_pk):
             messages.success(
                 request, f'PEM4 {product.name} removed from the bag')
     request.session['bag'] = bag
+    print(bag)
     return redirect(reverse('view_shopping_bag'))
 
 
