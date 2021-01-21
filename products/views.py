@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.db.models import Q  # to generate a seach query
 from django.db.models.functions import Lower
 from .models import Product, Category
+from .forms import ProductForm
 # Create your views here.
 
 
@@ -91,3 +92,14 @@ def product(request, pk):
     }
 
     return render(request, 'products/product.html', context)
+
+
+def add_new_product(request):
+    """ View to add new products """
+    form = ProductForm()
+    template = 'products/add_product.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
