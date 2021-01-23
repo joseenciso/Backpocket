@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q  # to generate a seach query
 from django.db.models.functions import Lower
 from .models import Product, Category
@@ -94,12 +95,64 @@ def product(request, pk):
     return render(request, 'products/product.html', context)
 
 
+@login_required
 def add_new_product(request):
     """ View to add new products """
-    form = ProductForm()
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid:
+            product = form.save()
+            messages.success(request, f'Product added!')
+            return redirect(reverse('product', arg=[product.pk]))
+        else:
+            messages.error(request, f'Couldnt add the product, please check every field before submitting.')
+    else:
+        form = ProductForm()
+    
     template = 'products/add_product.html'
     context = {
         'form': form,
     }
 
     return render(request, template, context)
+
+
+@login_required
+def edit_product(request, pk):
+    """ A view to edit an alredy existing product """
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+    product = get_object_or_404(Product, pk=pk)
+    
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILE, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Product updated!')
+            return redirect(reverse('product', arg=[product.pk]))
+        else:
+            messages.error(request, 'Failed to update the product! Please, double check the form fields.')
+    else:
+        form = ProductForm(instance=product)
+        messages.info(request, f'You are about to edit { product.name }')
+
+    template = 'products/add_product.html'
+    context = {
+        'form': form,
+        'product': product,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def delete_product(request, pk):
+    """ View that will delete a product from our DB """
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+    product = get_object_or_404(Product, pk=pk)
+    product.delete()
+    messages.success(request, f'Product { product.name } successfully deleted!')
+    return redirect(reverse('allproducts'))

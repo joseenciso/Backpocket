@@ -2,9 +2,11 @@ from django.shortcuts import render, get_object_or_404
 from .models import UserProfile
 from .forms import UserProfileForm
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from checkout.models import Order
-# Create your views here.
 
+
+@login_required
 def profile(request):
     """ User's profile """
     profile = get_object_or_404(UserProfile, user=request.user)
@@ -16,6 +18,10 @@ def profile(request):
         if form .is_valid():
             form.save()
             messages.success(request, 'Profile updated!')
+        else:
+            messages.error(request, f'Profile update failed, please double check the the information in fields!')
+    else:
+        form = UserProfileForm(instance=profile)
 
     template = 'profiles/profiles.html'
     context = {
@@ -41,3 +47,4 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
+

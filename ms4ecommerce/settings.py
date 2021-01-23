@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 from os import path
 import os
+import dj_database_url
+
 if path.exists("env.py"):
     import env
     
@@ -135,14 +137,23 @@ WSGI_APPLICATION = 'ms4ecommerce.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
-
+else:
+    DATABASES ={
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+            # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+"""
+    DATABASES = {
+        'default': dj_database_url.parse('postgres://pspnwufjyiivfx:8f40b6edb0a89ae86ba9d7202d8e56565348e9fc97117e5931d180a52c138786@ec2-18-203-7-163.eu-west-1.compute.amazonaws.com:5432/d9hqq5acui2p40')
+    }
+"""
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -202,3 +213,5 @@ STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_KEY = os.getenv('STRIPE_WH_KEY', '')
 DEFAULT_FROM_EMAIL = 'costumerservice@backpoket.com'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

@@ -1,10 +1,7 @@
 from django.db import models
 
-# Create your models here.
-
 
 class Category(models.Model):
-
     class Meta:
         verbose_name_plural = 'Categories'
 
@@ -16,7 +13,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-    def get_product_display_name(self):
+    def get_friendly_name(self):
         return self.friendly_name
 
 
@@ -31,10 +28,12 @@ class Sub_Category(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def get_friendly_name(self):
+        return self.friendly_name
 
 
 class Articles(models.Model):
-
     class Meta:
         verbose_name_plural = 'Articles'
 
@@ -45,15 +44,20 @@ class Articles(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def get_friendly_name(self):
+        return self.friendly_name
 
 
 class Gender(models.Model):
-
     name = models.CharField(max_length=50)
     friendly_name = models.CharField(max_length=50)
 
     def __str__(self):
         return self.name
+    
+    def get_friendly_name(self):
+        return self.friendly_name
 
 
 class Product(models.Model):
