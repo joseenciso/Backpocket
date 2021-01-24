@@ -1,1 +1,1 @@
-web: gunicorn backpocket-store.wsgi:application
+web: gunicorn ms4ecommerce.wsgi:application
