@@ -220,7 +220,7 @@ if 'USE_AWS' in os.environ:
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
     STATICFILES_LOCATION = 'static'
     DEFAULT_FILE_STORAGE = 'custom_storage.MediaStorage'
-    MEDIAFILE_LOCATION = 'media'
+    MEDIAFILES_LOCATION = 'media'
 
     # Overide static and edia URls in production
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
