@@ -42,7 +42,7 @@ def all_products(request):
             # Creating a list
             categories = categories.filter(categories__in=categories)
             # categories = Category.objects.filter(category_name__in=catgories)
-            categories = Product.objects.filter(category_name__in=catgories)
+            categories = Product.objects.filter(category_name__in=categories)
 
         # if 'gender' in request.GET:
         #    gender = request.GET['gender'].split(',')

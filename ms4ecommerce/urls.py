@@ -26,8 +26,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('', include('home.urls')),
-    path('products/', include('products.urls')),
     path('products/shopping_bag/', include('shopping_bag.urls')),
+    path('allproducts/', include('products.urls')),
     path('products/checkout/', include('checkout.urls')),
     path('profile/', include('profiles.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # Static Function
