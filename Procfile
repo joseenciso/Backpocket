@@ -1,1 +1,1 @@
-web: gunicorn backpocket-store.wsg:application
+web: gunicorn backpocket-store.wsgi:application
