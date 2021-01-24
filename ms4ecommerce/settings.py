@@ -33,6 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 # True only if in development environ
 #DEBUG = 'DEVELOPMENT' in os.eviron
+DEBUG = True
 
 ALLOWED_HOSTS = ['backpocket-store.herokuapp.com', 'localhost']
 
