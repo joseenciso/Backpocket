@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # True only if in development environ
-DEBUG = 'DEVELOPMENT' in os.eviron
+#DEBUG = 'DEVELOPMENT' in os.eviron
 
 ALLOWED_HOSTS = ['backpocket-store.herokuapp.com', 'localhost']
 
@@ -238,5 +238,14 @@ if 'DEVELOPMENT' in os.environ:
     # Sending  new account confimation emails to the console temporary
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'costumerservice@backpoket.com'
+else:
+    # Sending  new account confimation emails to the console temporary
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
