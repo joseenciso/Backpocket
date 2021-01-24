@@ -119,9 +119,6 @@ AUTHENTICATION_BACKENDS = [
 # database can manage content for multiple sites.
 SITE_ID = 1
 
-# Sending  new account confimation emails to the console temporary
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
 # Allauth allowing to --->
 ACCOUNT_AUTHENTICATIONMETHOD = 'username_email'  # Either username or email
 ACCOUNT_EMAIL_REQUIRED = True
@@ -236,6 +233,10 @@ STRIPE_CURRENCY = 'GBP'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_KEY = os.getenv('STRIPE_WH_KEY', '')
-DEFAULT_FROM_EMAIL = 'costumerservice@backpoket.com'
+
+if 'DEVELOPMENT' in os.environ:
+    # Sending  new account confimation emails to the console temporary
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    DEFAULT_FROM_EMAIL = 'costumerservice@backpoket.com'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
