@@ -35,7 +35,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 #DEBUG = 'DEVELOPMENT' in os.eviron
 DEBUG = True
 
-ALLOWED_HOSTS = ['backpocket-store.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['backpocket-store.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
