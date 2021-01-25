@@ -77,6 +77,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'ms4ecommerce.urls'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -99,6 +101,10 @@ TEMPLATES = [
                 # Making the shopping bag context available for the entire project
                 # folder.file.function
                 'shopping_bag.context.bag_context',
+            ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
             ],
         },
     },
