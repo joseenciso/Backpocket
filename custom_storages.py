@@ -8,3 +8,7 @@ class StaticStorage(S3Boto3Storage):
 
 class MediaStorage(S3Boto3Storage):
     location = settings.MEDIAFILES_LOCATION
+
+
+#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3Boto3Storage'
