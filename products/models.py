@@ -61,9 +61,9 @@ class Gender(models.Model):
 
 
 class Product(models.Model):
-    sku = models.CharField(max_length=254, blank=False, default='SKU')
+    sku = models.CharField(max_length=254, blank=False)
     name = models.CharField(
-        max_length=250, blank=False, default='Product Name')
+        max_length=250, blank=False)
     categories = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.SET_NULL)
     # In case that category is deleted, the product will stay as NULL
@@ -75,12 +75,12 @@ class Product(models.Model):
         'Gender', blank=False, null=True, on_delete=models.SET_NULL)
     has_size = models.BooleanField(default=False, null=True, blank=True)
     
-    brand = models.CharField(max_length=50, blank=False, default='Brand')
+    brand = models.CharField(max_length=50, blank=False)
     base_colour = models.CharField(max_length=50, blank=True)
     price = models.DecimalField(max_digits=5, decimal_places=2)
     rating = models.IntegerField(blank=True)
     usage = models.CharField(max_length=50, blank=True)
-    description = models.TextField(blank=False, default='Description')
+    description = models.TextField(blank=False)
     image_url = models.URLField(blank=True)
     image = models.ImageField(blank=True)
 

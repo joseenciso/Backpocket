@@ -1,0 +1,26 @@
+[
+    {
+        "pk": 1,
+        "model":"products.gender",
+        "fields":{
+            "name":"unisex",
+            "friendly_name":"Unisex"
+        }
+    },
+    {
+        "pk": 2,
+        "model":"products.gender",
+        "fields":{
+            "name":"women",
+            "friendly_name":"Women"
+        }
+    },
+    {
+        "pk": 3,
+        "model":"products.gender",
+        "fields":{
+            "name":"men",
+            "friendly_name":"Men"
+        }
+    }
+]

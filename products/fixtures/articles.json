@@ -1,0 +1,110 @@
+[
+    {
+        "pk": 1,
+        "model": "products.articles",
+        "fields": {
+            "name": "footballs",
+            "friendly_name": "Footballs",
+            "sub_categories": 5
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.articles",
+        "fields": {
+            "name": "backpacks",
+            "friendly_name": "Backpacks",
+            "sub_categories": 1
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.articles",
+        "fields": {
+            "name": "handbags",
+            "friendly_name": "Handbags",
+            "sub_categories": 1
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.articles",
+        "fields": {
+            "name": "jackets",
+            "friendly_name": "Jackets",
+            "sub_categories": 2
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.articles",
+        "fields": {
+            "name": "tshirts",
+            "friendly_name": "Tshirts",
+            "sub_categories": 2
+        }
+    },
+    {
+        "pk": 6,
+        "model": "products.articles",
+        "fields": {
+            "name": "caps",
+            "friendly_name": "Caps",
+            "sub_categories": 2
+        }
+    },
+    {
+        "pk": 7,
+        "model": "products.articles",
+        "fields": {
+            "name": "shorts",
+            "friendly_name": "Shorts",
+            "sub_categories": 6
+        }
+    },
+    {
+        "pk": 8,
+        "model": "products.articles",
+        "fields": {
+            "name": "track_pants",
+            "friendly_name": "Track Pants",
+            "sub_categories": 2
+        }
+    },
+    {
+        "pk": 9,
+        "model": "products.articles",
+        "fields": {
+            "name": "shirt",
+            "friendly_name": "Shirt",
+            "sub_categories": 2
+        }
+    },
+    {
+        "pk": 10,
+        "model": "products.articles",
+        "fields": {
+            "name": "blouse",
+            "friendly_name": "Blouse",
+            "sub_categories": 2
+        }
+    },
+    {
+        "pk": 11,
+        "model": "products.articles",
+        "fields": {
+            "name": "sports_shoes",
+            "friendly_name": "Sports Shoes",
+            "sub_categories": 4
+        }
+    },
+    {
+        "pk": 12,
+        "model": "products.articles",
+        "fields": {
+            "name": "casual_shoes",
+            "friendly_name": "Casual Shoes",
+            "sub_categories": 4
+        }
+    }
+]
