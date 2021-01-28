@@ -1,6 +1,6 @@
 import random
 from django.shortcuts import render, get_object_or_404
-from products.models import Product
+from products.models import Product, Category, Sub_Category, Articles
 
 # Create your views here.
 
@@ -9,6 +9,11 @@ def index(request):
     """ A view to return the index page """
 
     products = Product.objects.all()
+    categories = Category.objects.all()
+    sub_categories = Sub_Category.objects.all()
+    articles = Articles.objects.all()
+
+    
     item = ''
     dic = {}
 
