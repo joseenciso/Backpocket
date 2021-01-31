@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     #'cities',
     'crispy_forms',
     'storages',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

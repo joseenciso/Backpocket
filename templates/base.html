@@ -1,4 +1,6 @@
 {% load static %}
+{% load widget_tweaks %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +39,7 @@
 </head>
 <body>
 <header>
-    <nav class="navbar fixed-top navbar-expand-md navbar-light bg-light">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand align-middle" href="{% url 'home' %}">
                 <i class="text-info fab fa-shirtsinbulk fa-lg"></i>
@@ -48,7 +50,7 @@
                     <span class="navbar-toggler-icon"></span>
             </button>
             
-            <form action="{% url 'allproducts' %}" id="search-bar" method="GET" class="w-100 mx-auto">
+            <form action="{% url 'allproducts' %}" id="search-bar" method="GET" class="mx-auto">
                 <div class="input-group ">
                     <input name="q" class="form-control" type="text" placeholder="Search" aria-label="Search">
                     <button class="input-group-text" id="basic-addon2">
@@ -62,7 +64,7 @@
 
             <div class="collapse navbar-collapse ml-auto w-auto" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown py-auto">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Products
                             </a>
@@ -74,7 +76,7 @@
                             </ul>
                         </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'allproducts' %}">All Products</a>
+                        <a class="nav-link active text-center w-100" aria-current="page" href="{% url 'allproducts' %}">All Products</a>
                     </li>
                     </li>
                     {% if user.is_authenticated %}
@@ -91,7 +93,7 @@
                         </li>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                            <a class="nav-link align-middle" href="{% url 'account_login' %}">Login</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_signup' %}">Register</a>

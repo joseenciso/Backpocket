@@ -39,17 +39,17 @@
                         <li class="list-inline-item mr-0"><i class="fa fa-star text-primary"></i></li>
                         <li class="list-inline-item mr-0"><i class="fa fa-star text-primary"></i></li>
                         <li class="list-inline-item mr-0"><i class="fa fa-star "></i></li>
-                        <!--span class="text-muted text-uppercase">25 reviews</!--span-->
+                        <span class="text-muted text-uppercase">25 reviews</!--span-->
                     </ul>
                 </div>
 
-                <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between mb-4">
-                        <span class="list-inline-item text-muted font-weight-light"> 
-                            RRP: <del>&#163;90.00</del>
-                        </span>
-                    <ul class="list-inline mb-2 mb-sm-0">
-                        <li class="list-inline-item h4 font-weight-light mb-0">Price: &#163;{{ product.price }}</li>
-                    </ul>
+                <div class="mb-4">
+                    <p class="list-inline-item text-muted font-weight-light"> 
+                        RRP: <del>&#163;90.00</del>
+                    </p>
+                    <p class="list-inline h4 font-weight-light mb-2 mb-sm-0">
+                        &#163;{{ product.price }}
+                    </p>
                 </div>
 
                 <form id="add_to_bag_form" action="{% url 'add_to_bag' product.pk %}" method="POST" class="my-2">

@@ -1,3 +1,12 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+#update-form{
+    min-width: 145px;
+}
 
 .products-row {
     height: 210px;
@@ -17,6 +26,7 @@
     width: auto;
     max-width: 100%;
     object-fit: contain;
+    -o-object-fit: contain;
 
     margin: 4px auto;
     vertical-align: middle;
@@ -25,4 +35,36 @@
 
 .shopping-wrapper{
     background-color: rgba(252, 252, 252, .5);
+}
+
+.update-item,
+.remove-item,
+.btn-checkout,
+.update-item:hover,
+.remove-item:hover,
+.btn-checkout:hover{
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 700;
+    padding-top: 10px;
+}
+
+
+
+.edit-section input{
+    min-width: 80px;
+}
+
+
+.product-row{
+    margin-bottom: 10px;
+}
+
+@media(max-width: 767px){
+    .update-item span,
+    .remove-item span{
+        display: none;
+    }
+
+    
 }

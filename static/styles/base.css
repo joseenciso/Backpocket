@@ -6,13 +6,17 @@ body{
 */}
 
 main{
-    min-height: 80vh;
-    margin-top: 120px;
-    margin-bottom: 120px;
+    min-height: 60vh;
+    margin-top: 60px;
+    margin-bottom: 80px;
 }
 
 li {
     list-style: none;
+}
+
+#search-bar{
+    width: 100%;
 }
 
 .basket-wrapper {
