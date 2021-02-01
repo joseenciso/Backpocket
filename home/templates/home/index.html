@@ -68,7 +68,7 @@
     
         <div class="card mx-auto">
             <img src="{{ item3.image.url }}" class="card-img mx-auto" alt="...">
-            <a href="#" class="btn btn-info bg-indigo w-100">{{ item3.articles|capfirst }}</a>
+            <a href="{% url 'product' item3.pk%}" class="btn btn-info bg-indigo w-100">{{ item3.articles|capfirst }}</a>
         </div>
     
         <div class="card mx-auto">

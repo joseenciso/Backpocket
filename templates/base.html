@@ -98,9 +98,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
                     {% endif %}
-                    <li class="nav-item text-info basket-wrapper">
+                    <li class="nav-item basket-wrapper">
                         <!--span class="product-counter">{{products_count}}</!--span-->
-                        <a class="nav-link checkout-link d-flex" href="{% url 'shopping_bag' %}"><i class="fas fa-shopping-bag fa-2x"></i><span class="d-lg-none">Checkout</span></a>
+                        <a class="nav-link checkout-link d-flex text-info" href="{% url 'shopping_bag' %}"><i class="fas fa-shopping-bag fa-2x"></i><span class="d-lg-none">Checkout</span></a>
                     </li>
                 </ul>
             </div>
@@ -197,9 +197,9 @@
     {% endblock %}
 
     {% block postloadjs %}
-        <!--script defer
-            src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
-        </!--script-->
+        <script defer
+            src="https://maps.googleapis.com/maps/api/js?key={{ GOOGLE_MAPS_KEY }}&callback=initMap">
+        </script>
 
         <script>
         /*

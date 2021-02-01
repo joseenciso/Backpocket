@@ -5,6 +5,15 @@ body{
     background: linear-gradient(0deg, rgba(139, 229, 252, 0.645) 0%, rgba(22,208,249,0.5438550420168067) 41%, rgba(0,212,255,0.2413340336134454) 74%, rgba(248,249,250,1) 100%);
 */}
 
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: black;
+}
+
 main{
     min-height: 60vh;
     margin-top: 60px;
@@ -125,7 +134,12 @@ footer li i{
         width: 240px;
         margin-left: auto;
     }
+
+    .login-container,
+    .register-container{
+        padding-top: 4rem;
     }
+}
 
 @media (max-width: 768px) {
     
