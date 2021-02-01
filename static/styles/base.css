@@ -83,6 +83,7 @@ li {
 .register-button i,
 .login-button i{
     width: 20px;
+    margin-left: 5px;
 }
 
 
