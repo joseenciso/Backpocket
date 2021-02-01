@@ -8,6 +8,7 @@ body{
 main{
     min-height: 60vh;
     margin-top: 60px;
+    margin-top: 80px;
     margin-bottom: 80px;
 }
 
@@ -17,6 +18,15 @@ li {
 
 #search-bar{
     width: 100%;
+}
+
+.brand-link .fa-shirtsinbulk{
+    font-size: 1.8rem;
+}
+
+.brand-name{
+    font-size: 2rem;
+    font-weight: 500;
 }
 
 .basket-wrapper {
@@ -56,6 +66,37 @@ li {
     top: 70px;
     right: 50px;
     z-index: 9999;
+}
+
+
+/**********************************************/
+
+.register-button button,
+.login-button button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    color: white;
+}
+
+.register-button i,
+.login-button i{
+    width: 20px;
+}
+
+
+/**********************************************/
+footer li i{
+    width: 21px;
+    padding-right: 5px;
+    text-align: center;
+}
+
+@media(max-width: 992px){
+    main{
+        margin-top: 120px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -121,5 +162,12 @@ li {
 
     .card .card-body {
         height: 80px;
+    }
+}
+
+@media(min-width: 400px){
+    .login-container,
+    .register-container{
+        width: 400px;
     }
 }

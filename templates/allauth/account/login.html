@@ -1,12 +1,12 @@
 {% extends "account/base.html" %}
-
+{% load widget_tweaks %}
 {% load i18n %}
 {% load account socialaccount %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block inner_content %}
-
+<div class="login-container mx-auto">
   <h2>{% trans "Sign In" %}</h2>
 
   {% get_providers as socialaccount_providers %}
@@ -38,10 +38,10 @@
     <div class="inner-form-conainer">
       {#{ form|crispy }#}
       {% for field in form %}
-        {% if field %}
-          <div class="form-floating">
-            {{ field }}
-            {{ field.label }}
+        {% if field|widget_type != 'checkboxinput' %}
+          <div class="form-floating mb-1">
+            {{ field|add_class:'form-control' }}
+            <label for="">{{ field.label }}</label>
           </div>
         {% else %}
           {{ field }}
@@ -54,8 +54,11 @@
     {% endif %}
     <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
     <br>
-    <button class="primaryAction btn btn-success" type="submit">{% trans "Sign In" %}</button>
+    <div class="login-button">
+      <button class="primaryAction btn btn-info" type="submit">{% trans "Sign In" %}<i class="fas fa-sign-in-alt mx-1"></i></button>
+    </div>
   </form>
+</div>
 
   <script>
     

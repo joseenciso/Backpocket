@@ -37,3 +37,12 @@ img {
     padding-left: 5px;
 }
 
+.btn-offcanvas{
+    border: 1px solid rgb(206,212,218); 
+    height: 40px;
+    background-color: rgb(233,236,239);
+}
+
+.side-filter li a{
+    color: rgb(116,116,117);
+}

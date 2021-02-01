@@ -35,22 +35,22 @@
     {% block title %}
         BackPocket
     {% endblock title %}
-    </title>
+</title>
 </head>
 <body>
 <header>
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand align-middle" href="{% url 'home' %}">
+            <a class="navbar-brand align-middle brand-link" href="{% url 'home' %}">
                 <i class="text-info fab fa-shirtsinbulk fa-lg"></i>
-                    BackPocket
+                    <span class="brand-name">BackPocket</span>
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
             </button>
             
-            <form action="{% url 'allproducts' %}" id="search-bar" method="GET" class="mx-auto">
+            <form action="{% url 'allproducts' %}" id="search-bar" method="GET" class="mx-auto w-100">
                 <div class="input-group ">
                     <input name="q" class="form-control" type="text" placeholder="Search" aria-label="Search">
                     <button class="input-group-text" id="basic-addon2">
@@ -73,11 +73,11 @@
                                 <li><a class="dropdown-item" href="#">Articles</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li class="nav-item">
+                                    <a class="dropdown-item w-100" aria-current="page" href="{% url 'allproducts' %}">All Products</a>
+                                </li>
                             </ul>
                         </li>
-                    <li class="nav-item">
-                        <a class="nav-link active text-center w-100" aria-current="page" href="{% url 'allproducts' %}">All Products</a>
-                    </li>
                     </li>
                     {% if user.is_authenticated %}
                         <li class="nav-item dropdown">
@@ -141,6 +141,7 @@
 <footer class="page-footer lighten-3 bg-dark">
     <div class="container py-4 mb-4 text-light">
         <h4><i class="fab fa-shirtsinbulk fa-sm"></i>BackPocket</h4>
+        <hr class="bg-white">
         <div class="row">
             
             <div class="col-md-4 col-lg-3 mt-4 mb-1">

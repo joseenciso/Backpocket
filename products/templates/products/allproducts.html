@@ -11,7 +11,7 @@
 
 {% block content %}
 
-<div class="container-fluid products-wrapper">
+<div class="container products-wrapper">
     <div class="row">
         <div class="col-sm-12 col-md-3 px-md-0 col-lg-2 mt-2">
             <div class="container-fluid filter-container bg-light">
@@ -36,7 +36,7 @@
                                 </ul>
                             </li>
 
-                            <li class="nav-item dropdown">
+                            <!--li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle font-weight-bold text-black mr-5" href="#" id="clothing-link" data-bs-toggle="collapse" aria-controls="byDeals" aria-controls="filterBy" aria-haspopup="true" aria-expanded="false">
                                     Clothing
                                 </a>
@@ -46,7 +46,7 @@
                                     <li><a href="{% url 'allproducts' %}?categories=Footware" class="dropdown-item">Footware</a></li>
                                     <li><a href="{% url 'allproducts' %}?categories=Accessories,Apparel,Footware" class="dropdown-item">All</a></li>
                                 </ul>
-                            </li>
+                            </!--li-->
 
                             <li class="nav-item dropdown">
                                 <a class="dropdown-toggle font-weight-bold nav-link text-black mr-5" href="#byGender" id="homeware-link" role="button" data-bs-toggle="collapse" aria-controls="byGender" aria-haspopup="true" aria-expanded="false">
@@ -59,7 +59,7 @@
                                 </ul>
                             </li>
 
-                            <li class="nav-item dropdown">
+                            <!--li class="nav-item dropdown">
                                 <a class="dropdown-toggle font-weight-bold nav-link text-black" href="#byDeals" id="specials-link" data-bs-toggle="collapse" aria-controls="byDeals" aria-haspopup="true" aria-expanded="false">
                                     Special Offers
                                 </a>
@@ -70,7 +70,7 @@
                                     <li><hr class="dropdown-divider"></li>
                                     <li><a href="" class="dropdown-item">All Specials</a></li>
                                 </ul>
-                            </li>
+                            </!--li-->
                         </form>
                     </ul>
                 </div>
@@ -80,7 +80,7 @@
         <div class="col-sm-12 col-md-9 col-lg-10 mt-2">
             <div class="row py-sm-0">
                 <div class="col-12">
-                    <nav class="navbar navbar-expanden-md">
+                    <nav class="navbar navbar-expand-md">
                         <div class="container-fluid">
                             <button class="navbar-toggler btn-offcanvas my-1" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
                                 <i class="fas fa-filter"></i>
@@ -89,10 +89,12 @@
                             {% if search_term == 'None' %}
                                 <span>All products</span>
                             {% else %}
-                                <span><strong class="products-count" data-search-count="{{ products|length }}">{{ products|length }}</strong>&nbsp;results found for &nbsp;<strong>"{{ search_term }}"</strong></span>
+                                <span>
+                                    <strong class="products-count" data-search-count="{{ products|length }}">{{ products|length }}</strong>&nbsp;results found for &nbsp;<strong>"{{ search_term }}"</strong>
+                                </span>
                             {% endif %}
 
-                            <select id="sort-selector" class="form-select rounded-0 border border-{% if current_sort != 'None_None' %}info{% else %}black{% endif %}">
+                            <select id="sort-selector" class="form-select ">
                                 <option value="reset" {% if current_sort == 'None_None' %}selected{% endif %}>Sort by...</option>
                                 <option value="price_asc" {% if current_sort == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
                                 <option value="price_desc" {% if current_sort == 'price_desc' %}selected{% endif %}>Price (high to low)</option>

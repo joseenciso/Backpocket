@@ -1,8 +1,10 @@
 {% extends "account/base.html" %}
+{% load widget_tweaks %}
 {% load i18n %}
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block inner_content %}
+<div class="register-container mx-auto">
   <h2>{% trans "Sign Up" %}</h2>
 
   <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
@@ -11,17 +13,19 @@
     {% csrf_token %}
     {#{ form|crispy }#}
       {% for field in form %}
-        <div class="form-floating">
-          {{ field }}
-          {{ field.label }}
+        <div class="form-floating mb-1">
+          {{ field|add_class:'form-control' }}
+          <label for="">{{ field.label }}</label>
         </div>
       {% endfor %}
 
     {% if redirect_field_value %}
       <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
     {% endif %}
-
-    <button type="submit" class="btn btn-success mt-4">{% trans "Sign Up" %} <i class="fas fa-chevron-circle-right"></i></button>
+    <div class="register-button">
+      <button type="submit" class="btn btn-info mt-4 text-white">{% trans "Sign Up" %}<i class="fas fa-chevron-circle-right"></i></button>
+    </div>
   </form>
+</div>
 
 {% endblock %}
