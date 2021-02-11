@@ -243,6 +243,9 @@ STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_KEY = os.getenv('STRIPE_WH_KEY', '')
 
+# Google Maps API Key
+GOOGLE_MAPS_KEY = os.environ.get('GOOGLE_MAPS_KEY')
+
 if 'DEVELOPMENT' in os.environ:
     # Sending  new account confimation emails to the console temporary
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

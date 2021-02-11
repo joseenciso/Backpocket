@@ -11,41 +11,40 @@
 
 {% block content %}
 
-
-<!--div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" height="512">
-    <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="4000">
-            <img src="{{ MEDIA_URL }}/backgrounds/People-fireworks.jpg" class="d-block" alt="..." height="512">
-            <div class="container">
-                <p>1</p>
-            </div>
+<div class="container">
+    <div class="row featurette">
+        <div class="col-md-7 text-wrapper">
+            <a href="{% url 'product' item0.pk %}">
+                <h2 class="featurette-heading">{{ item0.name }}</h2>
+                <p class="lead d-none d-sm-block">{{ item0.description }}</p>
+            </a>
         </div>
-        <div class="carousel-item" data-bs-interval="4000">
-            <img src="{{ MEDIA_URL }}/backgrounds/bg02.jpg" class="d-block " alt="...">
-            <div class="container">
-                <p>2</p>
-            </div>
-        </div>
-        <div class="carousel-item" data-bs-interval="4000">
-            <img src="{{ MEDIA_URL }}/backgrounds/bg01.jpg" class="d-block mx-auto" alt="...">
-            <div class="container">
-                <p>3</p>
-            </div>
+        <div class="col-md-5 img-wrapper">
+            <a href="{% url 'product' item0.pk %}">
+                <img class="card-img mx-auto" src="{{ item0.image.url }}" alt="item0.name"></img>
+            </a>
         </div>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </a>
-</!--div-->
 
-<div class="container">
-    <div class="row featurette" >
-        <div class="col-md-7 text-wrapper">
+    <hr class="featurette-divider h-10 w-100 my-2 bg-info">
+    <div class="title-wrapper">
+        <h2>{{ article_name|capfirst }}</h2>
+    </div>
+    <div class="articles-wrapper">
+        {% for article in articles %}
+        <div class="card mx-auto border border-info">
+            <a href="{% url 'product' article.pk %}">
+                <img src="{{ article.image.url }}" class="card-img mx-auto" alt="article.name">
+                <span class="bg-info rounded-bottom w-100 py-2" role="button">{{ article.name|truncatechars:12|capfirst }}</span>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-7 promo-wrapper">
             <a href="{% url 'product' item1.pk %}">
                 <h2 class="featurette-heading">{{ item1.name }}</h2>
                 <p class="lead d-none d-sm-block">{{ item1.description }}</p>
@@ -58,118 +57,56 @@
         </div>
     </div>
 
-    <hr class="featurette-divider">
+    <hr class="featurette-divider h-10 w-100 my-2 bg-info">
 
+    <div class="title-wrapper">
+        <h2>{{ category_name|capfirst }}</h2>
+    </div>
     <div class="articles-wrapper">
-        <div class="card mx-auto">
-            <img src="{{ item2.image.url }}" class="card-img mx-auto" alt="...">
-            <a href="#" class="btn btn-info bg-indigo w-100">{{ item2.articles.friendly_name|capfirst }}</a>
+        {% for category in categories %}
+        <div class="card mx-auto border border-info">
+            <a href="{% url 'product' category.pk %}">
+                <img src="{{ category.image.url }}" class="card-img mx-auto" alt="category.name">
+                <span class="bg-info rounded-bottom w-100 py-2" role="button">{{ category.name|truncatechars:12|capfirst }}</span>
+            </a>
         </div>
-    
-        <div class="card mx-auto">
-            <img src="{{ item3.image.url }}" class="card-img mx-auto" alt="...">
-            <a href="{% url 'product' item3.pk%}" class="btn btn-info bg-indigo w-100">{{ item3.articles|capfirst }}</a>
-        </div>
-    
-        <div class="card mx-auto">
-            <img src="{{ item4.image.url }}" class="card-img mx-auto" alt="...">
-            <a href="#" class="btn btn-info bg-indigo w-100">{{ item4.articles|capfirst }}</a>
-        </div>
-    
-        <div class="card mx-auto">
-            <img src="{{ item5.image.url }}" class="card-img mx-auto" alt="...">
-            <a href="#" class="btn btn-info bg-indigo w-100">{{ item5.articles|capfirst }}</a>
-        </div>
+        {% endfor %}
     </div>
 
-    <hr class="featurette-divider">
+    <hr class="featurette-divider h-10 w-100 my-2 bg-info">
 
     <div class="row featurette">
         <div class="col-md-7 promo-wrapper">
-            <a href="{% url 'product' item6.pk %}">
-                <h2 class="featurette-heading">{{ item6.name }}</h2>
-                <p class="lead d-none d-sm-block">{{ item6.description }}</p>
+            <a href="{% url 'product' item2.pk %}">
+                <h2 class="featurette-heading">{{ item2.name }}</h2>
+                <p class="lead d-none d-sm-block">{{ item2.description }}</p>
             </a>
         </div>
         <div class="col-md-5 img-wrapper">
-            <a href="{% url 'product' item6.pk %}">
-                <img class="card-img mx-auto" src="{{ item6.image.url }}"></img>
+            <a href="{% url 'product' item2.pk %}">
+                <img class="card-img mx-auto" src="{{ item2.image.url }}"></img>
             </a>
         </div>
     </div>
 
-    <hr class="featurette-divider">
-
+    <hr class="featurette-divider h-10 w-100 my-2 bg-info">
+    
+    <div class="title-wrapper">
+        <h2>For {{ gender_name|capfirst }}</h2>
+    </div>
     <div class="articles-wrapper">
-        <div class="card mx-auto">
-            <img src="{{ item7.image.url }}" class="card-img mx-auto" alt="...">
-            <a href="#" class="btn btn-info bg-indigo w-100">{{ item7.articles|capfirst }}</a>
-        </div>
-    
-        <div class="card mx-auto">
-            <img src="{{ item8.image.url }}" class="card-img mx-auto" alt="...">
-            <a href="#" class="btn btn-info bg-indigo w-100">{{ item8.articles|capfirst }}</a>
-        </div>
-
-        <div class="card mx-auto">
-            <img src="{{ item9.image.url }}" class="card-img mx-auto" alt="...">
-            <a href="#" class="btn btn-info bg-indigo w-100">{{ item9.articles|capfirst }}</a>
-        </div>
-    
-        <div class="card mx-auto">
-            <img src="{{ item10.image.url }}" class="card-img mx-auto" alt="...">
-            <a href="#" class="btn btn-info bg-indigo w-100">{{ item10.articles|capfirst }}</a>
-        </div>
-    </div>
-
-    <hr class="featurette-divider">
-    
-    <div class="row featurette">
-        <div class="col-md-7">
-            <a href="{% url 'product' item11.pk %}">
-                <h2 class="featurette-heading">{{ item11.name }}</h2>
-                <p class="lead d-none d-sm-block">{{ item11.description }}</p>
+        {% for gender in gender_products %}
+        <div class="card mx-auto border border-info">
+            <a href="{% url 'product' gender.pk %}">
+                <img src="{{ gender.image.url }}" class="card-img mx-auto" alt="gender.name">
+                <span class="bg-info rounded-bottom w-100 py-2" role="button">{{ gender.name|truncatechars:12|capfirst }}</span>
             </a>
         </div>
-        <div class="col-md-5 img-wrapper">
-            <a href="{% url 'product' item11.pk %}">
-                <img class="card-img mx-auto" src="{{ item11.image.url }}"></img>
-            </a>
-        </div>
+        {% endfor %}
     </div>
 
-    <hr class="featurette-divider">
-
-<div class="articles-wrapper">
-        <div class="card mx-auto">
-            <img src="{{ item7.image.url }}" class="card-img mx-auto" alt="...">
-            <a href="#" class="btn btn-info bg-indigo w-100">{{ item7.articles|capfirst }}</a>
-        </div>
-    
-        <div class="card mx-auto">
-            <img src="{{ item8.image.url }}" class="card-img mx-auto" alt="...">
-            <a href="#" class="btn btn-info bg-indigo w-100">{{ item8.articles|capfirst }}</a>
-        </div>
-
-        <div class="card mx-auto">
-            <img src="{{ item9.image.url }}" class="card-img mx-auto" alt="...">
-            <a href="#" class="btn btn-info bg-indigo w-100">{{ item9.articles|capfirst }}</a>
-        </div>
-    
-        <div class="card mx-auto">
-            <img src="{{ item10.image.url }}" class="card-img mx-auto" alt="...">
-            <a href="#" class="btn btn-info bg-indigo w-100">{{ item10.articles|capfirst }}</a>
-        </div>
-    </div>
 </div>
 
-{% endblock %}
-
-
-{% block extra_js %}
-    <script>
-        var myCarousel = document.querySelector('#carouselExampleInterval')
-        var carousel = new bootstrap.Carousel(myCarousel)
-    </script>
+<div class="">{{ article1 }}</div>
 
 {% endblock %}

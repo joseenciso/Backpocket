@@ -3,8 +3,8 @@
         "pk": 1,
         "model":"products.sub_category",
         "fields":{
-            "name":"bags",
-            "friendly_name":"Bags",
+            "name":"bag",
+            "friendly_name":"Bag",
             "categories": 1
         }
     },

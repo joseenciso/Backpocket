@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q  # to generate a seach query
 from django.db.models.functions import Lower
-from .models import Product, Category
+from .models import Product, Category, Articles, Gender
 from .forms import ProductForm
 # Create your views here.
 
@@ -44,10 +44,11 @@ def all_products(request):
             # categories = Category.objects.filter(category_name__in=catgories)
             categories = Product.objects.filter(category_name__in=categories)
 
-        # if 'gender' in request.GET:
-        #    gender = request.GET['gender'].split(',')
-            # Creating a list
-        #    products = products.filter(gender__in=gender)
+        if 'gender' in request.GET:
+            gender = request.GET['gender'].split(',')
+            print(products.filter(gender__in=gender))
+            products = products.filter(gender__in=gender)
+            gender = Category.objects.filter(name__in=gender)
 
         # if 'type' in request.GET:
         #    article = request.GET['categories'].split(',')

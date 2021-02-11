@@ -3,8 +3,8 @@
         "pk": 1,
         "model": "products.articles",
         "fields": {
-            "name": "footballs",
-            "friendly_name": "Footballs",
+            "name": "football",
+            "friendly_name": "Football",
             "sub_categories": 5
         }
     },
@@ -12,8 +12,8 @@
         "pk": 2,
         "model": "products.articles",
         "fields": {
-            "name": "backpacks",
-            "friendly_name": "Backpacks",
+            "name": "backpack",
+            "friendly_name": "Backpack",
             "sub_categories": 1
         }
     },
@@ -21,8 +21,8 @@
         "pk": 3,
         "model": "products.articles",
         "fields": {
-            "name": "handbags",
-            "friendly_name": "Handbags",
+            "name": "handbag",
+            "friendly_name": "Handbag",
             "sub_categories": 1
         }
     },
@@ -30,8 +30,8 @@
         "pk": 4,
         "model": "products.articles",
         "fields": {
-            "name": "jackets",
-            "friendly_name": "Jackets",
+            "name": "fleece",
+            "friendly_name": "Fleece",
             "sub_categories": 2
         }
     },
@@ -39,8 +39,8 @@
         "pk": 5,
         "model": "products.articles",
         "fields": {
-            "name": "tshirts",
-            "friendly_name": "Tshirts",
+            "name": "t-shirts",
+            "friendly_name": "T-shirt",
             "sub_categories": 2
         }
     },
@@ -49,7 +49,7 @@
         "model": "products.articles",
         "fields": {
             "name": "caps",
-            "friendly_name": "Caps",
+            "friendly_name": "Cap",
             "sub_categories": 2
         }
     },
@@ -58,7 +58,7 @@
         "model": "products.articles",
         "fields": {
             "name": "shorts",
-            "friendly_name": "Shorts",
+            "friendly_name": "Short",
             "sub_categories": 6
         }
     },
@@ -66,8 +66,8 @@
         "pk": 8,
         "model": "products.articles",
         "fields": {
-            "name": "track_pants",
-            "friendly_name": "Track Pants",
+            "name": "track pants",
+            "friendly_name": "Track Pant",
             "sub_categories": 2
         }
     },
@@ -93,8 +93,8 @@
         "pk": 11,
         "model": "products.articles",
         "fields": {
-            "name": "sports_shoes",
-            "friendly_name": "Sports Shoes",
+            "name": "sports shoe",
+            "friendly_name": "Sports Shoe",
             "sub_categories": 4
         }
     },
@@ -102,8 +102,8 @@
         "pk": 12,
         "model": "products.articles",
         "fields": {
-            "name": "casual_shoes",
-            "friendly_name": "Casual Shoes",
+            "name": "casual shoe",
+            "friendly_name": "Casual Shoe",
             "sub_categories": 4
         }
     }

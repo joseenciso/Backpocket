@@ -29,31 +29,34 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <!-- Stripe  -->
     <script src="https://js.stripe.com/v3/"></script>
+    <script src="{% static 'scripts/app.js' %}"></script>
 {% endblock %}
 
-<title>
-    {% block title %}
-        BackPocket
-    {% endblock title %}
-</title>
+    <link rel="shortcut icon" href="favicon.ico" type="{% static '/favico/backpocket-ico.svg' %}">
+
+    <title>
+        {% block title %}
+            BackPocket
+        {% endblock title %}
+    </title>
 </head>
 <body>
 <header>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light border-bottom border-info">
         <div class="container">
             <a class="navbar-brand align-middle brand-link" href="{% url 'home' %}">
                 <i class="text-info fab fa-shirtsinbulk fa-lg"></i>
                     <span class="brand-name">BackPocket</span>
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler border border-info" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
             </button>
             
-            <form action="{% url 'allproducts' %}" id="search-bar" method="GET" class="w-100">
+            <form action="{% url 'allproducts' %}" id="search-bar" method="GET" class="w-100 border rounded border-info">
                 <div class="input-group ">
-                    <input name="q" class="form-control" type="text" placeholder="Search" aria-label="Search">
-                    <button class="input-group-text" id="basic-addon2">
+                    <input name="q" class="form-control rounded-start" type="text" placeholder="Search" aria-label="Search">
+                    <button class="input-group-text rounded-end" id="basic-addon2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
                             <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
@@ -65,19 +68,18 @@
             <div class="collapse navbar-collapse ml-auto w-auto" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item dropdown py-auto">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Products
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Categories</a></li>
-                                <li><a class="dropdown-item" href="#">Articles</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                <li class="nav-item">
-                                    <a class="dropdown-item w-100" aria-current="page" href="{% url 'allproducts' %}">All Products</a>
-                                </li>
-                            </ul>
-                        </li>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Categories</a></li>
+                            <li><a class="dropdown-item" href="#">Articles</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li class="nav-item">
+                                <a class="dropdown-item w-100" aria-current="page" href="{% url 'allproducts' %}">All Products</a>
+                            </li>
+                        </ul>
                     </li>
                     {% if user.is_authenticated %}
                         <li class="nav-item dropdown">
@@ -99,8 +101,13 @@
                             <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
                     {% endif %}
                     <li class="nav-item basket-wrapper">
-                        <!--span class="product-counter">{{products_count}}</!--span-->
-                        <a class="nav-link checkout-link d-flex text-info" href="{% url 'shopping_bag' %}"><i class="fas fa-shopping-bag fa-2x"></i><span class="d-lg-none">Checkout</span></a>
+                        <a class="nav-link checkout-link d-flex" href="{% url 'shopping_bag' %}">
+                            <i class="fas fa-shopping-bag fa-2x text-info"></i>
+                            <p clas="counter fs-4">{{ products_count }}</p>
+                            <p class="d-flex">
+                                <span class="d-lg-none fs-3">Checkout</span>
+                            </p>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -112,7 +119,8 @@
 
 {% block content %}{% endblock %}
 
-<div class="container">
+    <!-- Messages Container -->
+    <div class="container">
         <div class="row">
             <div class="col-12">
                 {% if messages %}
@@ -135,6 +143,7 @@
             </div>
         </div>
     </div>
+    <!-- End - Messages Container -->
 </main>
 
 <footer class="page-footer lighten-3 bg-dark">
@@ -143,7 +152,7 @@
         <hr class="bg-white">
         <div class="row">
             
-            <div class="col-md-4 col-lg-3 mt-4 mb-1">
+            <div class="col-sm-12 col-md-4 col-lg-3 mt-4 mb-1">
                 <ul class="list-unstyled ">
                     <li><i class="far fa-paper-plane"></i>Contact us</li>
                     <li><i class="far fa-envelope"></i>info@backpocket.com</li>
@@ -152,57 +161,52 @@
                 </ul>
             </div>
 
-            <div class="col-md-4 col-lg-6 mt-4 mb-1 ">
+            <div class="col-sm-12 col-md-4 col-lg-6 mt-4 mb-1 ">
                 <div id="map" class="w-100 h-100"></div>
             </div>
             
 
-            <div class="col-md-4 col-lg-3 mt-4 mb-1">
+            <div class="col-sm-12 col-md-4 col-lg-3 mt-4 mb-1">
                 <h5>Follow us</h5>
                 <ul class="list-unstyled ">
-                    <li><a href="" class="text-light"><i class="fab fa-facebook-f"></i>facebook</a></li>
-                    <li><a href="" class="text-light"><i class="fab fa-twitter"></i>twitter</a></li>
-                    <li><a href="" class="text-light"><i class="fab fa-pinterest-p"></i>pinterest</a></li>
-                    <li><a href="" class="text-light"><i class="fab fa-tiktok"></i>tiktok</a></li>
-                    <li><a href="" class="text-light"><i class="fab fa-instagram"></i>instagram</a></li>
+                    <li><a href="_blank" class="text-light"><i class="fab fa-facebook-f"></i>facebook</a></li>
+                    <li><a href="_blank" class="text-light"><i class="fab fa-twitter"></i>twitter</a></li>
+                    <li><a href="_blank" class="text-light"><i class="fab fa-pinterest-p"></i>pinterest</a></li>
+                    <li><a href="_blank" class="text-light"><i class="fab fa-tiktok"></i>tiktok</a></li>
+                    <li><a href="_blank" class="text-light"><i class="fab fa-instagram"></i>instagram</a></li>
                 </ul>
-
-                <p>Sign up to our newsletter and get 15% off your first order  </p>
-                
-                <div class="progress-bar">
-                    <a href="" class="btn btn-warning text-light   progress-bar-striped bg-warning">Sign up for newsletter <i class="fas fa-chevron-right text-white"></i></a>
-                </div>
             </div>
         </div>
-
     </div>
 
     <div class="footer-copyright text-center bg-secondary text-light py-4">
         <a href="#" class="text-light">Jose Enciso</a>:
         <a href="#" class="text-light">MS4-eCommerce - <i class="fab fa-shirtsinbulk fa-sm"></i>BackPocket</a>
     </div>
-
-    
-
 </footer>
     
     {% block extra_js %}
         
-        <script>
+        <!--script>
             $('.btn-offcanvas').click(function(){
                 $('.offcanvas-collapse').toggleClass('open');
             })
-        </script>
+        </cript>
         
     {% endblock %}
 
     {% block postloadjs %}
         <script defer
-            src="https://maps.googleapis.com/maps/api/js?key={{ GOOGLE_MAPS_KEY }}&callback=initMap">
-        </script>
+            src="https://maps.googleapis.com/maps/api/js?key={{GOOGLE_MAPS_KEY}}&callback=initMap" type="text/javascript">
+        </!--script-->
 
+        <script defer
+            src="https://maps.googleapis.com/maps/api/js?key={{GOOGLE_MAPS_KEY}}&callback=initMap"
+            async
+            type="text/javascript">
+        </script>
         <script>
-        /*
+        console.log({{product_count}})
             ((function () {
                 'use strict';
 
@@ -210,10 +214,8 @@
                     document.querySelector('.offcanvas-collapse').classList.toggle('open');
                 })
             }))
-            */
         </script>
         
-
         <script>
             $(document).ready(function() {
                 $(".toast").toast('show');
