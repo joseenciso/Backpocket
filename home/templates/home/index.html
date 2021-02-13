@@ -32,7 +32,7 @@
     </div>
     <div class="articles-wrapper">
         {% for article in articles %}
-        <div class="card mx-auto border border-info">
+        <div class="card border border-info">
             <a href="{% url 'product' article.pk %}">
                 <img src="{{ article.image.url }}" class="card-img mx-auto" alt="article.name">
                 <span class="bg-info rounded-bottom w-100 py-2" role="button">{{ article.name|truncatechars:12|capfirst }}</span>
@@ -64,7 +64,7 @@
     </div>
     <div class="articles-wrapper">
         {% for category in categories %}
-        <div class="card mx-auto border border-info">
+        <div class="card border border-info">
             <a href="{% url 'product' category.pk %}">
                 <img src="{{ category.image.url }}" class="card-img mx-auto" alt="category.name">
                 <span class="bg-info rounded-bottom w-100 py-2" role="button">{{ category.name|truncatechars:12|capfirst }}</span>
@@ -94,9 +94,9 @@
     <div class="title-wrapper">
         <h2>For {{ gender_name|capfirst }}</h2>
     </div>
-    <div class="articles-wrapper">
+    <div class="articles-wrapper overflow-auto">
         {% for gender in gender_products %}
-        <div class="card mx-auto border border-info">
+        <div class="card border border-info">
             <a href="{% url 'product' gender.pk %}">
                 <img src="{{ gender.image.url }}" class="card-img mx-auto" alt="gender.name">
                 <span class="bg-info rounded-bottom w-100 py-2" role="button">{{ gender.name|truncatechars:12|capfirst }}</span>

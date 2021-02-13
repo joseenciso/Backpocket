@@ -1,26 +1,34 @@
 .card {
     padding: 0;
-    width: 288px;
-    height: 350px;
+    /*width: 25%;*/
+    max-height: 210px;
 }
 
-.card .card-image {
+.card-product .card-image {
     text-align: center;
-    height: 240px;
+    height: 180px;
 }
 
-img {
-    max-width: 90%;
-    height: 90%;
+.card-product img {
+    max-width: 100%;
+    height: 100%;
     width: auto;
     object-fit: contain;
-}
-
-.card-image img {
     padding: 5px;
 }
 
-.product-rating {
+.card-product .card-body p{
+    font-size: 1rem;
+}
+
+.card-product .card-text{
+    overflow: hidden;
+}
+
+.pagination-wrapper a{
+    font-size: 1.5rem;
+}
+/*.product-rating {
     bottom: 5px;
     left: 10px;
 }
@@ -28,21 +36,10 @@ img {
 .product-price {
     bottom: 5px;
     right: 10px;
-}
+}*/
 
-.offcanvas-collapse .nav-item {
-    padding: 5px;
-}
-.offcanvas-collapse ul {
-    padding-left: 5px;
-}
-
-.btn-offcanvas{
-    border: 1px solid rgb(206,212,218); 
-    height: 40px;
-    background-color: rgb(233,236,239);
-}
-
-.side-filter li a{
-    color: rgb(116,116,117);
+@media (max-width: 768px){
+    .card-product .card-image {
+        height: 140px;
+    }
 }

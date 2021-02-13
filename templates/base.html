@@ -101,12 +101,10 @@
                             <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
                     {% endif %}
                     <li class="nav-item basket-wrapper">
-                        <a class="nav-link checkout-link d-flex" href="{% url 'shopping_bag' %}">
-                            <i class="fas fa-shopping-bag fa-2x text-info"></i>
+                        <a class="nav-link checkout-link text-info" href="{% url 'shopping_bag' %}">
+                            <i class="fas fa-shopping-bag fa-2x"></i>
                             <p clas="counter fs-4">{{ products_count }}</p>
-                            <p class="d-flex">
-                                <span class="d-lg-none fs-3">Checkout</span>
-                            </p>
+                            <span class="d-lg-none fs-3">Checkout</span>
                         </a>
                     </li>
                 </ul>
@@ -185,42 +183,19 @@
     </div>
 </footer>
     
-    {% block extra_js %}
-        
-        <!--script>
-            $('.btn-offcanvas').click(function(){
-                $('.offcanvas-collapse').toggleClass('open');
-            })
-        </cript>
-        
-    {% endblock %}
+{% block extra_js %}
 
-    {% block postloadjs %}
-        <script defer
-            src="https://maps.googleapis.com/maps/api/js?key={{GOOGLE_MAPS_KEY}}&callback=initMap" type="text/javascript">
-        </!--script-->
-
-        <script defer
-            src="https://maps.googleapis.com/maps/api/js?key={{GOOGLE_MAPS_KEY}}&callback=initMap"
+    <script defer
+        src="https://maps.googleapis.com/maps/api/js?key={{GOOGLE_MAPS_KEY}}&callback=initMap"
             async
-            type="text/javascript">
-        </script>
-        <script>
-        console.log({{product_count}})
-            ((function () {
-                'use strict';
-
-                document.querySelector('[data-bs-toggle="offcanvas"]').addEventListener('click', function () {
-                    document.querySelector('.offcanvas-collapse').classList.toggle('open');
-                })
-            }))
-        </script>
-        
-        <script>
-            $(document).ready(function() {
-                $(".toast").toast('show');
-            });
-        </script>
-    {% endblock %}
-    </body>
+        type="text/javascript">
+    </script>
+            
+    <script>
+        $(document).ready(function() {
+            $(".toast").toast('show');
+        });
+    </script>
+{% endblock %}
+</body>
 </html>

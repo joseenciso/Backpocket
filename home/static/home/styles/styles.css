@@ -6,20 +6,19 @@ a:link{
     color: black;
 }
 
-#carouselExampleInterval {
-    height: 512px;
-}
-
 .card {
-    width: 210px;
-    height: 210px;
+    min-width: 200px;
+    max-width: 210px;
+    min-height: 200px;
+    max-height: 210px;
     padding: 5px;
     text-align: center;
+    margin: auto 10px;
 }
 
 .card img {
     object-fit: contain;
-    height: 100%;
+    height: 198px;
 }
 
 .articles-wrapper .card span {
@@ -45,34 +44,12 @@ a:link{
     display: flex;
 }
 
-.articles-wrapper::-webkit-scrollbar {
+/*.articles-wrapper::-webkit-scrollbar {
     width: 0;
-}
+}*/
 
 .articles-wrapper .card {
     display: inline-block;
-}
-
-.marketing {
-    height: 400px;
-}
-
-.carousel{
-    z-index: -2;
-    width: 100vw;
-    height: 512px;
-}
-
-.carousel-inner {
-    padding: 0;
-    margin: 0;
-}
-
-.carousel-inner .carousel-item img {
-    width: 100vw;
-    object-fit: contain;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .promo-wrapper{
@@ -89,9 +66,23 @@ a:link{
     height: 15px;
 }
 
+@media (min-width: 993px){
+    .text-wrapper {
+        padding-top: auto;
+        padding-bottom: auto;
+    }
+    
+}
+
 @media(max-width: 992px) {
     .articles-wrapper {
         display: block;
+    }
+}
+
+@media (min-width: 768px){
+    .text-wrapper p{
+
     }
 }
 
@@ -104,7 +95,7 @@ a:link{
     }
 
     .featurette-heading {
-        font-size: 50px;
+        font-size: 2rem;
     }
 }
 

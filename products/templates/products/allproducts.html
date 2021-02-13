@@ -12,72 +12,86 @@
 {% block content %}
 
 <div class="container products-wrapper">
+    <div class="row py-sm-0">
+        <div class="col-12 d-block d-md-flex justify-content-evenly mt-4">
+            <p>
+                <strong class="products-count py-2" data-search-count="{{ products|length }}">
+                    {{ products|length }}</strong>
+                    &nbsp;results found 
+                {% if search_term %}
+                        for &nbsp;<strong>"{{ search_term }}"</strong>
+                {% endif %}
+            </p>
+            <select id="sort-selector" class="form-select d-sm-w-100">
+                <option value="reset" {% if current_sort == 'None_None' %}selected{% endif %} disabled>Sort by...</option>
+                <option value="price_asc" {% if current_sort == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                <option value="price_desc" {% if current_sort == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                <option value="rating_asc" {% if current_sort == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
+                <option value="rating_desc" {% if current_sort == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
+                <option value="name_asc" {% if current_sort == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                <option value="name_desc" {% if current_sort == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                <option value="category_asc" {% if current_sort == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
+                <option value="category_desc" {% if current_sort == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+            </select>
+        </div>
+            <hr class="mt-4">
+    </div>
     <div class="row">
         <div class="col-12 mt-2">
-            <div class="row py-sm-0">
-                <div class="col-12">
-                    <nav class="navbar navbar-expand-md">
-                        <div class="container-fluid">
-                            <!--button class="navbar-toggler btn-offcanvas my-1" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
-                                <i class="fas fa-filter"></i>
-                            </!--button-->
-                            
-                            {% if search_term == 'None' %}
-                                <span>All products</span>
-                            {% else %}
-                                <span>
-                                    <strong class="products-count py-2" data-search-count="{{ products|length }}">{{ products|length }}</strong>&nbsp;results found for &nbsp;<strong>"{{ search_term }}"</strong>
-                                </span>
-                            {% endif %}
-
-                            <select id="sort-selector" class="form-select ">
-                                <option value="reset" {% if current_sort == 'None_None' %}selected{% endif %}>Sort by...</option>
-                                <option value="price_asc" {% if current_sort == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
-                                <option value="price_desc" {% if current_sort == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
-                                <option value="rating_asc" {% if current_sort == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
-                                <option value="rating_desc" {% if current_sort == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
-                                <option value="name_asc" {% if current_sort == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
-                                <option value="name_desc" {% if current_sort == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
-                                <option value="category_asc" {% if current_sort == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
-                                <option value="category_desc" {% if current_sort == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
-                            </select>
-                            
-                        </div>
-                    </nav>
+            {% if products|length == 0%}
+                <div class="row">
+                    <div class="col-12">
+                        <h2>We didn't find the product you are looking for :'(</h2>
+                    </div>
                 </div>
-            </div>
-            <div class="row mt-2">
-                <div class="d-flex flex-wrap justify-content-around">
-                {% for product in products %}
-                    <div id="product-{{ product.pk }}" class="card border border-2 border-info product-card mb-3 mx-2" >
-                        <div id="product{{ value|add:2}}" class="col-12 p-2">
-                            <a class="" href="{% url 'product' product.pk %}">
-                                <div class="card-image border border-2 rounded border-warning">
-                                        <img src="{{ product.image.url }}" class="" alt="..." >
-                                </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="d-flex flex-wrap justify-content-around">
+        {% for product in products %}
+            <div class="col-12">
+                <div id="product-{{ forloop.counter }}" class="card-product d-flex w-100 mb-3">
+                        <div class="card-image d-sm-w-50 w-25">
+                            <a href="{% url 'product' product.pk %}">
+                                <img src="{{ product.image.url }}" class="" alt="{{ product.name }}" >
                             </a>
                         </div>
-                        <div class="col-12">
-                            <div class="card-body">
-                                <h6 class="card-title">
-                                    <a class="text-dark" href="{% url 'product' product.pk %}">
-                                        {{ product.name }}
-                                    </a>
-                                </h6>
-                                <div class="d-flex justify-content-between postition-relative">
-                                    <div class="product-rating text-sm position-absolute" value="{{ product.pk }}" data-rating="{{ product.rating }}">
-                                        {# {{ product.pk }} - {{ product.rating }} #}
-                                    </div>
-                                    <div class="product-price position-absolute" >
-                                        <strong>Price: </strong>&#163;{{ product.price }}
-                                    </div>
+                        <div class="card-body d-sm-w-50 w-75">
+                            <a href="{% url 'product' product.pk %}">
+                                <h5 class="card-title">{{ product.name }}</h5>
+                            </a>
+                            <p class="card-text d-none d-md-block">{{ product.description }}</p>
+                            <hr class=" d-none d-md-block">
+                            <div class="d-flex justify-content-between">
+                                <div id="rating-count"class="product-rating text-sm" value="{{ product.pk }}" data-rating="{{ product.rating }}">
+                                </div>
+                                <div class="product-price" >
+                                    <strong>Price: </strong>&#163;{{ product.price }}
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                {% endfor %}
                 </div>
+                <hr>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-evenly pagination-wrapper w-75 mx-auto">
+            {% if products.has_previous %}
+                <a href="{% url 'allproducts' %}?page={{products.previous_page_number}}" class="text-info"><i class="fas fa-chevron-circle-left"></i></a>
+            {% endif %}
+
+            {% for page in products.paginator.page_range%}
+                <a href="{% url 'allproducts' %}?page={{ page }}" class="text-info">{{ page }}</a>
+                
+            {% endfor %}
+
+            {% if products.has_next%}
+                <a href="{% url 'allproducts' %}?page={{products.next_page_number}}" class="text-info"><i class="fas fa-chevron-circle-right"></i></a>
+            {% endif %}
             </div>
         </div>
     </div>
@@ -91,8 +105,9 @@
         /* Stars Counter Django-JS */
         /* From the ratin to the stars */
         var productCount = $(".products-count").data();
+
             for (i = 0; i <= productCount.searchCount; i++){
-                
+                console.log(i)
                 $(`#product-${ i }`).each(function(){
                     var a = $(this).find(".product-rating").data();;
                     var rate = a.rating;
@@ -113,14 +128,16 @@
 {% block postloadjs %}
     {{ block.super }}
     <script>
-            $('.btn-offcanvas').click(function(){
+            /*$('.btn-offcanvas').click(function(){
                 $('.offcanvas-collapse').toggleClass('open');
-            })
+            })*/
 
         /* Code Institute Sort Filter */
         $('#sort-selector').change(function(){
             var sortSelect = $(this)
+            console.log(sortSelect)
             var currentURL = new URL(window.location);
+            console.log(currentURL)
             
             var selectedValue = sortSelect.val();
             /* If selectedValue is NOT equals to REset */

@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.core.paginator import Paginator, EmptyPage
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q  # to generate a seach query
 from django.db.models.functions import Lower
@@ -66,14 +67,23 @@ def all_products(request):
                 description__icontains=query)
             # the i makes the queries case insensitive
             products = products.filter(queries)
-
+    print("Q", query)
     current_sort = f'{sort}_{direction}'
     rating = products.filter()
     # print(products)
-    print(current_sort)
+    print("CS", current_sort)
+
+    p = Paginator(products, 8)
+    page_num = request.GET.get('page', 1)
+
+    try:
+        page = p.page(page_num)
+    except EmptyPage:
+        page = p.page(1)
+    print(p, page, page_num)
 
     context = {
-        'products': products,
+        'products': page,
         'search_term': query,
         'current_category': categories,
         'current_sort': current_sort,

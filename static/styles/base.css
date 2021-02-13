@@ -42,12 +42,14 @@ li {
 }
 
 .basket-wrapper .checkout-link .counter {
-    font-size: 1.2rem;
+    font-size: 2rem;
     padding: 0;
     width: 36px;
     height: 36px;
     position: absolute;
     top: 0;
+    left: 0;
+    display: inline-block;
 }
 
 .product-counter {
@@ -157,11 +159,11 @@ footer li i{
 }
 
 @media (min-width: 768px) {
-    .product-card {
+    /*.product-card {
         background-color: rgb(250, 250, 250);
         margin: 1rem auto;
         height: 528px;
-    }
+    }*/
 
     */
 
@@ -216,11 +218,11 @@ footer li i{
         padding: 0 10px !important;
     }
 }
-@media (max-width: 576px) {
 
-    .card .card-body {
+@media (max-width: 576px) {
+    /*.card .card-body {
         height: 80px;
-    }
+    }*/
 }
 
 @media(min-width: 400px){
