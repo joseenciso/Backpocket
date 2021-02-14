@@ -16,7 +16,7 @@
         <div class="col-md-7 text-wrapper">
             <a href="{% url 'product' item0.pk %}">
                 <h2 class="featurette-heading">{{ item0.name }}</h2>
-                <p class="lead d-none d-sm-block">{{ item0.description }}</p>
+                <p class="lead d-none d-sm-block mt-4">{{ item0.description }}</p>
             </a>
         </div>
         <div class="col-md-5 img-wrapper">
@@ -26,9 +26,10 @@
         </div>
     </div>
 
-    <hr class="featurette-divider h-10 w-100 my-2 bg-info">
+    <hr class="featurette-divider my-2 bg-info">
+
     <div class="title-wrapper">
-        <h2>{{ article_name|capfirst }}</h2>
+        <h2>{{ article_name|capfirst }}s</h2>
     </div>
     <div class="articles-wrapper">
         {% for article in articles %}
@@ -41,13 +42,13 @@
         {% endfor %}
     </div>
 
-    <hr class="featurette-divider">
+    <hr class="featurette-divider my-4 bg-info">
 
-    <div class="row featurette">
+    <div class="row my-5 featurette">
         <div class="col-md-7 promo-wrapper">
             <a href="{% url 'product' item1.pk %}">
                 <h2 class="featurette-heading">{{ item1.name }}</h2>
-                <p class="lead d-none d-sm-block">{{ item1.description }}</p>
+                <p class="lead d-none d-sm-block mt-4">{{ item1.description }}</p>
             </a>
         </div>
         <div class="col-md-5 img-wrapper">
@@ -57,10 +58,10 @@
         </div>
     </div>
 
-    <hr class="featurette-divider h-10 w-100 my-2 bg-info">
+    <hr class="featurette-divider my-4 bg-info">
 
     <div class="title-wrapper">
-        <h2>{{ category_name|capfirst }}</h2>
+        <h2>{{ category_name|capfirst }}s</h2>
     </div>
     <div class="articles-wrapper">
         {% for category in categories %}
@@ -73,13 +74,13 @@
         {% endfor %}
     </div>
 
-    <hr class="featurette-divider h-10 w-100 my-2 bg-info">
+    <hr class="featurette-divider my-4 bg-info">
 
-    <div class="row featurette">
+    <div class="row my-5 featurette">
         <div class="col-md-7 promo-wrapper">
             <a href="{% url 'product' item2.pk %}">
                 <h2 class="featurette-heading">{{ item2.name }}</h2>
-                <p class="lead d-none d-sm-block">{{ item2.description }}</p>
+                <p class="lead d-none d-sm-block mt-4">{{ item2.description }}</p>
             </a>
         </div>
         <div class="col-md-5 img-wrapper">
@@ -89,14 +90,14 @@
         </div>
     </div>
 
-    <hr class="featurette-divider h-10 w-100 my-2 bg-info">
+    <hr class="featurette-divider my-4 bg-info">
     
-    <div class="title-wrapper">
-        <h2>For {{ gender_name|capfirst }}</h2>
+    <div class="title-wrapper ">
+        <h2>For {% if gender_name != 'men' %}him{% else %}her{% endif %}</h2>
     </div>
     <div class="articles-wrapper overflow-auto">
         {% for gender in gender_products %}
-        <div class="card border border-info">
+        <div class="card border border-2 border-info">
             <a href="{% url 'product' gender.pk %}">
                 <img src="{{ gender.image.url }}" class="card-img mx-auto" alt="gender.name">
                 <span class="bg-info rounded-bottom w-100 py-2" role="button">{{ gender.name|truncatechars:12|capfirst }}</span>

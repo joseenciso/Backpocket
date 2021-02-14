@@ -14,7 +14,7 @@ a:hover{
 main{
     min-height: 60vh;
     margin-top: 60px;
-    margin-top: 80px;
+    margin-top: 120px;
     margin-bottom: 80px;
 }
 
@@ -152,6 +152,14 @@ footer li i{
     text-align: center;
 }
 
+.card-product .card-image{
+    width: 20%;
+}
+
+.card-product .card-body{
+    width: 80%;
+    padding-right: 5%;
+}
 @media(max-width: 992px){
     main{
         margin-top: 120px;
@@ -223,6 +231,11 @@ footer li i{
     /*.card .card-body {
         height: 80px;
     }*/
+
+    .card-product .card-image,
+    .card-product .card-body{
+        width: 50%;
+    }
 }
 
 @media(min-width: 400px){

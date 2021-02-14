@@ -53,11 +53,11 @@
                     <span class="navbar-toggler-icon"></span>
             </button>
             
-            <form action="{% url 'allproducts' %}" id="search-bar" method="GET" class="w-100 border rounded border-info">
-                <div class="input-group ">
-                    <input name="q" class="form-control rounded-start" type="text" placeholder="Search" aria-label="Search">
-                    <button class="input-group-text rounded-end" id="basic-addon2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <form action="{% url 'allproducts' %}" id="search-bar" method="GET" class="w-100 mx-2">
+                <div class="input-group">
+                    <input name="q" class="form-control border border-3 rounded-start-2 border-warning fs-5" type="text" placeholder="Search" aria-label="Search">
+                    <button class="input-group-text rounded-end border border-3 rounded-end-2 border-warning bg-warning text-white" id="basic-addon2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
                             <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
                         </svg>
@@ -66,12 +66,12 @@
             </form>
 
             <div class="collapse navbar-collapse ml-auto w-auto" id="navbarSupportedContent">
-                <ul class="navbar-nav mb-2 mb-lg-0">
+                <ul class="navbar-nav mb-2 mb-lg-0 fs-5">
                     <li class="nav-item dropdown py-auto">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Products
+                            Products by
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu fs-6" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Categories</a></li>
                             <li><a class="dropdown-item" href="#">Articles</a></li>
                             <li><hr class="dropdown-divider"></li>

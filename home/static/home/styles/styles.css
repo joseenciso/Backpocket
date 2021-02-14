@@ -59,7 +59,7 @@ a:link{
 
 .img-wrapper img{
     object-fit: contain;
-    max-height: 400px;
+    max-height: 300px;
 }
 
 .featurette-divider{

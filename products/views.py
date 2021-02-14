@@ -73,16 +73,19 @@ def all_products(request):
     # print(products)
     print("CS", current_sort)
 
-    p = Paginator(products, 8)
+    total_products = products.count()
+    p = Paginator(products, 7)
+    print("p", p)
     page_num = request.GET.get('page', 1)
 
     try:
         page = p.page(page_num)
     except EmptyPage:
         page = p.page(1)
-    print(p, page, page_num)
+    print(p, page, page.count,  page_num)
 
     context = {
+        'total_products': total_products,
         'products': page,
         'search_term': query,
         'current_category': categories,

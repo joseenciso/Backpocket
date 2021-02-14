@@ -3,6 +3,8 @@ import os
 from django.shortcuts import render, get_object_or_404, HttpResponse, HttpResponse
 from products.models import Product, Category, Sub_Category, Articles, Gender
 from django.db.models import Q
+from django.contrib import messages
+from django.urls import get_resolver, get_urlconf, resolve, reverse, NoReverseMatch
 
 
 def index(request):
@@ -20,11 +22,12 @@ def index(request):
         #print(i)
         try:
             product = get_object_or_404(Product, pk=random.randint(1, product_count))
-        except Exception as e:
+        except (Exception, NoReverseMatch) as e:
             messages.error(request, f'Error removing item {e}')
+            print(e)
             return HttpResponse(status=500)
         pro_test = get_object_or_404(Product, pk=random.randint(1, product_count))
-        print(i,"\t", product.pk,"\t", pro_test,"\t")
+        #print(i,"\t", product.pk,"\t", pro_test,"\t")
         #print(product)
         if product == prev_prod:
             -i
