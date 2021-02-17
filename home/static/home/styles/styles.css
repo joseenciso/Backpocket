@@ -52,10 +52,10 @@ a:link{
     display: inline-block;
 }
 
-.promo-wrapper{
+/*.promo-wrapper{
     max-height: 400px;
     padding: 5px;
-}
+}*/
 
 .img-wrapper img{
     object-fit: contain;
@@ -68,8 +68,8 @@ a:link{
 
 @media (min-width: 993px){
     .text-wrapper {
-        padding-top: auto;
-        padding-bottom: auto;
+        padding-left: 5%;
+        padding-right: 5%;
     }
     
 }

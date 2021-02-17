@@ -13,34 +13,41 @@
 {% block content %}
 
 <div class="container">
-    <div class="row d-flex justify-content-around py-5">
+    <div class="row">
+        <div class="col-12 py-2">
+            <h2>Checkout</h2>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-around">
         <div class="summary-wrapper">
             <h4 class="d-flex  align-items-center mb-3">
                 <span class="text-muted">Your cart: </span>
-                <span class="badge badge-secondary badge-pill">3</span>
             </h4>
-            <ul class="list-group mb-3">
+            <ul class="list-group mb-3 border border-3 border-warning">
             {% if bag_items %}
                 {% for item in bag_items %}
-                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                    <li class="list-group-item d-flex justify-content-between border-2
+                        border-top-0 border-start-0 border-end-0 border-bottom 
+                        {% if forloop.counter|divisibleby:2 %} border-warning  {% else %} border-info {% endif %}{{forloop.counter}}">
                         <div class="thumbnail-wrapper text-center">
                             <img src="{{ item.product.image.url }}" alt="" class="img-thumbnail rounded">
                         </div>
                         <div class="w-100 px-1">
                             <h6 class="my-0">{{ item.product.name }}</h6>
-                            <small class="text-muted">Size: {{ item.size }}</small><br>
-                            <small class="text-muted">Quantity: {{ item.quantity }}</small>
+                            {% if item.size %}
+                                <small class="text-muted"><strong>Size:</strong> {{ item.size }}</small><br>
+                            {% endif %}
+                            <small class="text-muted"><strong>Quantity:</strong> {{ item.quantity }}</small>
                         </div>
                         <div class="align-self-center">
-                            <span class="text-muted h-100 ">&#163;{{item.product.price}}</span>
+                            <span class="text-muted h-100 "><strong>&#163;{{item.product.price}}</strong></span>
                         </div>
                     </li>
                 {% endfor %}
             {% endif %}
-                
-                <li class="list-group-item d-flex justify-content-between">
-                    <span>Total (GBP)</span>
-                    <strong>&#163;{{ grand_total }}</strong>
+                <li class="list-group-item d-flex justify-content-between border-0">
+                    <span><strong>Total</strong>(<i class="mx-1">GBP</i>)</span>
+                    <strong><i>&#163;{{ grand_total }}</i></strong>
                 </li>
             </ul>
         </div>
@@ -52,14 +59,14 @@
                 <div class="row">
                     <div class="col-12 mb-3 d-flex">
                         <label for="firstName" class="w-25">Full Name</label>
-                        <input type="text" class="form-control w-75" id="firstName" placeholder="First Name" value="" name="full_name" required>
+                        <input type="text" class="form-control w-75 border border-info" id="firstName" placeholder="First Name" value="" name="full_name" required>
                         <div class="invalid-feedback border border-danger">
                             Valid last name is required.
                         </div>
                     </div>
                     <div class="col-12 mb-3 d-flex">
                         <label for="email" class="w-25">Email</label>
-                        <input type="email" class="form-control w-75" id="email" placeholder="your@email.com"  name="email" required>
+                        <input type="email" class="form-control w-75 border border-info" id="email" placeholder="your@email.com"  name="email" required>
                         <div class="invalid-feedback">
                             Please enter a valid email address for shipping updates.
                         </div>
@@ -69,16 +76,17 @@
                 <div class="row">
                     <div class="col-12 mb-3 d-flex">
                         <label for="email" class="w-25">Telephone</label>
-                        <input type="tel" class="form-control w-75" id="phone-number" placeholder="Telephone (123-456-7890)"  name="phone_number" required>
+                        <input type="tel" class="form-control w-75 border border-info" id="phone-number" placeholder="Telephone (123-456-7890)"  name="phone_number" required>
                         <div class="invalid-feedback">
                             Telephone number incorrect.
                         </div>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-12 mb-3 d-flex">
                         <label for="postcode" class="w-25">Postcode</label>
-                        <input type="text" class="form-control w-75" id="postcode" placeholder="Postcode" name="postcode" required>
+                        <input type="text" class="form-control w-75 border border-info" id="postcode" placeholder="Postcode" name="postcode" required>
                         <div class="invalid-feedback">
                             Postcode code required.
                         </div>
@@ -88,7 +96,7 @@
                 <div class="row">
                     <div class="col-12 mb-3 d-flex">
                         <label for="address" class="w-25">Address Line 1</label>
-                        <input type="text" class="form-control w-75" id="address" placeholder="1234 Main St"  name="street_address1" required>
+                        <input type="text" class="form-control w-75 border border-info" id="address" placeholder="1234 Main St"  name="street_address1" required>
                         <div class="invalid-feedback">
                             Please enter your shipping address.
                         </div>
@@ -96,12 +104,12 @@
 
                     <div class="col-12 mb-3 d-flex">
                         <label for="address2" class="w-25">Address Line 2</label>
-                        <input type="text" class="form-control w-75" id="address2" placeholder="Apartment or suite"  name="street_address2">
+                        <input type="text" class="form-control w-75 border border-info" id="address2" placeholder="Apartment or suite"  name="street_address2">
                     </div>
 
                     <div class="col-12 mb-3 d-flex">
                         <label for="town-or-city" class="w-25">Town or City</label>
-                        <input type="text" class="form-control w-75" id="town-or-city" placeholder="Town or City"  name="town_or_city" required>
+                        <input type="text" class="form-control w-75 border border-info" id="town-or-city" placeholder="Town or City"  name="town_or_city" required>
                         <div class="invalid-feedback">
                             Please provide a valid state.
                         </div>
@@ -112,7 +120,7 @@
                     <div class="col-12 mb-3 d-flex">
                         <label for="country" class="w-25">Country</label>
                         {% get_countries as countries %}
-                        <select name="country" id="country" placeholder="Country" class="form-select w-75">
+                        <select name="country" id="country" placeholder="Country" class="form-select w-75 border border-info">
                             {% for country in countries %}
                                 <option value="{{ country.code }}">{{ country.name }}</option>
                             {% endfor %}
@@ -124,14 +132,18 @@
 
                     <div class="col-12 mb-3 d-flex">
                         <label for="address2" class="w-25">County</label>
-                        <input type="text" class="form-control w-75" id="county" placeholder="County"  name="county" required>
+                        <input type="text" class="form-control w-75 border border-info" id="county" placeholder="County"  name="county" required>
                         <div class="invalid-feedback border border-danger">
                             Please provide a valid state.
                         </div>
                     </div>
 
-                <hr class="mb-4">
-
+                <div class="row">
+                    <div class="col-12">
+                        <hr class="border border-2 border-info my-4">
+                    </div>
+                </div>
+                
                 <div class="row">
                     <div class="px-5">
                         <div class="form-check">
@@ -145,7 +157,11 @@
                     </div>
                 </div>
 
-                <hr class="mb-4">
+                <div class="row">
+                    <div class="col-12">
+                        <hr class="border border-2 border-info my-4">
+                    </div>
+                </div>
                 
                 <div class="row">
                     <div class="stripe-wrapper">
@@ -156,11 +172,15 @@
                     </div>
                 </div>
 
-                <hr class="mb-4">
+                <div class="row">
+                    <div class="col-12">
+                        <hr class="border border-2 border-info my-4">
+                    </div>
+                </div>
                 
                 <div class="row">
                     <div class="submite-buttom text-center">
-                        <button type="submit" id="checkout-button" class="btn btn-info btn-lg btn-block">Submit Payment</button>
+                        <button type="submit" id="checkout-button" class="btn btn-info btn-lg btn-block text-white"><strong>Submit Payment</strong></button>
                     </div>
                 </div>
             </form>

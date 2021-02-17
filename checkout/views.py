@@ -38,7 +38,7 @@ def checkout(request):
 
     if request.method == 'POST':
         bag = request.session.get('bag', {})
-
+        
         form_data = {
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
@@ -52,7 +52,7 @@ def checkout(request):
         }
 
         order_form = OrderForm(form_data)
-
+        
         if order_form.is_valid():
             order = order_form.save(commit=False)
             payment_id = request.POST.get('client_secret').split('_secret')[0]
@@ -79,7 +79,7 @@ def checkout(request):
                             )
                             order_line_item.save()
                 except Product.DoesNotExist:
-                    message.error(request, ("One of the products not found!"))
+                    messages.error(request, ("One of the products not found!"))
                     order.delete()
                     return redirect(reverse('shopping_bag'))
 
@@ -93,7 +93,7 @@ def checkout(request):
         if not bag:
             messages.error(request, "There is nothing in your bag at the moment.")
             return redirect(reverse('home'))
-
+        print()
         current_bag = bag_context(request)
         total = current_bag['grand_total']
 

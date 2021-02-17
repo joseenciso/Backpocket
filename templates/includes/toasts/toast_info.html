@@ -1,11 +1,11 @@
+{%load static %}
 <div class="toast border border-info" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-header bg-info text-white">
-        <img src="..." class="rounded me-2" alt="...">
+    <div class="toast-header bg-info text-white fs-4">
+        <img src="{% static 'favicon/backpocket-ico.svg' %}" width="32" height="32" class="rounded me-2" alt="Backpoket - info!">
         <strong class="me-auto">info</strong>
-        <small>&time;</small>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
-    <div class="toast-body">
-        {{ message }}
+    <div class="toast-body fs-5">
+        <strong><i class="fas fa-info-circle mr-2"></i>{{ message }}</strong>
     </div>
 </div>

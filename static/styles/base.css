@@ -11,6 +11,11 @@ a:hover{
     color: black;
 }
 
+nav .container-fluid{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
 main{
     min-height: 60vh;
     margin-top: 60px;
@@ -22,10 +27,6 @@ li {
     list-style: none;
 }
 
-#search-bar{
-    width: 100%;
-}
-
 .brand-link .fa-shirtsinbulk{
     font-size: 1.8rem;
 }
@@ -35,23 +36,22 @@ li {
     font-weight: 500;
 }
 
-.basket-wrapper {
-    max-width: 36px;
-    height: 36px;
+.basket-wrapper .checkout-link{
+    /*width: 36px;
+    display: block;
+    height: 36px; */   
     position: relative;
+
 }
 
-.basket-wrapper .checkout-link .counter {
+.checkout-link .products-counter {
     font-size: 2rem;
-    padding: 0;
     width: 36px;
     height: 36px;
     position: absolute;
-    top: 0;
-    left: 0;
-    display: inline-block;
+    top: 50px;
 }
-
+/*
 .product-counter {
     font-weight: 800;
     margin: 0;
@@ -61,11 +61,17 @@ li {
     position: absolute;
     top: 25%;
     left: 35%;
-}
+}*/
+
+/*.basket-wrapper .products-wrapper{
+    width: 36px;
+    height: 36px;
+    position: absolute;
+}*/
 
 .message-container{
     position: fixed;
-    top: 70px;
+    top: 130px;
     right: 50px;
     z-index: 9999;
 }
@@ -160,9 +166,16 @@ footer li i{
     width: 80%;
     padding-right: 5%;
 }
+
+@media(min-width: 993){
+    form#search-bar{
+        width: 75%;
+    }
+}
+
 @media(max-width: 992px){
     main{
-        margin-top: 120px;
+        margin-top: 131px;
     }
 }
 

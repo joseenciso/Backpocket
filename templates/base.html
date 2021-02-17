@@ -42,8 +42,8 @@
 </head>
 <body>
 <header>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light border-bottom border-info">
-        <div class="container">
+    <nav class="navbar fixed-top navbar-expand-md navbar-light bg-light border-bottom border-2 border-info">
+        <div class="container-fluid">
             <a class="navbar-brand align-middle brand-link" href="{% url 'home' %}">
                 <i class="text-info fab fa-shirtsinbulk fa-lg"></i>
                     <span class="brand-name">BackPocket</span>
@@ -53,7 +53,7 @@
                     <span class="navbar-toggler-icon"></span>
             </button>
             
-            <form action="{% url 'allproducts' %}" id="search-bar" method="GET" class="w-100 mx-2">
+            <form action="{% url 'allproducts' %}" id="search-bar" method="GET" class="mx-2">
                 <div class="input-group">
                     <input name="q" class="form-control border border-3 rounded-start-2 border-warning fs-5" type="text" placeholder="Search" aria-label="Search">
                     <button class="input-group-text rounded-end border border-3 rounded-end-2 border-warning bg-warning text-white" id="basic-addon2">
@@ -66,7 +66,7 @@
             </form>
 
             <div class="collapse navbar-collapse ml-auto w-auto" id="navbarSupportedContent">
-                <ul class="navbar-nav mb-2 mb-lg-0 fs-5">
+                <ul class="navbar-nav mb-2 mb-lg-0 fs-6">
                     <li class="nav-item dropdown py-auto">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Products by
@@ -102,9 +102,9 @@
                     {% endif %}
                     <li class="nav-item basket-wrapper">
                         <a class="nav-link checkout-link text-info" href="{% url 'shopping_bag' %}">
-                            <i class="fas fa-shopping-bag fa-2x"></i>
-                            <p clas="counter fs-4">{{ products_count }}</p>
-                            <span class="d-lg-none fs-3">Checkout</span>
+                            <span class="fas fa-shopping-bag fa-2x"></span>
+                            <span clas="products-counter text-warning">{{ products_count }}</span>
+                            <span class="d-md-none fs-3">Checkout</span>
                         </a>
                     </li>
                 </ul>
@@ -146,27 +146,29 @@
 
 <footer class="page-footer lighten-3 bg-dark">
     <div class="container py-4 mb-4 text-light">
-        <h4><i class="fab fa-shirtsinbulk fa-sm"></i>BackPocket</h4>
-        <hr class="bg-white">
+        <h4><i class="fab fa-shirtsinbulk fa-sm m-2"></i>BackPocket</h4>
+        <hr class="border border-2 border-info">
         <div class="row">
             
             <div class="col-sm-12 col-md-4 col-lg-3 mt-4 mb-1">
+                <h5><i class="far fa-paper-plane m-2"></i>Contact us at:</h5>
+                <hr class="bg-warning border border-2 border-warning">
                 <ul class="list-unstyled ">
-                    <li><i class="far fa-paper-plane"></i>Contact us</li>
                     <li><i class="far fa-envelope"></i>info@backpocket.com</li>
                     <li><i class="fas fa-phone-alt"></i>+ 01 234 567 88</li>
                     <li><i class="fas fa-map-marker-alt"></i>1 Kildare St, Leicester LE1 3YH</li>
                 </ul>
             </div>
 
-            <div class="col-sm-12 col-md-4 col-lg-6 mt-4 mb-1 ">
-                <div id="map" class="w-100 h-100"></div>
+            <div class="col-sm-12 col-md-4 col-lg-6 mt-4 mb-1 h-100">
+                <div id="map" class="w-100 h-100 d-block"></div>
             </div>
             
 
             <div class="col-sm-12 col-md-4 col-lg-3 mt-4 mb-1">
-                <h5>Follow us</h5>
-                <ul class="list-unstyled ">
+                <h5>Follow us on:</h5>
+                <hr class="bg-warning border border-2 border-warning">
+                <ul class="list-unstyled pl-2">
                     <li><a href="_blank" class="text-light"><i class="fab fa-facebook-f"></i>facebook</a></li>
                     <li><a href="_blank" class="text-light"><i class="fab fa-twitter"></i>twitter</a></li>
                     <li><a href="_blank" class="text-light"><i class="fab fa-pinterest-p"></i>pinterest</a></li>
@@ -179,12 +181,12 @@
 
     <div class="footer-copyright text-center bg-secondary text-light py-4">
         <a href="#" class="text-light">Jose Enciso</a>:
-        <a href="#" class="text-light">MS4-eCommerce - <i class="fab fa-shirtsinbulk fa-sm"></i>BackPocket</a>
+        <a href="#" class="text-light">MS4-eCommerce - <i class="fab fa-shirtsinbulk fa-sm m-1"></i>BackPocket</a>
     </div>
 </footer>
     
-{% block extra_js %}
-
+{% block maps_toast_js %}
+    
     <script defer
         src="https://maps.googleapis.com/maps/api/js?key={{GOOGLE_MAPS_KEY}}&callback=initMap"
             async

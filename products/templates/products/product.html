@@ -17,10 +17,10 @@
             <h1 class="mt-6 mb-2">{{ product.name }}</h1>
         </div>
         <div class="col-sm-12 px-sm-0 col-md-5 col-lg-5 product-detail-image">
-            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image w-75">
         </div>
 
-        <div class="col-sm-12 col-md-7 col-lg-7 pt-4">
+        <div class="col-sm-12 col-md-7 col-lg-7 py-4">
             <div class="list-unstyled">
                 <span><strong>Category: </strong><a class="text-muted" href="#">{{ product.categories.friendly_name }}</a></span>
                 <span><strong>&#62;</strong> <a class="text-muted" href="#">{{ product.sub_categories.friendly_name }}</a></span>
@@ -28,10 +28,10 @@
                 
             </div>
 
-            <div><strong>SKU:</strong> <span class="text-muted">{{ product.sku }}</span></div>
+            <div class="py-1"><strong>SKU:</strong> <span class="text-muted">{{ product.sku }}</span></div>
             
             <div class="d-flex align-items-center text-sm mb-4 my-2">
-                <span class="mr-2 ">
+                <span class="mr-2">
                     <strong>Rating </strong>
                     <span id="rating-count" class="list-inline mr-2 mb-0 product-rating" data="{{product.rating}}">
                     </span>
@@ -40,7 +40,7 @@
 
             
             <h4>Description</h4>
-            <p class="my-2">{{ product.description }}</p>
+            <p class="my-2 w-75">{{ product.description }}</p>
             
 
             <div class="my-4">
@@ -80,10 +80,23 @@
         </div>
     </div>
 </div>
+<script>
+        /* Stars Counter Django-JS */
+        /* From the ratin to the stars */
+        var count = {{product.rating}}
+        console.log(count)
 
+        var productCount = $("#rating-count").data();
+            console.log(productCount)
+            for (i = 0; i < count; i++){
+                console.log(i)
+                $("#rating-count").append('<i class="fas fa-star text-warning mx-0"></i>');
+            }; 
+        /* End -- Stars Counter Django-JS */
+    </script>
 {% endblock %}
 
-{% block extra_js %}
+{% block product_rating_js %}
     <script>
         /* Stars Counter Django-JS */
         /* From the ratin to the stars */

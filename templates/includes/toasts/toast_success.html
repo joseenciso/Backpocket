@@ -1,11 +1,20 @@
+{%load static %}
 <div class="toast border border-success" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
-    <div class="toast-header bg-success text-white">
-        <img src="..." class="rounded me-2" alt="...">
-        <strong class="me-auto">Success</strong>
-        <small>&time;</small>
-        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    <div class="toast-header bg-info text-white">
+        <img src="{% static 'favicon/backpocket-ico.svg' %}" width="32" height="32" class="rounded me-2" alt="Backpocket - Success!">
+        <strong class="me-auto fs-4">Success!!</strong>
+        <button type="button" class="btn-close bg-danger" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
     <div class="toast-body">
-        {{ message }}
+        <div class="product-wrapper d-flex">
+            <img src="{{ product.image.url }}" width="80" alt="{{product.name}}" class="mx-auto">
+            <div>
+                <p>
+                    <strong>{{ message }}</i></strong>
+                </p>
+            </div>
+        </div>
+        <a class="bg-warning d-block w-100 text-center fs-4 text-white mt-1 py-1" href="{% url 'home' %}">Keep Shopping!!</a>
+        <a class="bg-success d-block w-100 text-center fs-4 text-white mt-1 py-1" href="{% url 'shopping_bag' %}">Go to basket<span class="fas fa-shopping-bag mx-1"></span></a>
     </div>
 </div>

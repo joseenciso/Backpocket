@@ -54,13 +54,13 @@
                                     <!--p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></!--p-->
                                     <form id="update-form" class="input-group update-form" method="POST" action="{% url 'edit_bag' item.product_pk %}">
                                         <a href="" id="remove-item-{{item.product_pk}}" class="input-group-text remove-item btn btn-warning" data-product_size="{{ item.product.size }}">
-                                            <span class="">Remove</span><i class="far fa-trash-alt"></i>
+                                            <span class="">Remove</span> <i class="far fa-trash-alt"></i>
                                         </a>
                                         <input class="form-control form-control-lg form-select-size text-center d-inline-block"
                                                 name="quantity" type="number" value="{{ item.quantity }}" min="1" max="99"
                                                 data-item-id="{{ product.pk }}"id="id_qty_{{ product.pk }}">
                                         <a href="" id="update-item-{{item.product_pk}}" class="input-group-text update-item btn btn-info">
-                                            <span>Update</span> <i class="fas fa-redo-alt"></i>
+                                            <i class="fas fa-redo-alt"></i> <span>Update</span>
                                         </a>
                                         <!--div class="edit-section">
                                         </div-->
