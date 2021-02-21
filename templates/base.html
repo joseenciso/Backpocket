@@ -42,8 +42,8 @@
 </head>
 <body>
 <header>
-    <nav class="navbar fixed-top navbar-expand-md navbar-light bg-light border-bottom border-2 border-info">
-        <div class="container-fluid">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light border-bottom border-2 border-info shadow">
+        <div class="container">
             <a class="navbar-brand align-middle brand-link" href="{% url 'home' %}">
                 <i class="text-info fab fa-shirtsinbulk fa-lg"></i>
                     <span class="brand-name">BackPocket</span>
@@ -53,7 +53,7 @@
                     <span class="navbar-toggler-icon"></span>
             </button>
             
-            <form action="{% url 'allproducts' %}" id="search-bar" method="GET" class="mx-2 w-75">
+            <form action="{% url 'allproducts' %}" id="search-bar" method="GET" class="mx-2 w-100">
                 <div class="input-group">
                     <input name="q" class="form-control border border-3 rounded-start-2 border-warning fs-5" type="text" placeholder="Search" aria-label="Search">
                     <button class="input-group-text rounded-end border border-3 rounded-end-2 border-warning bg-warning text-white" id="basic-addon2">

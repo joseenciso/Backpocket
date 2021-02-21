@@ -2,8 +2,6 @@ from django.shortcuts import render, redirect, reverse, HttpResponse, HttpRespon
 from django.contrib import messages
 from products.models import Product
 
-# Create your views here.
-
 
 def view_shopping_bag(request):
     """ A view which renders the shopping bag """
@@ -12,22 +10,20 @@ def view_shopping_bag(request):
 
 def view_add_to_bag(request, product_pk):
     """ A view to add quantities of the selected product to added to the shopping bag """
-    print("add_to_bag")
     product = get_object_or_404(Product, pk=product_pk)
-    
     quantity = int(request.POST.get('quantity'))
-
     redirect_url = request.POST.get('redirect_url')
     total_product = quantity
+    
     size = None
-
     bag = request.session.get('bag', {})
-
+    print("20", bag)
     if 'product_size' in request.POST:
         size = request.POST['product_size']
-
+    
     if size:
         if product_pk in list(bag.keys()):
+            print("26-PK", product_pk, "S",  size)
             if size in bag[product_pk]['items_by_size'].keys():
                 bag[product_pk]['items_by_size'][size] += quantity
                 messages.success(request, f'PAM1 Size updated for {product.name} to {bag[product_pk]["items_by_size"][size]}')
@@ -51,7 +47,6 @@ def view_add_to_bag(request, product_pk):
 
 def view_edit_bag(request, product_pk):
     """ A view to edit/modify the shopping bag """
-    print("edit_bag")
     product = get_object_or_404(Product, pk=product_pk)
     print("55", product)
     quantity = int(request.POST.get('quantity'))
@@ -59,66 +54,81 @@ def view_edit_bag(request, product_pk):
 
     if 'product_size' in request.POST:
         size = request.POST['product_size']
+        print("57", size)
 
     bag = request.session.get('bag', {})
 
     if size:
+        print("65", size)
         if quantity > 0:
-            bag[product_pk]['size'][size] = quantity
+            bag[product_pk]['items_by_size'][size] = quantity
+            print("65", bag)
             messages.success(
                 request, f'PAM1 Size updated for {product.name} to {bag[product_pk]["items_by_size"][size]}')
         else:
-            del bag[product_pk]['size'][size]
-            if not bag[product_pk]['size']:
+            print("69", bag)
+            del bag[product_pk]['items_by_size'][size]['quantity'][quantity]
+            print("71")
+            if not bag[product_pk]['items_by_size']['quantity']:
+                print("73")
                 bag.pop(bag)
             messages.success(
                 request, f'PAM2{product.name}, size {size.upper()} removed')
     else:
+        print("78")
         if quantity > 0:
+            print("80", quantity)
             bag[product_pk] = quantity
+            print("82 - MERGED ITEMS")
             messages.success(
                 request, f'PEM3 {product.name} quantity updated to {bag[product_pk]}')
         else:
+            print("84", quantity)
             bag.pop(product_pk)
             messages.success(
                 request, f'PEM4 {product.name} removed from the bag')
     request.session['bag'] = bag
-    print("86", request.session['bag'])
-    print("87", bag)
+    print("89", bag)    
     return redirect(reverse('shopping_bag'))
 
 
 def view_remove_from_bag(request, product_pk):
     """ A view that delete an item from the shopping bag """
-    print("remove from bag")
-    size = None
 
     try:
-        print("93-Del")
         product = get_object_or_404(Product, pk=product_pk)
-        print("DP", product)
+        size = None
+        print("99", product)
         if 'product_size' in request.POST:
             size = request.POST['product_size']
-            print("97")
+            print("102", size)
+
         bag = request.session.get('bag', {})
-        print("99-bag")
+        print("107", bag)
         if size:
-            del bag[product_pk]['size'][size]
-            print("102-Del")
-            if not bag[product_pk]['size']:
+            print("109", size)
+            print("109", bag)
+            del bag[product_pk]["items_by_size"][size]
+            print("111", bag)
+            if not bag[product_pk]['items_by_size']:
+                print("113", bag)
                 bag.pop(bag)
-                print("105-Del")
+                print("116", bag)
+                #del bag[product_pk]["items_by_size"]
+                print("115", bag)
             messages.success(
                 request, f'PRM1 {product.name}, size {size.upper()} removed')
         else:
+            print("117", bag)
             bag.pop(product_pk)
             messages.success(
                 request, f'PRM2 {product.name} removed from the bag')
-            print("112-Del")
+            
         request.session['bag'] = bag
-        #return redirect(reverse('view_shopping_bag'))
-        print("115-Del")
-        return HttpResponse(status=200)
+        print("123", bag)
+        return redirect(reverse('shopping_bag'))
+
+        #return HttpResponse(status=200)
     except Exception as e:
         messages.error(request, f'Error removing item {e}')
         return HttpResponse(status=500)

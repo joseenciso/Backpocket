@@ -158,6 +158,10 @@ footer li i{
     text-align: center;
 }
 
+footer li a:hover{
+    color: rgb(255,193,7);
+}
+
 .card-product .card-image{
     width: 20%;
 }
@@ -171,12 +175,17 @@ hr{
     opacity: 1;
 }
 
+.signup{
+    width: 500px;
+}
+
 @media(min-width: 993){
 
 
 @media(max-width: 992px){
     main{
         margin-top: 131px;
+        padding-top: 20px
     }
 }
 
@@ -256,6 +265,6 @@ hr{
     .allauth-form-container,
     .login-container,
     .register-container{
-        width: 400px;
+        max-width: 320px;
     }
 }

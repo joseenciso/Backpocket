@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <hr class="my-4 border border-2 border-info">
+    <hr class="my-4 border border-2 border-info shadow">
 
     <div class="title-wrapper">
         <h2>{{ article_name|capfirst }}s</h2>
@@ -42,13 +42,13 @@
         {% endfor %}
     </div>
 
-    <hr class="my-4 border border-2 border-info">
+    <hr class="my-4 border border-2 border-info shadow">
 
     <div class="row my-5">
         <div class="col-md-7 text-wrapper">
             <a href="{% url 'product' item1.pk %}" class="mx-auto">
                 <h2 class="featurette-heading">{{ item1.name }}</h2>
-                <p class="lead d-none d-sm-block mt-4">{{ item1.description }}</p>
+                <p class="lead mt-4">{{ item1.description }}</p>
             </a>
         </div>
         <div class="col-md-5 img-wrapper">
@@ -58,7 +58,7 @@
         </div>
     </div>
 
-    <hr class="my-4 border border-2 border-info">
+    <hr class="my-4 border border-2 border-info shadow">
 
     <div class="title-wrapper">
         <h2>{{ category_name|capfirst }}s</h2>
@@ -74,13 +74,13 @@
         {% endfor %}
     </div>
 
-    <hr class="my-4 border border-2 border-info">
+    <hr class="my-4 border border-2 border-info shadow">
 
     <div class="row my-5">
         <div class="col-md-7 text-wrapper">
             <a href="{% url 'product' item2.pk %}" class="ml-auto">
                 <h2 class="featurette-heading">{{ item2.name }}</h2>
-                <p class="lead d-none d-sm-block mt-4">{{ item2.description }}</p>
+                <p class="lead mt-4">{{ item2.description }}</p>
             </a>
         </div>
         <div class="col-md-5 img-wrapper">
@@ -90,7 +90,7 @@
         </div>
     </div>
 
-    <hr class="my-4 border border-2 border-info">
+    <hr class="my-4 border border-2 border-info shadow">
     
     <div class="title-wrapper ">
         <h2>For {% if gender_name == 'men' %}her - {{gender_name}}{% else %}him - {{gender_name}}{% endif %}</h2>
