@@ -4,11 +4,16 @@
 * Autoprefixer: v9.7.6
 * Browsers: last 4 version
 */
+
+.edit-update-wrapper {
+    min-width: 120px;
+}
+/*
 #update-form{
-    min-width: 145px;
+    min-width: 60px;
     max-width: 300px;
 }
-
+*/
 .products-row {
     height: 210px;
     padding: 5px;
@@ -74,5 +79,19 @@ td .fa-shopping-bag{
         display: none;
     }
 
-    
+}
+
+
+@media(max-width: 400px){
+
+    .edit-update-wrapper {
+        min-width: 120px;
+        max-width: 140px;
+    }
+
+    .edit-update-wrapper #update-form,
+    .edit-update-wrapper #update-form input{
+       /* min-width: 60px;*/
+        max-width: 55px !important;
+    }
 }

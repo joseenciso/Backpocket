@@ -46,10 +46,10 @@
         <div class="container">
             <a class="navbar-brand align-middle brand-link" href="{% url 'home' %}">
                 <i class="text-info fab fa-shirtsinbulk fa-lg"></i>
-                    <span class="brand-name">BackPocket</span>
+                <span class="brand-name">BackPocket</span>
             </a>
             
-            <button class="navbar-toggler border border-info" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler border border-2 border-info" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
             </button>
             
@@ -100,10 +100,10 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
                     {% endif %}
-                    <li class="nav-item basket-wrapper">
-                        <a class="nav-link checkout-link text-info" href="{% url 'shopping_bag' %}">
-                            <span class="fas fa-shopping-bag fa-2x"></span>
-                            <span clas="products-counter text-warning">{{ products_count }}</span>
+                    <li class="nav-item basket-wrapper position-relative">
+                        <img src="{% static 'favicon/basket-ico.svg' %}" class=" position-absolute text-warning"></img>
+                        <a class="nav-link checkout-link text-secondary" href="{% url 'shopping_bag' %}">
+                            <span clas="products-counter m-2"><strong>{{ products_count }}</strong></span>
                             <span class="d-md-none fs-3">Checkout</span>
                         </a>
                     </li>

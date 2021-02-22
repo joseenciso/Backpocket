@@ -112,7 +112,7 @@ def view_remove_from_bag(request, product_pk):
             print("111", bag)
             if not bag[product_pk]['items_by_size']:
                 print("113", bag)
-                bag.pop(bag)
+                bag.pop(product_pk)
                 print("116", bag)
                 #del bag[product_pk]["items_by_size"]
                 print("115", bag)
