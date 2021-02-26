@@ -140,6 +140,7 @@ def checkout_success(request, order_number):
     """ Success Checkout Handler """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
+    print("order: ", order)
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
@@ -162,8 +163,8 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
-    messages.success(request, f'Order { order_number } Successed!\
-        We will send you the confirmation detail to { order.email }.')
+    # messages.success(request, f'Order { order_number } Successed!\
+    #    We will send you the confirmation detail to { order.email }.')
 
     if 'bag' in request.session:
         del request.session['bag']
@@ -172,7 +173,7 @@ def checkout_success(request, order_number):
     context = {
         'order': order,
     }
-
+    print(order)
     return render(request, template, context)
 
 

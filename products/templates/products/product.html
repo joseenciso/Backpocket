@@ -14,7 +14,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12 text-center">
-            <h1 class="mt-6 mb-2">{{ product.name }}</h1>
+            <h1 class="mt-6 mb-2 pb-2 border-bottom border-info border-3">{{ product.name }}</h1>
         </div>
         <div class="col-sm-12 px-sm-0 col-md-5 col-lg-5 product-detail-image">
             <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image w-75">
@@ -83,12 +83,9 @@
         /* Stars Counter Django-JS */
         /* From the ratin to the stars */
         var count = {{product.rating}}
-        console.log(count)
 
         var productCount = $("#rating-count").data();
-            console.log(productCount)
             for (i = 0; i < count; i++){
-                console.log(i)
                 $("#rating-count").append('<i class="fas fa-star text-warning mx-0"></i>');
             }; 
         /* End -- Stars Counter Django-JS */
@@ -100,12 +97,10 @@
         /* Stars Counter Django-JS */
         /* From the ratin to the stars */
         var count = {{product.rating}}
-        console.log(count)
 
         var productCount = $("#rating-count").data();
             console.log(productCount)
             for (i = 0; i < count; i++){
-                console.log(i)
                 $("#rating-count").append('<i class="fas fa-star text-warning mx-0"></i>');
             }; 
         /* End -- Stars Counter Django-JS */

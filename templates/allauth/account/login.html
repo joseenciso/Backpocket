@@ -3,11 +3,11 @@
 {% load i18n %}
 {% load account socialaccount %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
+{% block head_title %}Login{% endblock %}
 
 {% block inner_content %}
 <div class="login-container border border-info rounded mx-auto">
-  <h2 class="bg-info text-white text-center p-2">{% trans "Sign In" %}</h2>
+  <h2 class="bg-info text-white text-center p-2">Login</h2>
 
   {% get_providers as socialaccount_providers %}
 
@@ -30,7 +30,7 @@
 
   {% else %}
     <p class="px-3 mt-4">{% blocktrans %}If you have not created an account yet, then please
-    <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+    <a href="{{ signup_url }}" class="text-white bg-info p-1"><strong>sign up</strong></a> first.{% endblocktrans %}</p>
   {% endif %}
 
   <form class="login px-2" method="POST" action="{% url 'account_login' %}">
@@ -42,10 +42,15 @@
     {% if redirect_field_value %}
       <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
     {% endif %}
-    <a class="button secondaryAction p-2" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+    <a class="button secondaryAction p-2 text-info" href="{% url 'account_reset_password' %}">
+      <strong>{% trans "Forgot Password?" %}</strong>
+    </a>
     <br>
     <div class="login-button my-4">
-      <button class="primaryAction btn btn-info" type="submit">{% trans "Sign In" %}<i class="fas fa-sign-in-alt mx-1"></i></button>
+      <button class="primaryAction btn btn-info border border-2 border-warning" type="submit">
+        <strong>{% trans "Sign In" %}</strong>
+        <i class="fas fa-sign-in-alt mx-1"></i>
+      </button>
     </div>
   </form>
 </div>

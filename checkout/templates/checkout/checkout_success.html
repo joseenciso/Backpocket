@@ -10,9 +10,12 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <div class="success-messages-warpper">
-                <h2>Thank you, this is your order confirmation!!!</h2>
-                <hr>
+            <div class="p-2 border-info bg-info text-white">
+                <h2 class="mt-1">Order Confirmation</h2>
+            </div>
+            <div class="success-messages-warpper my-2">
+                    <h3>Thanks for shopping with us!</h3>
+                <hr class="bg-warning border-4 p-1">
                 <p>Your order details will be sent to your email <strong>{{ order.email }}</strong></p>
             </div>
         </div>
@@ -31,11 +34,19 @@
                     </div>
                 </div>
                 
-                <hr>
+                <hr class="bg-info border-4 p-1">
 
                 <div class="row">
-                    <div class="col-6">
-                        <p> </p>
+                    <div class="col-12">
+
+                    {% for item in order.lineitems.all %}
+                        <span><strong>Name:</strong> {{ item.product.name }}</span><br>
+                        {% if item.product.has_size %}
+                            <span><strong>Size:</strong> {{ item.product_size|upper }}</span><br>
+                        {% endif %}
+                        <span><strong>Qty</strong> {{ item.quantity }} x &#163;{{ item.product.price }} each.</span><br>
+                        
+                    {% endfor %}
                     </div>
                     <div class="col-6">
                         <span class="ml-auto"></span>

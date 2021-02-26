@@ -36,19 +36,6 @@ li {
     font-weight: 500;
 }
 
-.basket-wrapper img{
-    z-index: -1;
-    width: 32px;
-    height: 32px;
-    top: -1px;
-    left: 1px;
-}
-
-.products-counter{
-    width: 32px;
-    height: 32px;
-}
-
 .message-container{
     position: fixed;
     top: 130px;
@@ -56,13 +43,23 @@ li {
     z-index: 9999;
 }
 
+
+header .navbar-nav .nav-link {
+    color: black !important;
+}
 /**********************************************/
 
 .register-button button,
 .login-button button{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin: 0 auto;
     color: white;
 }
@@ -79,7 +76,7 @@ li {
 
 .login-container form input[type="text"],
 .login-container form input[type="password"]{
-    width: 80%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
@@ -93,8 +90,13 @@ li {
     padding-left: -10px;
 }
 
+.login-container button:hover{
+    color: white;
+}
 /**********************************************/
 .allauth-form-container #div_id_email{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -119,13 +121,17 @@ li {
 /**********************************************/
 
 #signup_form label{
-    padding-left: 5px;
+    padding-left: 15px;
 }
 
 #signup_form input{
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
+}
+
+#signup_form .form-group{
+    margin-bottom: 1rem;
 }
 
 .login-container p{
@@ -155,20 +161,65 @@ hr{
     opacity: 1;
 }
 
-.signup{
-    width: 500px;
+.register-container .signup{
+    max-width: 500px;
 }
 
 @media(min-width: 993px){
+    .checkout-link{
+        position: relative;
+    }
+    
+    .basket-wrapper img{
+        z-index: -1;
+        position: absolute;
+        width: 28px;
+        height: 28px;
+        top: 0%;
+        left: 0%;
+    }
+    
+    .products-counter span{
+        width: 32px;
+        height: 32px;
+    }
 
+    .products-counter{
+        position: absolute;
+        top: 60%;
+        left: 70%;
+        max-width: 32px;
+        max-height: 32px;
+    }
 }
 
-@media(max-width: 991x){
+@media(max-width: 991px){
     main{
         margin-top: 131px;
         padding-top: 20px
     }
 
+    /*.checkout-link{
+        position: relative;
+    }*/
+    
+    .basket-wrapper img{
+        width: 24px;
+        height: 24px;
+    }
+    
+    .products-counter{
+        font-size: 1.3rem;
+    }
+
+    .collapse .dropdown-menu .dropdown-item,
+    .collapse .dropdown-menu .nav-link{
+        font-size: 1.5rem     !important;
+    }
+
+    .collapse .navbar-nav {
+        font-size: 1.5rem;
+    }
 
 }
 
@@ -194,30 +245,12 @@ hr{
 }
 
 @media (max-width: 768px) {
-    
-    .offcanvas-collapse {
-        position: fixed;
-        top: 55px;
-        /* Height of navbar */
-        bottom: 0;
-        left: 100%;
-        width: 50%;
-        padding-right: 1rem;
-        padding-left: 1rem;
-        overflow-y: auto;
-        visibility: hidden;
-        /*background-color: #343a40;*/
-        transition: transform .3s ease-in-out,
-            visibility .3s ease-in-out;
-        z-index: 2;
-        outline: solid #F1F1F1;
+    main{
+        margin-top: 160px !important;
     }
 
-    .offcanvas-collapse.open {
-        visibility: visible;
-        transform: translateX(-100%);
-    }
     
+
     #search-bar {
         margin-top: 5px;
     }

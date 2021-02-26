@@ -66,27 +66,34 @@
             </form>
 
             <div class="collapse navbar-collapse ml-auto w-auto" id="navbarSupportedContent">
-                <ul class="navbar-nav mb-2 mb-lg-0 fs-6">
+                <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item dropdown py-auto">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Products by
+                            Products
                         </a>
-                        <ul class="dropdown-menu fs-6" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Categories</a></li>
-                            <li><a class="dropdown-item" href="#">Articles</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <ul class="dropdown-menu border border-0 bg-light border border-bottom border-info" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="#">Categories</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">Articles</a>
+                            </li>
+
+                            <li><hr class="dropdown-divider bg-info border-3"></li>
                             <li class="nav-item">
                                 <a class="dropdown-item w-100" aria-current="page" href="{% url 'allproducts' %}">All Products</a>
                             </li>
+                            <li>
+                            </li>
+                            <hr class="dropdown-divider bg-warning border-3 m-0 p-0">
                         </ul>
                     </li>
                     {% if user.is_authenticated %}
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown border border-0 bg-light border border-bottom border-info">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 {{ user.get_username|title }}
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" class="border border-0 bg-light border border-bottom border-info">
                                 <li><a class="dropdown-item" href="#">Orders</a></li>
                                 <li><a class="dropdown-item" href="#">Account</a></li>
                                 <li><hr class="dropdown-divider"></li>
@@ -100,11 +107,14 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
                     {% endif %}
-                    <li class="nav-item basket-wrapper position-relative">
-                        <img src="{% static 'favicon/basket-ico.svg' %}" class=" position-absolute text-warning"></img>
-                        <a class="nav-link checkout-link text-secondary" href="{% url 'shopping_bag' %}">
-                            <span clas="products-counter m-2"><strong>{{ products_count }}</strong></span>
-                            <span class="d-md-none fs-3">Checkout</span>
+                    <li class="nav-item basket-wrapper">
+                        <a class="nav-link checkout-link d-flex text-secondary" href="{% url 'shopping_bag' %}">
+                            <img src="{% static 'favicon/basket-ico.svg' %}" class="m-1">
+                            <div class="products-counter text-center">
+                                <span>
+                                    <strong>{{ products_count }}</strong>
+                                </span>
+                            </div>
                         </a>
                     </li>
                 </ul>
@@ -144,6 +154,8 @@
     <!-- End - Messages Container -->
 </main>
 
+{% block postloadjs %}
+{% endblock %}
 <footer class="page-footer lighten-3 bg-dark">
     <div class="container py-4 mb-4 text-light">
         <h4><i class="fab fa-shirtsinbulk fa-sm m-2"></i>BackPocket</h4>

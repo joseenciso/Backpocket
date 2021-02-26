@@ -13,9 +13,11 @@
 
 <div class="container">
     <div class="row">
+        <a href="{% url 'product' item0.pk %}" class="py-2 px-4 border border-2 border-info bg-info text-white shadow">
+            <h2 class="featurette-heading my-2">{{ item0.name }}</h2>
+        </a>
         <div class="col-md-7 text-wrapper">
             <a href="{% url 'product' item0.pk %}" class="mx-auto">
-                <h2 class="featurette-heading">{{ item0.name }}</h2>
                 <p class="lead mt-4">{{ item0.description }}</p>
             </a>
         </div>
@@ -26,10 +28,8 @@
         </div>
     </div>
 
-    <hr class="my-4 border border-2 border-info shadow">
-
-    <div class="title-wrapper">
-        <h2>{{ article_name|capfirst }}s</h2>
+    <div class="title-wrapper my-4 py-2 px-4 border border-2 border-info bg-info text-white shadow">
+        <h2 class="my-2">{{ article_name|capfirst }}s</h2>
     </div>
     <div class="articles-wrapper">
         {% for article in articles %}
@@ -42,12 +42,12 @@
         {% endfor %}
     </div>
 
-    <hr class="my-4 border border-2 border-info shadow">
-
     <div class="row my-5">
+        <a href="{% url 'product' item1.pk %}" class="py-2 px-4 border border-2 border-info bg-info text-white shadow">
+            <h2 class="featurette-heading my-2">{{ item1.name }}</h2>
+        </a>
         <div class="col-md-7 text-wrapper">
             <a href="{% url 'product' item1.pk %}" class="mx-auto">
-                <h2 class="featurette-heading">{{ item1.name }}</h2>
                 <p class="lead mt-4">{{ item1.description }}</p>
             </a>
         </div>
@@ -58,10 +58,8 @@
         </div>
     </div>
 
-    <hr class="my-4 border border-2 border-info shadow">
-
-    <div class="title-wrapper">
-        <h2>{{ category_name|capfirst }}s</h2>
+    <div class="title-wrapper my-4 py-2 px-4 border border-2 border-info bg-info text-white shadow">
+        <h2 class="py-2">{{ category_name|capfirst }}s</h2>
     </div>
     <div class="articles-wrapper">
         {% for category in categories %}
@@ -74,12 +72,12 @@
         {% endfor %}
     </div>
 
-    <hr class="my-4 border border-2 border-info shadow">
-
     <div class="row my-5">
+        <a href="{% url 'product' item2.pk %}" class="my-4 py-2 px-4 border border-2 border-info bg-info text-white shadow">
+            <h2 class="featurette-heading py-2">{{ item2.name }}</h2>
+        </a>
         <div class="col-md-7 text-wrapper">
             <a href="{% url 'product' item2.pk %}" class="ml-auto">
-                <h2 class="featurette-heading">{{ item2.name }}</h2>
                 <p class="lead mt-4">{{ item2.description }}</p>
             </a>
         </div>
@@ -90,10 +88,9 @@
         </div>
     </div>
 
-    <hr class="my-4 border border-2 border-info shadow">
     
-    <div class="title-wrapper ">
-        <h2>For {% if gender_name == 'Women' %}her{% else %}him{% endif %}</h2>
+    <div class="title-wrapper my-4 py-2 px-4 border border-2 border-info bg-info text-white shadow">
+        <h2 class="py-2">For {% if gender_name == 'Women' %}her{% else %}him{% endif %}</h2>
     </div>
     <div class="articles-wrapper overflow-auto">
         {% for gender in gender_products %}

@@ -8,12 +8,7 @@
 .edit-update-wrapper {
     min-width: 120px;
 }
-/*
-#update-form{
-    min-width: 60px;
-    max-width: 300px;
-}
-*/
+
 .products-row {
     height: 210px;
     padding: 5px;
@@ -78,7 +73,14 @@ td .fa-shopping-bag{
     .remove-item span{
         display: none;
     }
+}
 
+@media(max-width: 576px){
+    .edit-update-wrapper #update-form,
+    .edit-update-wrapper #update-form input{
+    /* min-width: 60px;*/
+        max-width: 55px !important;
+    }
 }
 
 
@@ -86,12 +88,26 @@ td .fa-shopping-bag{
 
     .edit-update-wrapper {
         min-width: 120px;
-        max-width: 140px;
+        max-width: auto;
+        margin-left: 0;
+        margin-right: 0;
     }
 
-    .edit-update-wrapper #update-form,
-    .edit-update-wrapper #update-form input{
-       /* min-width: 60px;*/
-        max-width: 55px !important;
+    .img-wrapper {
+        max-width: 120px;
+        max-height: 120px;
+    }
+    
+    .img-wrapper img {
+        height: auto;
+        max-height: 120px;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+        -o-object-fit: contain;
+    
+        margin: 4px auto;
+        vertical-align: middle;
+    
     }
 }

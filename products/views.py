@@ -39,17 +39,32 @@ def all_products(request):
             products = products.order_by(sortkey)
 
         if 'categories' in request.GET:
-            categories = request.GET['categories'].split(',')
+            category = request.GET['categories']
+            print("42-C: ", category, "\n")
             # Creating a list
-            categories = categories.filter(categories__in=categories)
+            #categories = categories.filter(categories__in=categories)
             # categories = Category.objects.filter(category_name__in=catgories)
-            categories = Product.objects.filter(category_name__in=categories)
+            all_categories = Category.objects.all()
+            print("47-C: ", all_categories, "\n")
+            categories = Category.objects.filter(name__in=category)
+            print("48-C: ", categories, "\n")
+            for cat in categories:
+                print(cat)
 
         if 'gender' in request.GET:
-            gender = request.GET['gender'].split(',')
-            print(products.filter(gender__in=gender))
-            products = products.filter(gender__in=gender)
-            gender = Category.objects.filter(name__in=gender)
+            gender_all = Gender.objects.all()
+            print("56-", gender_all)
+            gender = request.GET['gender']
+            print("56-G: ", gender)
+            # print(products.filter(gender__in=gender))
+            products = products.filter(gender__name=gender)
+            print("59-G: ", products)
+            # for g1 in gend:
+            #    print("g1", g1)
+            # gender1 = Product.objects.filter(gender__name=gender)
+            # print("61", gender1)
+            # for g2 in gender1:
+            #    print("g2", g2)
 
         # if 'type' in request.GET:
         #    article = request.GET['categories'].split(',')
@@ -67,32 +82,33 @@ def all_products(request):
                 description__icontains=query)
             # the i makes the queries case insensitive
             products = products.filter(queries)
-    print("Q", query)
+    # print("76 - Q: ", query)
     current_sort = f'{sort}_{direction}'
-    rating = products.filter()
+    #rating = products.filter()
     # print(products)
-    print("CS", current_sort)
+    # print("CS: ", current_sort)
 
     total_products = products.count()
-    p = Paginator(products, 7)
-    print("p", p)
-    page_num = request.GET.get('page', 1)
+    # Future Feature
+    # p = Paginator(products, 7)
+    # print("p", p)
+    # page_num = request.GET.get('page', 1)
 
-    try:
-        page = p.page(page_num)
-    except EmptyPage:
-        page = p.page(1)
-    print(p, page, page.count,  page_num)
+    # try:
+    #    page = p.page(page_num)
+    # except EmptyPage:
+    #    page = p.page(1)
+    # print(p, page, page.count,  page_num)
 
     context = {
         'total_products': total_products,
-        'products': page,
+        'products': products,
         'search_term': query,
         'current_category': categories,
         'current_sort': current_sort,
     }
 
-    print(query)
+    # print(query)
     return render(request, 'products/allproducts.html', context)
 
 

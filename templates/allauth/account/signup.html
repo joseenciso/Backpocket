@@ -1,15 +1,15 @@
 {% extends "account/base.html" %}
 {% load widget_tweaks %}
 {% load i18n %}
-{% block head_title %}{% trans "Signup" %}{% endblock %}
+{% block head_title %}Register{% endblock %}
 
 {% block inner_content %}
-<div class="register-container border border-info rounded mx-auto shadow">
+<div class="register-container border border-2 border-info rounded mx-auto shadow">
   <div class="allauth-title text-white bg-info text-center p-2">
-    <h2>{% trans "Sign Up" %}</h2>
+    <h2>Register</h2>
   </div>
 
-  <p class="p-2 mt-4">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+  <p class="p-2 mt-4 mx-2">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
 
   <form class="signup px-2" id="signup_form" method="post" action="{% url 'account_signup' %}">
     {% csrf_token %}
@@ -18,7 +18,10 @@
       <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
     {% endif %}
     <div class="register-button mb-4 d-flex">
-      <button type="submit" class="btn btn-info mt-4 text-white border border-2 border-warning shadow">{% trans "Sign Up" %}<i class="fas fa-chevron-circle-right"></i></button>
+      <button type="submit" class="btn btn-info mt-4 text-white border border-2 border-warning shadow">
+        <strong>Register</strong>
+        <i class="fas fa-chevron-circle-right border border-2 border-warning rounded-circle"></i>
+      </button>
     </div>
   </form>
 </div>
