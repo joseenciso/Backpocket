@@ -64,7 +64,7 @@ form.addEventListener('submit', function (ev) {
         'save_info':saveInfo,
     };
 
-    var url = '/checkout/cache_checkout_data/';
+    var url = '/products/checkout/cache_checkout_data/';
 
     $.post(url, postData).done(function(){
         stripe.confirmCardPayment(clientSecret, {
