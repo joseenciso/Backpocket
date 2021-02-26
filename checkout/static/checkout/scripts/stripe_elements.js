@@ -59,12 +59,12 @@ form.addEventListener('submit', function (ev) {
 
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').valueOf()
     var postData = {
-        'csrfmiddlewaretoen': csrfToken,
+        'csrfmiddlewaretoken': csrfToken,
         'client_secret': clientSecret,
         'save_info':saveInfo,
     }
-
-    var url = '/checkout/cache_checkout_data/';
+    console.log(postData)
+    var url = 'products/checkout/cache_checkout_data/';
 
     $.post(url, postData).done(function(){
         stripe.confirmCardPayment(clientSecret, {
