@@ -47,24 +47,24 @@ form.addEventListener('submit', function (ev) {
 
     /* Preventing multiple submissions*/
     card.update({ 'disabled': true });
-    $('#checkout-button').attr('disabled', true)
+    $('#checkout-button').attr('disabled', true);
     /*** LoadingOverlay ***/
     $('#checkout-form').fadeToggle(100);
-    $('#loading-overlay').fadeToggle(100)
+    $('#loading-overlay').fadeToggle(100);
     /*** End LoadingOverlay */
 
     /* Cache_Ceckout_Data */
     /* Save_info Box */
-    var saveInfo = Boolean($('#save-info').attr('checked'))
+    var saveInfo = Boolean($('#save-info').attr('checked'));
 
-    var csrfToken = $('input[name="csrfmiddlewaretoken"]').valueOf()
+    var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     var postData = {
         'csrfmiddlewaretoken': csrfToken,
         'client_secret': clientSecret,
         'save_info':saveInfo,
-    }
-    console.log(postData)
-    var url = 'products/checkout/cache_checkout_data/';
+    };
+
+    var url = '/checkout/cache_checkout_data/';
 
     $.post(url, postData).done(function(){
         stripe.confirmCardPayment(clientSecret, {
@@ -109,10 +109,10 @@ form.addEventListener('submit', function (ev) {
                 $(errorDiv).html(html);
                 /*** LoadingOverlay ***/
                 $('#checkout-form').fadeToggle(100);
-                $('#loading-overlay').fadeToggle(100)
+                $('#loading-overlay').fadeToggle(100);
                 /*** End LoadingOverlay */
                 card.update({ 'disabled': false });
-                $('#checkout-button').attr('disabled', false)
+                $('#checkout-button').attr('disabled', false);
             } else {
                 // The payment has been processed!
                 if (result.paymentIntent.status === 'succeeded') {

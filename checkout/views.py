@@ -56,6 +56,7 @@ def checkout(request):
         if order_form.is_valid():
             order = order_form.save(commit=False)
             payment_id = request.POST.get('client_secret').split('_secret')[0]
+            print(payment_id)
             order.stripe_pid = payment_id
             order.original_bag = json.dumps(bag)
             order.save()
@@ -133,6 +134,7 @@ def checkout(request):
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
     }
+    print(intent.client_secret)
     return render(request, template, context)
 
 
