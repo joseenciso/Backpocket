@@ -38,25 +38,23 @@
 
                 <div class="row">
                     <div class="col-12">
-
-                    {% for item in order.lineitems.all %}
-                        <span><strong>Name:</strong> {{ item.product.name }}</span><br>
-                        {% if item.product.has_size %}
-                            <span><strong>Size:</strong> {{ item.product_size|upper }}</span><br>
-                        {% endif %}
-                        <span><strong>Qty</strong> {{ item.quantity }} x &#163;{{ item.product.price }} each.</span><br>
-                        
-                    {% endfor %}
-                    </div>
-                    <div class="col-6">
-                        <span class="ml-auto"></span>
+                        <div class="items-wrapper px-2">
+                        {% for item in order.lineitems.all %}
+                            <span><strong>Name:</strong> {{ item.product.name }}</span><br>
+                            {% if item.product.has_size %}
+                                <span><strong>Size:</strong> {{ item.product_size|upper }}</span><br>
+                            {% endif %}
+                            <span><strong>Qty</strong> {{ item.quantity }} x &#163;{{ item.product.price }} each.</span><br>
+                            
+                        {% endfor %}
+                        </div>
                     </div>
                 </div>
 
                 <hr>
 
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-12">
                         <table>
                             <tr>
                                 <th> Delivering to:</th>

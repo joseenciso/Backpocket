@@ -40,7 +40,7 @@ card.addEventListener('change', function (event) {
 
 
 /* Submit Stripe Client Code */
-var form = document.getElementById('payment-form');
+var form = document.getElementById('checkout-form');
 
 form.addEventListener('submit', function (ev) {
     ev.preventDefault();
