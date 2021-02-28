@@ -57,3 +57,12 @@ The pagination section has prev as previous page, next to go to the next page an
 # Features
 Data From
 https://www.kaggle.com/paramaggarwal/fashion-product-images-small?select=styles.csv
+
+
+
+# Documentation and Help
+[Django 3.1 Documentation](https://docs.djangoproject.com/en/3.1/)
+
+# Credits
+
+I would like to thanks Code Institute for 
