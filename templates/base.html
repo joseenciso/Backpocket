@@ -70,7 +70,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Products
                         </a>
-                        <ul class="dropdown-menu border border-0 bg-light border border-bottom border-info" aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu bg-light border border-top-0 border-2 rounded-0 border-info" aria-labelledby="navbarDropdown">
                             <li>
                                 <a class="dropdown-item" href="{% url 'allproducts' %}?articles=football">Footballs</a>
                             </li>
@@ -108,23 +108,22 @@
                                 <a class="dropdown-item" href="{% url 'allproducts' %}?articles=casual_shoe">Casual Shoes</a>
                             </li>
                             
-                            <li><hr class="dropdown-divider bg-info border-3"></li>
+                            <li><hr class="dropdown-divider bg-warning border-3 m-0 p-0"></li>
                             <li class="nav-item">
                                 <a class="dropdown-item w-100" aria-current="page" href="{% url 'allproducts' %}">All Products</a>
                             </li>
                             
-                            <hr class="dropdown-divider bg-warning border-3 m-0 p-0">
+                            
                         </ul>
                     </li>
                     {% if user.is_authenticated %}
-                        <li class="nav-item dropdown border border-0 bg-light border border-bottom border-info">
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 {{ user.get_username|title }}
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" class="border border-0 bg-light border border-bottom border-info">
-                                <li><a class="dropdown-item" href="{% url 'profile' %}">Orders</a></li>
-                                <li><a class="dropdown-item" href="#">Account</a></li>
-                                <li><hr class="dropdown-divider"></li>
+                            <ul class="dropdown-menu border bg-light border-top-0 border-2 rounded-0 border-info" aria-labelledby="navbarDropdown" class="border border-0 bg-light border border-bottom border-info">
+                                <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
+                                <li><hr class="dropdown-divider bg-warning border-3 m-0 p-0"></li>
                                 <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
                             </ul>
                         </li>
