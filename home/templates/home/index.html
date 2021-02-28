@@ -18,7 +18,7 @@
         </a>
         <div class="col-md-7 text-wrapper">
             <a href="{% url 'product' item0.pk %}" class="mx-auto">
-                <p class="lead mt-4">{{ item0.description }}</p>
+                <p class="lead mt-4 ">{{ item0.description }}</p>
             </a>
         </div>
         <div class="col-md-5 img-wrapper">
@@ -28,8 +28,10 @@
         </div>
     </div>
 
-    <div class="title-wrapper my-4 py-2 px-4 border border-2 border-info bg-info text-white shadow">
-        <h2 class="my-2">{{ article_name|capfirst }}s</h2>
+    <div class="title-wrapper my-4 py-2 px-4 border border-2 border-info bg-info shadow">
+        <a class="text-white" href="{% url 'allproducts' %}?articles={{ article_name }}">
+            <h2 class="my-2">{{ article_name.friendly_name }}</h2>
+        </a>
     </div>
     <div class="articles-wrapper">
         {% for article in articles %}
@@ -58,8 +60,10 @@
         </div>
     </div>
 
-    <div class="title-wrapper my-4 py-2 px-4 border border-2 border-info bg-info text-white shadow">
-        <h2 class="py-2">{{ category_name|capfirst }}s</h2>
+    <div class="title-wrapper my-4 py-2 px-4 border border-2 border-info bg-info shadow">
+        <a class="text-white" href="{% url 'allproducts' %}?categories={{ category_name }}">
+            <h2 class="py-2">{{ category_name.friendly_name }}</h2>
+        </a>
     </div>
     <div class="articles-wrapper">
         {% for category in categories %}
@@ -89,8 +93,10 @@
     </div>
 
     
-    <div class="title-wrapper my-4 py-2 px-4 border border-2 border-info bg-info text-white shadow">
-        <h2 class="py-2">For {% if gender_name == 'Women' %}her{% else %}him{% endif %}</h2>
+    <div class="title-wrapper my-4 py-2 px-4 border border-2 border-info bg-info shadow">
+        <a class="text-white" href="{% url 'allproducts' %}?gender={{ gender_name }}">
+            <h2 class="py-2">For {% if gender_name == 'Women' %}her{% else %}him{% endif %}</h2>
+        </a>
     </div>
     <div class="articles-wrapper overflow-auto">
         {% for gender in gender_products %}

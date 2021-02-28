@@ -72,18 +72,47 @@
                         </a>
                         <ul class="dropdown-menu border border-0 bg-light border border-bottom border-info" aria-labelledby="navbarDropdown">
                             <li>
-                                <a class="dropdown-item" href="#">Categories</a>
+                                <a class="dropdown-item" href="{% url 'allproducts' %}?articles=football">Footballs</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#">Articles</a>
+                                <a class="dropdown-item" href="{% url 'allproducts' %}?articles=backpack">Backpacks</a>
                             </li>
-
+                            <li>
+                                <a class="dropdown-item" href="{% url 'allproducts' %}?articles=handbag">handbags</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{% url 'allproducts' %}?articles=fleece">Fleece</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{% url 'allproducts' %}?articles=t-shirts">T-shirts</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{% url 'allproducts' %}?articles=caps">Caps</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{% url 'allproducts' %}?articles=shorts">Shorts</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{% url 'allproducts' %}?articles=track_pants">Track Pants</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{% url 'allproducts' %}?articles=shirts">Shirts</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{% url 'allproducts' %}?articles=blouse">Blouses</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{% url 'allproducts' %}?articles=sport_shoes">Sports Shoes</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{% url 'allproducts' %}?articles=casual_shoe">Casual Shoes</a>
+                            </li>
+                            
                             <li><hr class="dropdown-divider bg-info border-3"></li>
                             <li class="nav-item">
                                 <a class="dropdown-item w-100" aria-current="page" href="{% url 'allproducts' %}">All Products</a>
                             </li>
-                            <li>
-                            </li>
+                            
                             <hr class="dropdown-divider bg-warning border-3 m-0 p-0">
                         </ul>
                     </li>
@@ -93,7 +122,7 @@
                                 {{ user.get_username|title }}
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown" class="border border-0 bg-light border border-bottom border-info">
-                                <li><a class="dropdown-item" href="#">Orders</a></li>
+                                <li><a class="dropdown-item" href="{% url 'profile' %}">Orders</a></li>
                                 <li><a class="dropdown-item" href="#">Account</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
@@ -162,12 +191,15 @@
 {% endblock %}
 <footer class="page-footer lighten-3 bg-dark">
     <div class="container py-4 mb-4 text-light">
-        <h4><i class="fab fa-shirtsinbulk fa-sm m-2"></i>BackPocket</h4>
-        <hr class="border border-2 border-info">
         <div class="row">
-            
+            <div class="col-12">
+                <h4><i class="fab fa-shirtsinbulk fa-sm m-2"></i>BackPocket</h4>
+                <hr class="border border-2 border-info">
+            </div>
+        </div>
+        <div class="row">
             <div class="col-sm-12 col-md-4 col-lg-3 mt-4 mb-1">
-                <h5><i class="far fa-paper-plane m-2"></i>Contact us at:</h5>
+                <h5 class="text-center" style="height: 36px;"><i class="far fa-paper-plane m-2"></i>Contact us at:</h5>
                 <hr class="bg-warning border border-2 border-warning">
                 <ul class="list-unstyled ">
                     <li><i class="far fa-envelope"></i>info@backpocket.com</li>
@@ -177,14 +209,14 @@
             </div>            
 
             <div class="col-sm-12 col-md-4 col-lg-3 mt-4 mb-1">
-                <h5>Follow us on:</h5>
+                <h5 class="text-center " style="height: 36px;"><i class="far fa-thumbs-up m-2"></i> Follow us on:</h5>
                 <hr class="bg-warning border border-2 border-warning">
                 <ul class="list-unstyled pl-2">
-                    <li><a href="_blank" class="text-light"><i class="fab fa-facebook-f"></i>facebook</a></li>
-                    <li><a href="_blank" class="text-light"><i class="fab fa-twitter"></i>twitter</a></li>
-                    <li><a href="_blank" class="text-light"><i class="fab fa-pinterest-p"></i>pinterest</a></li>
-                    <li><a href="_blank" class="text-light"><i class="fab fa-tiktok"></i>tiktok</a></li>
-                    <li><a href="_blank" class="text-light"><i class="fab fa-instagram"></i>instagram</a></li>
+                    <li><a href="https://www.facebook.com/" target="_blank" class="text-light"><i class="fab fa-facebook-f"></i>facebook</a></li>
+                    <li><a href="https://twitter.com/Twitter" target="_blank" class="text-light"><i class="fab fa-twitter"></i>twitter</a></li>
+                    <li><a href="https://www.pinterest.com" target="_blank" class="text-light"><i class="fab fa-pinterest-p"></i>pinterest</a></li>
+                    <li><a href="https://www.tiktok.com" target="_blank" class="text-light"><i class="fab fa-tiktok"></i>tiktok</a></li>
+                    <li><a href="https://www.instagram.com" target="_blank" class="text-light"><i class="fab fa-instagram"></i>instagram</a></li>
                 </ul>
             </div>
         </div>

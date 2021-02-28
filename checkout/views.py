@@ -56,7 +56,6 @@ def checkout(request):
         if order_form.is_valid():
             order = order_form.save(commit=False)
             payment_id = request.POST.get('client_secret').split('_secret')[0]
-            print(payment_id)
             order.stripe_pid = payment_id
             order.original_bag = json.dumps(bag)
             order.save()
@@ -134,7 +133,6 @@ def checkout(request):
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
     }
-    print(intent.client_secret)
     return render(request, template, context)
 
 
@@ -142,7 +140,6 @@ def checkout_success(request, order_number):
     """ Success Checkout Handler """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
-    print("order: ", order)
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
@@ -175,7 +172,6 @@ def checkout_success(request, order_number):
     context = {
         'order': order,
     }
-    print(order)
     return render(request, template, context)
 
 

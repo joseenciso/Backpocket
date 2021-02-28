@@ -249,7 +249,7 @@ GOOGLE_MAPS_KEY = os.environ.get('GOOGLE_MAPS_KEY')
 if 'DEVELOPMENT' in os.environ:
     # Sending  new account confimation emails to the console temporary
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'costumerservice@backpoket.com'
+    DEFAULT_FROM_EMAIL = 'costumerservice@backpocket.com'
 else:
     # Sending  new account confimation emails to the console temporary
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

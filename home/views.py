@@ -18,34 +18,21 @@ def index(request):
     for i in range(3):
         # Run a QUERY to count all the products in the DB
         # If products > 0 then rund randint 1, QUERY
-        #print(i)
         try:
             pk = random.randint(1, product_count)
             product = get_object_or_404(Product, pk=pk)
             #print("ppk", pk, "p", product, product.pk)
         except (Exception, NoReverseMatch) as e:
             messages.error(request, f'NoReverseMatch on item {e}')
-            #print("29-pe", e, product, product.pk)
             return HttpResponse(status=500)
-        #pro_test = get_object_or_404(Product, pk=random.randint(1, product_count))
-        #print(i,"\t", product.pk,"\t", pro_test,"\t")
-        #print(product)
-        #print("PT-L29", pro_test)
         if product == prev_prod:
             pk = random.randint(1, product_count)
             product = get_object_or_404(Product, pk=pk)
-            #print("35 - P: ", product, "pv-p: ", prev_prod, "i - ", i)
-            #i-=1
-            #print("37", i)
             dic["item{0}".format(i)] = product
             item+str(i)
         else:
-            #print("39", i)
             dic["item{0}".format(i)] = product
             item+str(i)
-            #print("ITEM", item+str(i))
-            #print("43-P", product)
-        #print("43", i)
         prev_prod = product
         
         # Else No products --> Message: No products Availabe <--
@@ -79,15 +66,13 @@ def index(request):
 
     context = {
         'GOOGLE_MAPS_KEY': GOOGLE_MAPS_KEY,
-        'article_name': article_name.friendly_name,
+        'article_name': article_name,
         'articles': articles,
-        'category_name': category_name.friendly_name,
+        'category_name': category_name,
         'categories': categories,
-        'gender_name': gender_name.friendly_name,
+        'gender_name': gender_name,
         'gender_products': gender_products,
     }
     context.update(dic)
-    #context.update(articles)
-    #print(context)
     return render(request, 'home/index.html', context)
 

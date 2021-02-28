@@ -3,28 +3,26 @@ from .models import UserProfile
 from .forms import UserProfileForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from checkout.models import Order
+from checkout.models import Order, OrderLineItem
 
 
 @login_required
 def profile(request):
     """ User's profile """
     profile = get_object_or_404(UserProfile, user=request.user)
-    print(profile)
     form = UserProfileForm(instance=profile)
-    #print(form)
     orders = profile.orders.all()
 
     if request.method == 'POST':
         form = UserProfileForm(request.POST, intance=profile)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Profile updated!')
+            messages.info(request, 'Profile updated!')
         else:
             messages.error(request, f'Profile update failed, please double check the the information in fields!')
     else:
         form = UserProfileForm(instance=profile)
-    print(orders)
+
     template = 'profiles/profiles.html'
     context = {
         'form': form,

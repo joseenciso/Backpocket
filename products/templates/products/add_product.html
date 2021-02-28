@@ -21,8 +21,6 @@
                     {% csrf_token %}
                     {{ form | crispy }}
                     
-                    <!--input type="hidden" name="csrfmiddlewaretoken" value="CwCSJrUWGSQDDwrO2pWblvl1DWn03LfyuNRErkSlXYdl34NWQdo7NpLCaqVawV94"-->
-                    
                     {% for field in form %}
                         <div class="form-floating">
                             {{ field }}
@@ -31,122 +29,6 @@
                             </label>
                         </div>
                     {% endfor %}
-                        <!--input type="text" name="sku" value="" maxlength="25" class="form-control" required id="id_sku" placeholder="S">
-                        <label for="id_sku" class="requiredField">
-                            Sku<span class="asteriskField">*</span>
-                        </label>
-                        
-                    
-                    <div id="div_id_name" class="control-group">
-                        <label for="id_name" class="control-label requiredField">
-                            Name<span class="asteriskField">*</span>
-                        </label>
-                        <div class="controls">
-                            <input type="text" name="name" value="Deck Navy Blue Backpack" maxlength="250" class="textinput textInput" required id="id_name">
-                        </div>
-                    </div>
-                    <div id="div_id_categories" class="control-group">
-                        <label for="id_categories" class="control-label ">
-                            Categories
-                        </label>
-                        <div class="controls">
-                            <select name="categories" class="select" id="id_categories">
-                                <option value="">---------</option>
-                                <option value="1" selected>accessories</option> <option value="2">apparel</option> <option value="3">footware</option> <option value="4">sporting_goods</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div id="div_id_sub_categories" class="control-group">
-                        <label for="id_sub_categories" class="control-label ">
-                            Sub categories
-                        </label>
-                    <div class="controls">
-                        <select name="sub_categories" class="select" id="id_sub_categories">
-                            <option value="">---------</option> <option value="1" selected>bags</option> <option value="2">topwear</option> <option value="3">headwear</option> <option value="4">shoes</option> <option value="5">sports_equipment</option> <option value="6">bottomwear</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div id="div_id_articles" class="control-group">
-                        <label for="id_articles" class="control-label ">
-                            Articles
-                        </label>
-                        <div class="controls">
-                            <select name="articles" class="select" id="id_articles">
-                                <option value="">---------</option> <option value="1">footballs</option> <option value="2" selected>backpacks</option> <option value="3">handbags</option> <option value="4">jackets</option> <option value="5">tshirts</option> <option value="6">caps</option> <option value="7">shorts</option> <option value="8">track_pants</option> <option value="9">shirt</option> <option value="10">blouse</option> <option value="11">sports_shoes</option> <option value="12">casual_shoes</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div id="div_id_gender" class="control-group">
-                        <label for="id_gender" class="control-label requiredField">
-                            Gender<span class="asteriskField">*</span>
-                        </label>
-                        <div class="controls">
-                            <select name="gender" class="select" required id="id_gender">
-                                <option value="">---------</option> <option value="1" selected>unisex</option> <option value="2">women</option> <option value="3">men</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div id="div_id_has_size" class="control-group">
-                        <label for="id_has_size" class="control-label ">
-                            Has size
-                        </label>
-                        <div class="controls">
-                            <select name="has_size" class="nullbooleanselect" id="id_has_size">
-                                <option value="unknown">Unknown</option> <option value="true">Yes</option> <option value="false" selected>No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div id="div_id_brand" class="control-group"> <label for="id_brand" class="control-label requiredField">
-                                    Brand<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="brand" value="Pumba" maxlength="50" class="textinput textInput" required id="id_brand"> </div> </div> <div id="div_id_base_colour" class="control-group"> <label for="id_base_colour" class="control-label ">
-                                    Base colour
-                                </label> <div class="controls"> <input type="text" name="base_colour" value="Navy Blue" maxlength="50" class="textinput textInput" id="id_base_colour"> </div> </div> <div id="div_id_price" class="control-group"> <label for="id_price" class="control-label requiredField">
-                                    Price<span class="asteriskField">*</span> </label> <div class="controls"> <input type="number" name="price" value="31.00" step="0.01" class="numberinput" required id="id_price"> </div> </div> <div id="div_id_rating" class="control-group"> <label for="id_rating" class="control-label ">
-                                    Rating
-                                </label>
-                                    <div class="controls">
-                                        <input type="number" name="rating" value="5" class="numberinput" id="id_rating">
-                                    </div>
-                                </div>
-                                <div id="div_id_usage" class="control-group">
-                                    <label for="id_usage" class="control-label ">
-                                        Usage
-                                </label>
-                        <div class="controls">
-                            <input type="text" name="usage" value="Casual" maxlength="50" class="textinput textInput" id="id_usage">
-                        </div>
-                    </div>
-                    <div id="div_id_description" class="control-group">
-                        <label for="id_description" class="control-label requiredField">
-                            Description<span class="asteriskField">*</span>
-                        </label>
-                        <div class="controls">
-                            <textarea name="description" cols="40" rows="10" class="textarea" required id="id_description">
-                                This stylish backpack - with its modern form and subtle colour scheme - is truly one for all occasions. And you can pack it for all occasions, too, thanks to its roomy interior and scores of compartments. A two-way zip opens the largest of them, which houses a sleeve for laptops, while a front pocket and two mesh pouches line the bag’s exterior. The straps are adjustable and padded, and the bottom is covered in sturdy Durabase material.
-                            </textarea>
-                        </div>
-                    </div>
-                    <div id="div_id_image_url" class="control-group">
-                        <label for="id_image_url" class="control-label ">
-                            Image url
-                        </label>
-                        <div class="controls">
-                            <input type="url" name="image_url" maxlength="200" class="urlinput" id="id_image_url">
-                        </div>
-                    </div>
-                    <div-- id="div_id_image" class="control-group">
-                        <label for="id_image" class="control-label ">
-                            Image
-                        </label> 
-                        <div class="controls">
-                            Currently: <a href="/media/products/1525.png">products/1525.png</a>
-                            <input type="checkbox" name="image-clear" id="image-clear_id">
-                            <label for="image-clear_id">Clear</label>
-                            <br>
-                            Change:
-                            <input type="file" name="image" accept="image/*" class="clearablefileinput" id="id_image"> 
-                        </div> 
-                    </div-->
-
 
                     <div class="row mt-2">
                         <div class="col-12">
