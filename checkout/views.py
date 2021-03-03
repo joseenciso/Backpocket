@@ -1,15 +1,14 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (render, redirect, reverse,
+                                get_object_or_404, HttpResponse)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
-
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 from products.models import Product
 from shopping_bag.context import bag_context
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
-
 import stripe
 import json
 
@@ -29,10 +28,9 @@ def cache_checkout_data(request):
         messages.error(request, 'Sorry, your payment cannot be \
             proccesed right now. Please try again later.')
         return HttpResponse(content=e, status=400)
-        
+
 
 def checkout(request):
-    # Stripe's payment intent
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -84,19 +82,18 @@ def checkout(request):
                     return redirect(reverse('shopping_bag'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_success', 
+                            args=[order.order_number]))
         else:
             messages.error(request, "There is an error in the form!")
         
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "There is nothing in your bag at the moment.")
+            messages.error(request, f'There is nothing in your bag at the moment.')
             return redirect(reverse('home'))
-        print()
         current_bag = bag_context(request)
         total = current_bag['grand_total']
-
         stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
@@ -104,7 +101,8 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
         
-        # Attempt to prefill the form with any info the user maintains in their profile
+        # Attempt to prefill the form with any info the 
+        # user maintains in their profile
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
@@ -173,8 +171,3 @@ def checkout_success(request, order_number):
         'order': order,
     }
     return render(request, template, context)
-
-
-
-
-

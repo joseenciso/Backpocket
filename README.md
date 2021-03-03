@@ -4,6 +4,9 @@
 
 [![Build Status](https://travis-ci.org/Skrkrw/ms4-ecommerce.svg?branch=master)](https://travis-ci.org/Skrkrw/ms4-ecommerce)
 
+
+<img src="static/screenshots/landing_page_full.png" height="250" />
+
 ![BackPocket - Logo](static/screenshots/landing_page_full.png)
 
 
@@ -79,7 +82,7 @@ For the testing in several devices and their respective web browser were used:
 ![BackPocket - Logo](static/screenshots/tablet-01.png)
 
 ## Deployment
-Created enviroment variables that will go on a env.py file and in the Heroku setting variables:
+These are the enviroment variables that will go on a env.py file and in the Heroku setting variables:
 - SECRET_KEY
 - DATABASE_URL*
 - EMAIL_HOST_PASSWORD
@@ -88,8 +91,7 @@ Created enviroment variables that will go on a env.py file and in the Heroku set
 - STRIPE_SECRET_KEY
 - STRIPE_WH_SECRET
 ### Deployment in Heroku
-To be able to deploy in heroku is important to create an account, y selecte the closest server to the region you live in.
-
+To be able to deploy in heroku is important to create an account making sure of selecting the closest server to the region you live in.
 
 
 # Features

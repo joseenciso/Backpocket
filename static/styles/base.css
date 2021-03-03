@@ -195,13 +195,8 @@ hr{
 
 @media(max-width: 991px){
     main{
-        margin-top: 131px;
-        padding-top: 20px
+        margin-top: 140px;
     }
-
-    /*.checkout-link{
-        position: relative;
-    }*/
     
     .basket-wrapper img{
         width: 24px;
@@ -221,6 +216,21 @@ hr{
         font-size: 1.5rem;
     }
 
+}
+
+@media (max-width: 768px) {
+    main{
+        margin-top: 160px;
+    }
+
+    
+
+    #search-bar {
+        margin-top: 5px;
+    }
+    .filter-container {
+        padding: 0 10px !important;
+    }
 }
 
 @media (min-width: 768px) {
@@ -244,22 +254,11 @@ hr{
     
 }
 
-@media (max-width: 768px) {
-    main{
-        margin-top: 160px !important;
-    }
-
-    
-
-    #search-bar {
-        margin-top: 5px;
-    }
-    .filter-container {
-        padding: 0 10px !important;
-    }
-}
-
 @media (max-width: 576px) {
+
+    main{
+        margin-top: 140px !important;
+    }
 
     .card-product .card-image,
     .card-product .card-body{

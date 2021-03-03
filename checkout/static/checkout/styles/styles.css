@@ -1,144 +1,150 @@
 .thumbnail-wrapper{
-        margin-right: 5px;
-    }
+    margin-right: 5px;
+}
 
-    li img{
-        width: auto;
+li img{
+    width: auto;
+    -o-object-fit: contain;
         object-fit: contain;
-    }
+}
 
-    .StripeElement {
-        box-sizing: border-box;
-        height: 40px;
-        padding: 10px 12px;
-        border: 1px solid rgb(206, 212, 218);
-        border-radius: 4px;
-        background-color: white;
+.StripeElement {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 40px;
+    padding: 10px 12px;
+    border: 1px solid rgb(206, 212, 218);
+    border-radius: 4px;
+    background-color: white;
+}
 
-        /*box-shadow: 5px 2px 5px 2px rgb(246, 247, 248);
-        -webkit-transition: box-shadow 150ms ease;
-        transition: box-shadow 150ms ease;*/
-    }
+.StripeElement--focus,
+.Stripe-style-input:focus,
+.Stripe-style-input:active{
+    -webkit-box-shadow: 0 0 5px 5px rgb(139, 185, 251);
+            box-shadow: 0 0 5px 5px rgb(139, 185, 251);
+}
 
-    .StripeElement--focus,
-    .Stripe-style-input:focus,
-    .Stripe-style-input:active{
-        box-shadow: 0 0 5px 5px rgb(139, 185, 251);
-    }
+.StripeElement--invalid {
+    border-color: #fa755a;
+}
 
-    .StripeElement--invalid {
-        border-color: #fa755a;
-    }
+.StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+}
 
-    .StripeElement--webkit-autofill {
-        background-color: #fefde5 !important;
-    }
+.StripeElement--focus,
+.Stripe-style-input:focus,
+.Stripe-style-input:active{
+    -webkit-box-shadow: 0 1px 3px 0 rgb(193, 217, 253);
+            box-shadow: 0 1px 3px 0 rgb(193, 217, 253);
+}
 
-    .StripeElement--focus,
-    .Stripe-style-input:focus,
-    .Stripe-style-input:active{
-        box-shadow: 0 1px 3px 0 rgb(193, 217, 253);
-    }
+#card-errors{
+    color: rgb(226, 56, 76);
+}
 
-    #card-errors{
-        color: rgb(226, 56, 76);
-    }
+#card-errors .icon{
+    margin-left: auto;
+}
 
-    #card-errors .icon{
-        margin-left: auto;
-    }
+tr th{
+    font-size: large;
+    text-decoration: underline;
+}
 
-    tr th{
-        font-size: large;
-        text-decoration: underline;
-    }
+tr td:first-child{
+    font-weight: bold;
+    width: 120px;
+}
 
-    tr td:first-child{
-        font-weight: bold;
-        width: 120px;
-    }
+#loading-overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(50,202,240);
+    z-index: 9999;
+}
 
-    #loading-overlay{
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgb(50,202,240);
-        z-index: 9999;
-    }
+#loading-overlay .loading-spinner{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0;
+    height: 100%;
+}
 
-    #loading-overlay .loading-spinner{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0;
-        height: 100%;
-    }
+select,
+select option{
+    color: #000;
+}
 
-    select,
-    select option{
-        color: #000;
-    }
-
-    select:invalid,
-    select option[value=""]{
-        color: #71777D;
-    }
+select:invalid,
+select option[value=""]{
+    color: #71777D;
+}
 
 
 @media(min-width: 993px){
 
 
-    .summary-wrapper{
-        width: 450px;
-    }
-    
-    .form-payment-wrapper{
-        width: 600px;
-        margin-left: 0;
-        margin-right: 0;
-    }
+.summary-wrapper{
+    width: 450px;
+}
 
-    .thumbnail-wrapper{
-        width: 100px;
-    }
+.form-payment-wrapper{
+    width: 600px;
+    margin-left: 0;
+    margin-right: 0;
+}
 
-    li img{
-        max-height: 100px;
-    }
+.thumbnail-wrapper{
+    width: 100px;
+}
 
-    #card-element{
-        max-width: 90%;
-        margin: 1rem auto;
-    }
-    
+li img{
+    max-height: 100px;
+}
+
+#card-element{
+    max-width: 90%;
+    margin: 1rem auto;
+}
+
 }
 
 @media(min-width: 768px) and (max-width: 992px){
-    .thumbnail-wrapper{
-        width: 70px;
-    }
+.thumbnail-wrapper{
+    width: 70px;
+}
 
-    li img{
-        max-height: 70px;
-    }
+li img{
+    max-height: 70px;
+}
 
-    .form{
-        width: 600px;
-    }
+.form{
+    width: 600px;
+}
 }
 
 @media(max-width: 576px){
-    .thumbnail-wrapper{
-        width: 100px;
-    }
-    .thumbnail-wrapper img{
-        height: auto;
-    }
+.thumbnail-wrapper{
+    width: 100px;
+}
+.thumbnail-wrapper img{
+    height: auto;
+}
 
-    table:first-child{
-        margin-top: 20px;
-    }
+table:first-child{
+    margin-top: 20px;
+}
 }

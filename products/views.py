@@ -2,16 +2,13 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage
 from django.contrib.auth.decorators import login_required
-from django.db.models import Q  # to generate a seach query
 from django.db.models.functions import Lower
 from .models import Product, Category, Articles, Gender
 from .forms import ProductForm
-# Create your views here.
 
 
 def all_products(request):
     """ A view to show all products """
-
     products = Product.objects.all()
     query = None
     category = None
@@ -35,17 +32,13 @@ def all_products(request):
                 direction = request.GET['direction']
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
-            # products.order_by(category__name)
             products = products.order_by(sortkey)
 
         if 'categories' in request.GET:
             categories = request.GET['categories'].split(',')
-            # Creating a list
-            #categories = categories.filter(categories__in=categories)
             category = Category.objects.filter(name__in=categories)
             all_categories = Category.objects.all()
             products = Product.objects.filter(categories__name__in=categories)
-            
 
         if 'articles' in request.GET:
             articles = request.GET['articles'].split(',')
@@ -61,7 +54,7 @@ def all_products(request):
         if 'q' in request.GET:  # q for Query
             query = request.GET['q']
             if not query:  # If query is blank
-                messages.warning(request, "Looks like you didn't enter any serch critiria")
+                messages.warning(request, f'Looks like you did not enter any serch critiria')
                 return redirect(reverse('allproducts'))
 
             queries = Q(name__icontains=query) | Q(
@@ -86,11 +79,9 @@ def all_products(request):
 def product(request, pk):
     """ A view to show a products detail """
     product = get_object_or_404(Product, pk=pk)
-
     context = {
         'product': product,
     }
-
     return render(request, 'products/product.html', context)
 
 
@@ -109,12 +100,10 @@ def add_new_product(request):
             messages.error(request, f'Couldnt add the product, please check every field before submitting.')
     else:
         form = ProductForm()
-    
     template = 'products/add_product.html'
     context = {
         'form': form,
     }
-
     return render(request, template, context)
 
 
@@ -132,7 +121,7 @@ def edit_product(request, pk):
             messages.success(request, 'Product updated!')
             return redirect(reverse('product', arg=[product.pk]))
         else:
-            messages.error(request, 'Failed to update the product! Please, double check the form fields.')
+            messages.error(request, f'Failed to update the product! Please, double check the form fields.')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are about to edit { product.name }')
@@ -142,7 +131,6 @@ def edit_product(request, pk):
         'form': form,
         'product': product,
     }
-
     return render(request, template, context)
 
 
