@@ -36,7 +36,8 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 # DEBUG = True
 
-ALLOWED_HOSTS = ['backpocket-store.herokuapp.com', 'localhost', '127.0.0.1']
+#ALLOWED_HOSTS = ['backpocket-store.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['.verce.app', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -83,6 +84,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
+        #'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             # Templates directory
