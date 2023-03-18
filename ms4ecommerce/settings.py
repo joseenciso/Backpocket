@@ -37,7 +37,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 # DEBUG = True
 
 #ALLOWED_HOSTS = ['backpocket-store.herokuapp.com', 'localhost', '127.0.0.1']
-ALLOWED_HOSTS = ['.verce.app', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['.verce.app', '.now.sh', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -207,6 +207,8 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)  # Tupla
 # STATICFILES_DIRS = (os.path.join(BASE_DIR, "staticfiles"), )
 
+# STATIC_ROOT needed for Vercel
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 # Static route for amazon services - Django Collectstatic utility
 
 
