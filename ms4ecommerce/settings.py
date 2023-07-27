@@ -34,10 +34,13 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # True only if in development environ
 DEBUG = 'DEVELOPMENT' in os.environ
 
-# DEBUG = True
+# DEBUG = False
 
 ALLOWED_HOSTS = ['backpocket-store.herokuapp.com', 'localhost', '127.0.0.1']
+# ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
+# Fix DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 # Application definition
 
@@ -203,7 +206,7 @@ STATIC_URL = 'static/'
 
 # Adding statics files
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)  # Tupla
-# STATICFILES_DIRS = (os.path.join(BASE_DIR, "staticfiles"), )
+#STATICFILES_DIRS = (os.path.join(BASE_DIR, "staticfiles"), )
 
 # Static route for amazon services - Django Collectstatic utility
 
@@ -227,7 +230,7 @@ if 'USE_AWS' in os.environ:
     # AWS_S3_FILE_OVERWRITE = False
 
     # Static and Media Files
-    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    #STATICFILES_STORAGE = 'custom_storages.StaticStorage'
     STATICFILES_LOCATION = 'static'
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
     MEDIAFILES_LOCATION = 'media'

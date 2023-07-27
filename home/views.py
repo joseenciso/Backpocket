@@ -11,6 +11,8 @@ from django.urls import (get_resolver, get_urlconf,
 
 
 def index(request):
+    
+
     """ A view to return the index page """
     item = ''
     dic = {}
