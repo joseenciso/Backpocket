@@ -4,4 +4,6 @@ __pycache__
 media_copy
 env.py
 venv/
-
+requirements.tzt
+.vercel
+env copy.py
