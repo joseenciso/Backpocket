@@ -18,6 +18,9 @@ import dj_database_url
 if path.exists("env.py"):
     import env
     
+application = get_wsgi_application()
+app = application
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 # BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
