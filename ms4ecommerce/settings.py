@@ -17,7 +17,7 @@ from django.core.wsgi import get_wsgi_application
 import dj_database_url
 
 if path.exists("env.py"):
-    import env
+    import env  
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,8 +37,8 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 # DEBUG = False
 
-ALLOWED_HOSTS = ['backpocket-store.herokuapp.com', 'localhost', '127.0.0.1']
-# ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+# ALLOWED_HOSTS = ['backpocket-store.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [ '.vercel.app', 'localhost', '127.0.0.1' ]
 
 # Fix DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
