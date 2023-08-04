@@ -58,7 +58,6 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     # end Django-Allauth
-    'admin'
     'home',
     'products',
     'shopping_bag',
@@ -70,7 +69,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'storages',
     'widget_tweaks',
-    'admin',
 ]
 
 MIDDLEWARE = [
