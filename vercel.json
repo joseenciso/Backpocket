@@ -11,7 +11,7 @@
         "use": "@vercel/static-build",
         "config": {
             "disDir": "staticfiles_build"
-        },
+        }
       }
     ],
     "routes": [
