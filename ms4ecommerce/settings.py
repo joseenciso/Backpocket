@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     # end Django-Allauth
+    'admin'
     'home',
     'products',
     'shopping_bag',
