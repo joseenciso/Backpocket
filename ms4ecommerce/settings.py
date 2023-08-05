@@ -148,10 +148,11 @@ WSGI_APPLICATION = 'ms4ecommerce.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
+# DATABASES['default] = dj_database_url.parse("DATABASE_URL")
 if 'DATABASE_URL' in os.environ:
+    # DATABASES['default'] = dj_database_url.parse("DATABASE_URL")
     DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        'default': dj_database_url.parse( os.environ.get('DATABASE_URL') )
     }
 else:
     DATABASES ={
@@ -161,11 +162,6 @@ else:
             # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-"""
-    DATABASES = {
-        'default': dj_database_url.parse('postgres://pspnwufjyiivfx:8f40b6edb0a89ae86ba9d7202d8e56565348e9fc97117e5931d180a52c138786@ec2-18-203-7-163.eu-west-1.compute.amazonaws.com:5432/d9hqq5acui2p40')
-    }
-"""
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
