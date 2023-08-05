@@ -148,11 +148,19 @@ WSGI_APPLICATION = 'ms4ecommerce.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-# DATABASES['default] = dj_database_url.parse("DATABASE_URL")
+# DATABASES['default'] = dj_database_url.parse("DATABASE_URL")
 if 'DATABASE_URL' in os.environ:
     # DATABASES['default'] = dj_database_url.parse("DATABASE_URL")
     DATABASES = {
-        'default': dj_database_url.parse( os.environ.get('DATABASE_URL') )
+        'default': {
+            # dj_database_url.parse( os.environ.get('DATABASE_URL') )
+            'ENGINE': os.environ.get('DATABASE_ENGINE'), 
+            'NAME': os.environ.get('DATABASE_NAME'),
+            'USER': os.environ.get('DATABASE_USER'),
+            'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
+            'HOST': os.environ.get('DATABASE_HOST'),
+            'PORT': os.environ.get('DATABASE_PORT')
+        }
     }
 else:
     DATABASES ={
