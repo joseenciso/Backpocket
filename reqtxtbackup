@@ -18,5 +18,9 @@ heroku run python manage.py collectstatic --app floating-brook-26346
 
 heroku git:remote -a floating-brook-26346
 
+herok run py manage.py loaddata
+
 heroku config:set DISABLE_COLLECTSTATIC=1
 ***********************/
+
+#ModuleNotFoundError: No module named 'crispy_bootstrap4'
