@@ -11,12 +11,10 @@ from django.urls import (get_resolver, get_urlconf,
 
 
 def index(request):
-    
-
     """ A view to return the index page """
     item = ''
     dic = {}
-    GOOGLE_MAPS_KEY = os.environ.get('GOOGLE_MAPS_KEY')
+    #GOOGLE_MAPS_KEY = os.environ.get('GOOGLE_MAPS_KEY')
     
     prev_prod = None
     product_count = Product.objects.count()
@@ -63,9 +61,9 @@ def index(request):
         print("ge", e, NoReverseMatch)
 
     context = {
-        'GOOGLE_MAPS_KEY': GOOGLE_MAPS_KEY,
-        'article_name': article_name,
-        'articles': articles,
+        #'GOOGLE_MAPS_KEY': GOOGLE_MAPS_KEY,
+        #'article_name': article_name,
+        #'articles': articles,
         'category_name': category_name,
         'categories': categories,
         'gender_name': gender_name,

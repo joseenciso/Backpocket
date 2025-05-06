@@ -29,7 +29,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', '')
+#SECRET_KEY = os.environ.get('SECRET_KEY', '')
+SECRET_KEY = 'SECRET_KEY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # True only if in development environ
@@ -38,7 +39,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = True
 
 # ALLOWED_HOSTS = ['backpocket-store.herokuapp.com', 'localhost', '127.0.0.1']
-ALLOWED_HOSTS = [ '.vercel.app', 'localhost', '127.0.0.1' ]
+#ALLOWED_HOSTS = [ '*' ]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 # Fix DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
@@ -67,6 +69,7 @@ INSTALLED_APPS = [
     'django_countries',
     #'cities',
     'crispy_forms',
+    'crispy_bootstrap4',
     'storages',
     'widget_tweaks',
 ]
@@ -154,12 +157,12 @@ if 'DATABASE_URL' in os.environ:
     DATABASES = {
         'default': {
             # dj_database_url.parse( os.environ.get('DATABASE_URL') )
-            'ENGINE': os.environ.get('DATABASE_ENGINE'), 
-            'NAME': os.environ.get('DATABASE_NAME'),
-            'USER': os.environ.get('DATABASE_USER'),
-            'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
-            'HOST': os.environ.get('DATABASE_HOST'),
-            'PORT': os.environ.get('DATABASE_PORT')
+            #'ENGINE': os.environ.get('DATABASE_ENGINE'), 
+            #'NAME': os.environ.get('DATABASE_NAME'),
+            #'USER': os.environ.get('DATABASE_USER'),
+            #'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
+            #'HOST': os.environ.get('DATABASE_HOST'),
+            #'PORT': os.environ.get('DATABASE_PORT')
         }
     }
 else:

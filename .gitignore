@@ -7,3 +7,4 @@ venv/
 requirements.tzt
 .vercel
 env copy.py
+reqtxtbackup
