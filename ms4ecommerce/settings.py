@@ -33,9 +33,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # True only if in development environ
-DEBUG = 'DEVELOPMENT' in os.environ
+#DEBUG = 'DEVELOPMENT' in os.environ
 
-# DEBUG = False
+DEBUG = True
 
 # ALLOWED_HOSTS = ['backpocket-store.herokuapp.com', 'localhost', '127.0.0.1']
 ALLOWED_HOSTS = [ '.vercel.app', 'localhost', '127.0.0.1' ]
