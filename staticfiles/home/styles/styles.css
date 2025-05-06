@@ -1,0 +1,110 @@
+
+a,
+a:hover,
+a:link{
+    text-decoration: none;
+    color: black;
+}
+
+.card {
+    min-width: 200px;
+    max-width: 210px;
+    min-height: 200px;
+    max-height: 210px;
+    padding: 5px;
+    text-align: center;
+    margin: auto 10px;
+}
+
+.card img {
+    object-fit: contain;
+    height: 198px;
+}
+
+.articles-wrapper .card span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: large;
+}
+
+.card span:hover{
+    color: white;
+}
+
+.articles-wrapper {
+    max-height: 260px;
+    width: auto;
+    padding: 0 !important;
+    overflow: auto;
+    white-space: nowrap;
+    display: flex;
+}
+
+.articles-wrapper .card {
+    display: inline-block;
+}
+
+.img-wrapper img{
+    object-fit: contain;
+    max-height: 300px;
+}
+
+.featurette-divider{
+    height: 15px;
+}
+
+@media (min-width: 993px){
+    .text-wrapper {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    
+}
+
+@media(max-width: 992px) {
+    .articles-wrapper {
+        display: block;
+    }
+}
+
+@media (min-width: 768px){
+    .text-wrapper p{
+
+    }
+}
+
+@media (min-width: 576px) {
+    .carousel-caption p {
+        margin-bottom: 1.25rem;
+        font-size: 1.25rem;
+        line-height: 1.4;
+    }
+
+    .featurette-heading {
+        font-size: 2rem;
+    }
+}
+
+@media(max-width: 575px){
+    
+    main{
+        margin-top: 120px;
+    }
+    
+    .carousel .carousel-inner{
+        max-height: 256px;
+    }
+
+    .articles-wrapper h2{
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .text-wrapper p{
+        font-size: 1rem !important;
+    }
+}

@@ -215,6 +215,7 @@ STATIC_URL = 'static/'
 # Adding statics files
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)  # Tupla
 #STATICFILES_DIRS = (os.path.join(BASE_DIR, "staticfiles"), )
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Static route for amazon services - Django Collectstatic utility
 
@@ -230,15 +231,15 @@ if 'USE_AWS' in os.environ:
         'CacheControl': 'max-age=94608000'
     }
     # AWS S3 Bucket Config
-    AWS_STORAGE_BUCKET_NAME = 'backpocket-ecommerce'
-    AWS_S3_REGION_NAME = 'eu-west-1'
+    AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+    AWS_S3_REGION_NAME = os.environ.get('AWS_S3_REGION_NAME')
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
     # AWS_S3_FILE_OVERWRITE = False
 
     # Static and Media Files
-    #STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
     STATICFILES_LOCATION = 'static'
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
     MEDIAFILES_LOCATION = 'media'

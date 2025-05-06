@@ -1,0 +1,9 @@
+.product-detail-image img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.size-select i,
+.add-to-cart i{
+    padding-right: 10px;
+}

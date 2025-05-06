@@ -1,0 +1,275 @@
+body{
+    background-color: rgb(250, 251, 253);
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: black;
+}
+
+nav .container-fluid{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+main{
+    min-height: 60vh;
+    margin-top: 60px;
+    margin-top: 120px;
+    margin-bottom: 80px;
+}
+
+li {
+    list-style: none;
+}
+
+.brand-link .fa-shirtsinbulk{
+    font-size: 1.8rem;
+}
+
+.brand-name{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.message-container{
+    position: fixed;
+    top: 130px;
+    right: 50px;
+    z-index: 9999;
+}
+
+
+header .navbar-nav .nav-link {
+    color: black !important;
+}
+/**********************************************/
+
+.register-button button,
+.login-button button{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0 auto;
+    color: white;
+}
+
+.register-button i,
+.login-button i{
+    width: 20px;
+    margin-left: 5px;
+}
+
+.login-container label{
+    padding-left: 10px;
+}
+
+.login-container form input[type="text"],
+.login-container form input[type="password"]{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.login-container form input[type="checkbox"]{
+    margin-left: 0;
+}
+
+.login-container form input[type="checkbox"] label{
+    padding-left: -10px;
+}
+
+.login-container button:hover{
+    color: white;
+}
+/**********************************************/
+.allauth-form-container #div_id_email{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.allauth-form-container #div_id_email label{
+    width: 20%;
+    margin: 5px 0;
+    padding-left: 10px;
+}
+
+.allauth-form-container #div_id_email div input{
+    width: 100%;
+}
+
+.allauth-form-container form .button-container input{
+    margin: 10px auto;
+}
+
+
+.inner-form-container input{
+    padding-bottom: 10px;
+}
+/**********************************************/
+
+#signup_form label{
+    padding-left: 15px;
+}
+
+#signup_form input{
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#signup_form .form-group{
+    margin-bottom: 1rem;
+}
+
+.login-container p{
+    margin-top: 10px;
+}
+
+footer li i{
+    width: 21px;
+    padding-right: 5px;
+    text-align: center;
+}
+
+footer li a:hover{
+    color: rgb(255,193,7);
+}
+
+.card-product .card-image{
+    width: 20%;
+}
+
+.card-product .card-body{
+    width: 80%;
+    padding-right: 5%;
+}
+
+hr{
+    opacity: 1;
+}
+
+.register-container .signup{
+    max-width: 500px;
+}
+
+@media(min-width: 993px){
+    .checkout-link{
+        position: relative;
+    }
+    
+    .basket-wrapper img{
+        z-index: -1;
+        position: absolute;
+        width: 28px;
+        height: 28px;
+        top: 0%;
+        left: 0%;
+    }
+    
+    .products-counter span{
+        width: 32px;
+        height: 32px;
+    }
+
+    .products-counter{
+        position: absolute;
+        top: 60%;
+        left: 70%;
+        max-width: 32px;
+        max-height: 32px;
+    }
+}
+
+@media(max-width: 991px){
+    main{
+        margin-top: 140px;
+    }
+    
+    .basket-wrapper img{
+        width: 24px;
+        height: 24px;
+    }
+    
+    .products-counter{
+        font-size: 1.3rem;
+    }
+
+    .collapse .dropdown-menu .dropdown-item,
+    .collapse .dropdown-menu .nav-link{
+        font-size: 1.5rem     !important;
+    }
+
+    .collapse .navbar-nav {
+        font-size: 1.5rem;
+    }
+
+}
+
+@media (max-width: 768px) {
+    main{
+        margin-top: 160px;
+    }
+
+    
+
+    #search-bar {
+        margin-top: 5px;
+    }
+    .filter-container {
+        padding: 0 10px !important;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .filter-button {
+        display: none;
+    }
+
+    .add-to-cart,
+    .size-select {
+        width: 60%;
+    }
+    .btn-offcanvas {
+        display: none;
+    }
+
+    #sort-selector {
+        width: 240px;
+        margin-left: auto;
+    }
+    
+}
+
+@media (max-width: 576px) {
+
+    main{
+        margin-top: 140px !important;
+    }
+
+    .card-product .card-image,
+    .card-product .card-body{
+        width: 50%;
+    }
+}
+
+@media(min-width: 400px){
+    .allauth-form-container,
+    .login-container,
+    .register-container{
+        max-width: 320px;
+    }
+}

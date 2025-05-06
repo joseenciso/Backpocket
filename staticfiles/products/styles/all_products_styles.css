@@ -1,0 +1,47 @@
+.card {
+    padding: 0;
+    /*width: 25%;*/
+    max-height: 210px;
+}
+
+.card-product .card-image {
+    text-align: center;
+    height: 180px;
+}
+
+.card-product img {
+    max-width: 100%;
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    padding: 5px;
+}
+
+.card-product .card-body p{
+    font-size: 1rem;
+}
+
+.card-product .card-text{
+    overflow: hidden;
+}
+
+.pagination-wrapper a{
+    font-size: 1.5rem;
+}
+/*.product-rating {
+    bottom: 5px;
+    left: 10px;
+}
+
+.product-price {
+    bottom: 5px;
+    right: 10px;
+}*/
+
+
+
+@media (max-width: 768px){
+    .card-product .card-image {
+        height: 140px;
+    }
+}
