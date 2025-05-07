@@ -26,6 +26,11 @@ heroku config:set DISABLE_COLLECTSTATIC=1
 #ModuleNotFoundError: No module named 'crispy_bootstrap4'
 
 
+
+#>heroku run bash --app floating-brook-26346
+
+#/***************************************/
+
 asgiref==3.7.2
 bootstrap4==0.1.0
 boto3==1.28.15
@@ -39,7 +44,7 @@ dj-database-url==2.0.0
 Django==4.2.3
 django-allauth==0.54.0
 django-countries==7.5.1
-django-crispy-forms==2.0
+django-crispy-forms==2.3
 django-storages==1.13.2
 django-widget-tweaks==1.4.12
 docopt==0.6.2
@@ -67,4 +72,4 @@ urllib3==1.26.16
 Werkzeug==1.0.1
 whitenoise==6.5.0
 yarg==0.1.10
-#crispy-bootstrap4==2024.10
+crispy-bootstrap4==2024.10
