@@ -40,7 +40,7 @@ DEBUG = True
 
 # ALLOWED_HOSTS = ['backpocket-store.herokuapp.com', 'localhost', '127.0.0.1']
 #ALLOWED_HOSTS = [ '*' ]
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['floating-brook-26346-12d4fb64a603.herokuapp.com', 'localhost', '127.0.0.1']
 
 # Fix DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
@@ -160,7 +160,7 @@ if 'DATABASE_URL' in os.environ:
             #dj_database_url.parse( os.environ.get['DATABASE_URL'] ),
             'ENGINE': os.environ.get('DB_ENGINE'),
             'NAME': os.environ.get('DB_NAME'),
-            #'USER': os.environ.get('DATABASE_USER'),
+            'USER': os.environ.get('DB_USER'),
             #'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
             #'HOST': os.environ.get('DATABASE_HOST'),
             #'PORT': os.environ.get('DATABASE_PORT')
