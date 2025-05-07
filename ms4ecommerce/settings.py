@@ -157,13 +157,13 @@ if 'DATABASE_URL' in os.environ:
     #DATABASES = 'default' = dj_database_url.parse("DATABASE_URL")
     DATABASES = {
         'default': {
-            dj_database_url.parse( os.environ.get['DATABASE_URL'] ),
-            #'ENGINE': os.environ.get('DB_ENGINE'),
-            #'NAME': os.environ.get('DB_NAME'),
-            #'USER': os.environ.get('DB_USER'),
-            #'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
-            #'HOST': os.environ.get('DATABASE_HOST'),
-            #'PORT': os.environ.get('DATABASE_PORT')
+            #dj_database_url.parse( os.environ.get['DATABASE_URL'] ),
+            'ENGINE': os.environ.get('DB_ENGINE'),
+            'NAME': os.environ.get('DB_NAME'),
+            'USER': os.environ.get('DB_USER'),
+            'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
+            'HOST': os.environ.get('DATABASE_HOST'),
+            'PORT': os.environ.get('DATABASE_PORT')
         }
     }
 else:
