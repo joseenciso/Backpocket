@@ -36,7 +36,7 @@ SECRET_KEY = 'SECRET_KEY'
 # True only if in development environ
 #DEBUG = 'DEVELOPMENT' in os.environ
 
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', False)
 
 # ALLOWED_HOSTS = ['backpocket-store.herokuapp.com', 'localhost', '127.0.0.1']
 #ALLOWED_HOSTS = [ '*' ]
@@ -226,7 +226,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-if 'USE_AWS' in os.environ:
+#if 'USE_AWS' in os.environ:
+if os.environ.get('USE_AWS') == 'True':
     # Cache Control
     AWS_S3_OBJECT_PARAMETERS = {
         'Expires': 'Thu, 31 Dec 2009 20:00:00 GTM',
