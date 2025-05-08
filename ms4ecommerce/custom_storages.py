@@ -16,5 +16,5 @@ class MediaStorage(S3Boto3Storage):
 #    default_acl = 'public-read'
 #    file_overwrite = False
 
-#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3Boto3Storage'
