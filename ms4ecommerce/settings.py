@@ -198,13 +198,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 
@@ -214,7 +210,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Adding statics files
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Tupla
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )  # Tupla
 #STATICFILES_DIRS = (os.path.join(BASE_DIR, "staticfiles"), )
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -242,10 +238,12 @@ if os.environ.get('USE_AWS') == 'True':
     AWS_DEFAULT_ACL = None
 
     # Static and Media Files
-    STATICFILES_STORAGE = 'ms4ecommerce.custom_storages.StaticStorage'
     STATICFILES_LOCATION = 'static'
-    DEFAULT_FILE_STORAGE = 'ms4ecommerce.custom_storages.MediaStorage'
     MEDIAFILES_LOCATION = 'media'
+    #DEFAULT_FILE_STORAGE = 'ms4ecommerce.custom_storages.MediaStorage'
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+    #STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
     # Overide static and edia URls in production
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
