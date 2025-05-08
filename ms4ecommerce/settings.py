@@ -221,8 +221,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-#if 'USE_AWS' in os.environ:
-if os.environ.get('USE_AWS') == 'True':
+if 'USE_AWS' in os.environ:
+#if os.environ.get('USE_AWS') == 'True':
     # Cache Control
     AWS_S3_OBJECT_PARAMETERS = {
         'Expires': 'Thu, 31 Dec 2009 20:00:00 GTM',
@@ -241,9 +241,9 @@ if os.environ.get('USE_AWS') == 'True':
     STATICFILES_LOCATION = 'static'
     MEDIAFILES_LOCATION = 'media'
     #DEFAULT_FILE_STORAGE = 'ms4ecommerce.custom_storages.MediaStorage'
-    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+    DEFAULT_FILE_STORAGE = 'ms4ecommerce.storages.backends.s3boto.S3BotoStorage'
     #STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    STATICFILES_STORAGE = 'ms4ecommerce.storages.backends.s3boto3.S3Boto3Storage'
 
     # Overide static and edia URls in production
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
