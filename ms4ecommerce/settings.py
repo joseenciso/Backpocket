@@ -241,9 +241,9 @@ if 'USE_AWS' in os.environ:
     STATICFILES_LOCATION = 'static'
     MEDIAFILES_LOCATION = 'media'
     #DEFAULT_FILE_STORAGE = 'ms4ecommerce.custom_storages.MediaStorage'
-    DEFAULT_FILE_STORAGE = 'ms4ecommerce.storages.backends.s3boto.S3BotoStorage'
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto'
     #STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-    STATICFILES_STORAGE = 'ms4ecommerce.storages.backends.s3boto3.S3Boto3Storage'
+    STATICFILES_STORAGE = 'storages.backends.s3boto3'
 
     # Overide static and edia URls in production
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
