@@ -35,11 +35,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # True only if in development environ
 #DEBUG = 'DEVELOPMENT' in os.environ
 
-DEBUG = os.environ.get('DEBUG', False)
+DEBUG = os.environ.get('DEBUG')
 
 # ALLOWED_HOSTS = ['backpocket-store.herokuapp.com', 'localhost', '127.0.0.1']
 #ALLOWED_HOSTS = [ '*' ]
-ALLOWED_HOSTS = ['floating-brook-26346-12d4fb64a603.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['floating-brook-26346-12d4fb64a603.herokuapp.com', 'localhost', '127.0.0.1', '127.0.0.1:8000']
 
 # Fix DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
@@ -139,7 +139,7 @@ ACCOUNT_AUTHENTICATIONMETHOD = 'username_email'  # Either username or email
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
-ACCOUNT_USERNAME_MIN_LENGHT = 4
+ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 # LOGIN_REDIRECT_URL = '/'
 # LOGIN_REDIRECT_URL = '/success'
@@ -193,7 +193,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -204,22 +203,24 @@ USE_L10N = True
 USE_TZ = True
 
 
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-
-STATIC_URL = '/static/'
-
+STATIC_URL = 'static/'
 # Adding statics files
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )  # Tupla
 #STATICFILES_DIRS = (os.path.join(BASE_DIR, "staticfiles"), )
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Static route for amazon services - Django Collectstatic utility
 
 
 # Media Settings
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#MEDIA_ROOT = 'media'
+MEDIA_ROOT = BASE_DIR / 'media/'
 MEDIA_URL = '/media/'
+#print('Media ', MEDIA_ROOT)
+#print('Media ', MEDIA_URL)
 
 if 'USE_AWS' in os.environ:
 #if os.environ.get('USE_AWS') == 'True':
@@ -230,24 +231,38 @@ if 'USE_AWS' in os.environ:
     }
     # AWS S3 Bucket Config
     AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
-    AWS_S3_REGION_NAME = 'eu-west-1'
+    AWS_S3_REGION_NAME = os.environ.get('AWS_S3_REGION_NAME')
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-    AWS_S3_FILE_OVERWRITE = False
-    AWS_DEFAULT_ACL = None
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com'
+    AWS_S3_FILE_OVERWRITE = os.environ.get('AWS_S3_FILE_OVERWRITE')
+    AWS_DEFAULT_ACL = os.environ.get('AWS_DEFAULT_ACL')
+    AWS_S3_OBJECT_PARAMETERS = { 'CacheControl': 'max-age=86400',}
+    AWS_HEADERS = { 'Access-Control-Allow-Origin': '*' }
+    # AWS_S3_SIGNATURE_VERSION = 's3v4'
+    # AWS_S3_SIGNATURE_VERSION = 's3v4'
+    # AWS_S3_SIGNATURE_VERSION = 's3v4'
+    # AWS_S3_SIGNATURE_VERSION = 's3v4'
+    # AWS_S3_SIGNATURE_VERSION = 's3v4'
+    # AWS_S3_SIGNATURE_VERSION = 's3v4'
+    # AWS_S3_SIGNATURE_VERSION = 's3v4'
+    # AWS_S3_SIGNATURE_VERSION = 's3v4'
+    # AWS_S3_SIGNATURE_VERSION = 's
+    #print('AWS_S3_CUSTOM_DOMAIN:', AWS_S3_CUSTOM_DOMAIN)
 
     # Static and Media Files
-    STATICFILES_LOCATION = 'static'
-    MEDIAFILES_LOCATION = 'media'
+    STATICFILES_LOCATION = 'static/'
+    MEDIAFILES_LOCATION = 'media/'
     #DEFAULT_FILE_STORAGE = 'ms4ecommerce.custom_storages.MediaStorage'
-    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto'
+    DEFAULT_FILE_STORAGE = 'ms4ecommerce.custom_storages.MediaStorage'
+    #DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     #STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-    STATICFILES_STORAGE = 'storages.backends.s3boto3'
+    #STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    STATICFILES_STORAGE = 'ms4ecommerce.custom_storages.StaticStorage'
 
     # Overide static and edia URls in production
-    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}'
 
 # Stripe's Setting
 FREE_DELIVERY_THRESHOLD = 50
@@ -273,5 +288,4 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
-
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+    

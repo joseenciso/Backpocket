@@ -31,3 +31,6 @@ urlpatterns = [
     path('products/checkout/', include('checkout.urls')),
     path('profile/', include('profiles.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # Static Function
+
+#print("MEDIA_URL:", settings.MEDIA_URL)
+#print("MEDIA_ROOT:", settings.MEDIA_ROOT)
